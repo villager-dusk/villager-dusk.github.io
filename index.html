@@ -1,1 +1,585 @@
-Hello world!
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>MC整合包（MC模组） - 烦村黄昏</title>
+    <meta name="description" content="烦村黄昏，高质量免费MC整合包，包含众多原创角色、技能、武器，MC整合包，MC模组。" />
+    <style>
+        
+        *{
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .l02221{
+            color: #fff;
+            display: inline-block;
+            border: solid 1.5px;
+            padding: 4px 5px 2px 5px;
+            border-radius: 5px;
+            opacity: 0.7;
+            width: 89px;
+        }
+        .l02221:hover{
+            opacity: 1;
+        }
+        svg {
+    width: 100%;
+    height: 200px;
+    font-family:fantasy
+  }
+
+  text {
+    font-size: 1.5em;
+    font-weight: bold;
+    fill: url(#gradient1);
+  }
+
+        .text-sub {
+            margin: 5px 50px;
+            line-height: 1.3;
+            font-size: 10px;
+            font-family: roboto condensed, sans-serif;
+            font-weight: 300;
+            text-align: center
+        }
+        
+        .b1 {
+            padding-bottom: 30px;
+            padding-top: 5px;
+            margin: 0;
+            background: rgb(10, 10, 10);
+        }
+        .b2 {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            width: auto;
+            max-width: 90%;
+        }
+        .b3 {
+            margin: 10px auto;
+            padding: 10px;
+            background-color:  rgb(10, 10, 10);;
+            box-shadow: rgba(50, 50, 93, .25) 0 -20px 40px -70px, rgba(0, 0, 0, .3) 0 40px 60px -30px
+        }
+        a{
+            color: #fff;
+            text-decoration: none;
+        }
+        a:hover{
+            color: #f8036c;
+        }
+        .ts1 {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .loading{
+            text-align: center; 
+            width: 430px; 
+            height:100px;
+            position: absolute; 
+            left: 50%; 
+            top: 50%; 
+            margin: -50px 0px 0px -215px; 
+            box-shadow: rgba(50, 50, 93, .35) 0 -20px 30px -70px, rgba(0, 0, 0, .3) 0 40px 20px -45px;
+            border: 1px solid #ddd;
+            padding-top: 39px;
+            background: #000;
+        }
+
+        .load2{
+            font-size:12px;
+            padding-left:5px;
+        }
+        .lw{
+            font-size: 20px;
+            opacity: 0.8;
+        }
+        .lw:hover{
+            opacity: 1;
+            
+        }
+        .image{
+            opacity: 0.7;
+        }
+        .image:hover{
+            opacity: 1;
+        }
+        .amount {
+            text-align: center;
+            font-family: roboto condensed;
+            font-weight: 400;
+            font-size: 72px;
+            margin: 20px 0 10px 0;
+            color: #000;
+            line-height: 72px
+        }
+
+        .text {
+            text-align: center;
+            font-family: lato, Sans-serif;
+            font-weight: 400;
+            letter-spacing: 2px;
+            font-size: 13px;
+            margin-top: 10px
+        }
+
+        .sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline;
+            top: -.5em;
+        }
+
+        .dotted-line {
+            border: none;
+            height: 0;
+            border-top: 2px dotted #666;
+            opacity: 0.5;
+        }
+
+        .b1 {
+            padding-bottom: 30px;
+            padding-top: 5px;
+            margin: 0;
+            background: #f5f6f7;
+        }
+
+        .b2 {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            width: auto;
+            max-width: 1280px;
+        }
+
+        .i1 {
+            height: 80px;
+            background: #191919;
+            border-radius: 90px;
+            padding: 10px 20px 10px 20px;
+        }
+
+        .d1 {
+            padding-top: 40px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .t1 {
+            height: 150px;
+            width: 100%;
+            margin-top: 20px;
+            font-size: 12px;
+            resize: none;
+            border:1px solid #6f6f6f;
+            padding:4px;
+            outline:none;
+        }
+
+        .e1 {
+            margin-top: 5px;
+            width: 100%;
+            font-size: 19px;
+            cursor: pointer;
+        }
+
+        .ts1 {
+            margin-top: 22px;
+            margin-bottom: 5px;
+        }
+
+        .loading{
+            text-align: center; 
+            width: 430px; 
+            height:100px;
+            position: absolute; 
+            left: 50%; 
+            top: 50%; 
+            margin: -50px 0px 0px -215px; 
+            box-shadow: rgba(50, 50, 93, .35) 0 -20px 30px -70px, rgba(0, 0, 0, .3) 0 40px 20px -45px;
+            border: 1px solid #ddd;
+            padding-top: 39px;
+            background: #000;
+        }
+
+        .load2{
+            font-size:12px;
+            padding-left:5px;
+        }
+
+        .l17{
+            padding: 4px;
+            cursor: pointer;
+        }
+
+        .l17:hover{
+            color:#ff0000;
+        }
+
+        .l16{
+            cursor: pointer;
+            border-bottom: 2px solid #cccccc;
+        }
+
+        .l16:hover{
+            color:#ff0000;
+        }
+
+        .lw{
+            font-size: 20px;
+            opacity: 0.8;
+        }
+        .lw:hover{
+            opacity: 1;
+            
+        }
+        
+        .s19{
+            padding-left:5px;
+        }
+        .btn2{
+            top: 20px;
+            position: relative;
+            border: 1px solid #bbb;
+            padding: 5px 10px 5px 10px;
+            height: 23px;
+            display: inline-block;
+            border-bottom: none;
+            cursor: pointer;
+            background: #eee;
+        }
+        .btn1{
+            top: 20px;
+            position: relative;
+            border: 1px solid #6f6f6f;
+            padding: 5px 10px 5px 10px;
+            height: 23px;
+            display: inline-block;
+            border-bottom: none;
+            cursor: pointer;
+            background: #000;
+        }
+        .t1:focus{
+            border:1px solid #6f6f6f;
+            padding:4px;
+            outline:none;
+        }
+        
+        .dynamic-list-item {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+            vertical-align: top;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size:14px;
+        }
+        .delete-button{
+            font-size:11px;
+            cursor: pointer;
+            color: #444;
+            opacity: 0.8;
+        }
+        .banner{
+            padding: 10px; 
+            background: #000; width: 100%; display: inline-block; 
+            border-radius: 0px;
+            opacity: 1;
+            color: #fff;
+        }
+        .banner:hover{
+            opacity: 1;
+        }
+        .d2121{
+            font-size:9px; background:#fcfcfc; padding:10px; border-radius:10px; overflow-x:auto;
+        }
+        .d2122{
+            text-shadow: 1px 0px 1px #666666; font-weight:600; opacity:0.8; font-size:10px;
+        }
+        .d2123{
+            text-align: left; display: block; padding-top:10px;
+        }
+        .d2124{
+            -webkit-user-select:none;/*webkit浏览器*/ 
+            -moz-user-select:none;/*火狐*/ 
+            -ms-user-select:none;/*IE10*/ 
+            user-select:none;
+        }
+    </style>
+</head>
+
+<body class="b1" style="
+            background-image: url('bg.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #fff;
+            ">
+    <div class="b2" style="opacity: 0.95;">
+        <div id="preview-card">
+            <div id="loading" class="loading">
+                <span class="load2">烦村黄昏 加载中...</span>
+            </div>
+            <div id="main" class="b3" style="display: none;">
+
+                
+                <div class="text-sub ts1" style="display: flex; ">
+                    <div style="flex:2; text-align: left; min-width: 180px;">
+                        <div style="display: block;float: left;height: 40px;padding-right: 7px; padding-left: 5px;">
+                            <img src="logo.avif" class="image" style="height: 40px; width: 40px;">
+                        </div> 
+                        
+                        <div style="display: block; float: left; padding-right: 10px;">
+                            <span class="lw" style="font-size: 18px; opacity: 1">烦村黄昏</span>
+                            <br>
+                            <span style="font-size: 11px; opacity: 0.8;">
+                                原创MC整合包
+                            </span>
+                            
+                        </div>
+                    </div>
+                    <div style="flex:1; text-align: center;">
+                        <div style="display: inline-block; opacity:0.8; margin-left:5px; ">
+                                <a class="l17" href="https://pan.quark.cn/s/9d824f593ff3" target="_blank" style="padding-left: 10px; display: inline-block;">
+                                    <div class="l02221">
+                                        <img src="download.png" class="image" style="width: 32px;">
+                                        <span style="top: -13px;display: inline-block;position: relative;">立刻下载</span>
+                                    </div>
+                                </a>
+                                <a class="l17" href="https://space.bilibili.com/1015730693" style="padding-left: 10px; display: inline-block;">
+                                    <div class="l02221">
+                                        <img src="us.png" class="image" style="width: 32px;">
+                                        <span style="top: -13px;display: inline-block;position: relative;">联系我们</span>
+                                    </div>
+                                </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-sub" style="margin-top: 26px; opacity: 0.3;">
+                    <hr class="dotted-line">
+                </div>
+
+                <div style="padding-top:14px;" class="text-sub">
+                    <div class="banner" style="position: relative; top: -0px;">
+                        <span style="padding-left: 10px; float: left;" class="d2124"><b>视频展示</b></span>
+                        <span style="padding-left: 9px; float: left; opacity: 0.8;" class="d2124">游戏实录画面</span>
+                        <span style="padding-right: 10px; float: right; opacity: 0.3;"  class="d2124">▼</span>
+                    </div>
+                    <video autoplay muted playsinline loop style="width: 100%;">
+                        <source src="bg.mp4" type="video/mp4;">
+                    </video>
+                </div>
+
+                <div style="padding-top:14px;" class="text-sub">
+                    <div class="banner">
+                        <span style="padding-right: 10px; float: right; opacity: 0.3;" class="d2124">▼</span>
+                    </div>
+                    <div class="text-sub">
+                        <svg viewBox="0 0 1000 170">
+                            <defs>
+                                <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="26%" style="stop-color:gold;stop-opacity:2" id="stop2"></stop>
+                                  <stop offset="0%" style="stop-color:red;stop-opacity:2" id="stop1"></stop>
+                                  <stop offset="42%" style="stop-color:yellow;stop-opacity:2" id="stop2"></stop>
+                                  <stop offset="63%" style="stop-color:aqua;stop-opacity:2" id="stop2"></stop>
+                                  <stop offset="77%" style="stop-color:blue;stop-opacity:2" id="stop2"></stop>
+                                  <stop offset="89%" style="stop-color:rgb(0, 102, 255);stop-opacity:2" id="stop2"></stop>
+                                  <stop offset="100%" style="stop-color:rgb(255, 0, 255);stop-opacity:2" id="stop2"></stop>
+                              </linearGradient>
+                            </defs>
+                            <text x="50%" y="20%" text-anchor="middle" dy=".1em">烦村黄昏</text>
+                            <text x="50%" y="40%" text-anchor="middle" dy=".2em">高质量免费MC整合包，包含众多角色、技能、武器</text>
+                            <text x="50%" y="60%" text-anchor="middle" dy=".3em">角色如：蓝恶魔、铁傀儡侦察兵、烦村格雷夫、芥末,史蒂夫等</text>
+                            <text x="50%" y="80%" text-anchor="middle" dy=".4em">武器如：蛇刃长刀、黑曜石机关枪、黑暗头盔、战神之刃、合金巨斧、影锤、帕拉丁之剑、钻石刺阴剑、爆炸匕首等</text>
+                            <text x="50%" y="100%" text-anchor="middle" dy=".4em">技能如：蛇刃地刺、黑曜石牢笼、TNT爆炸、史蒂夫觉醒、觉醒、钢铁旋风、三叉戟狂欢节等</text>
+                          </svg>
+                    </div>
+                    <svg viewBox="0 0 1000 220">
+                        <defs>
+                          <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop offset="26%" style="stop-color:gold;stop-opacity:2" id="stop2"></stop>
+                            <stop offset="0%" style="stop-color:red;stop-opacity:2" id="stop1"></stop>
+                            <stop offset="42%" style="stop-color:yellow;stop-opacity:2" id="stop2"></stop>
+                            <stop offset="63%" style="stop-color:aqua;stop-opacity:2" id="stop2"></stop>
+                            <stop offset="77%" style="stop-color:blue;stop-opacity:2" id="stop2"></stop>
+                            <stop offset="89%" style="stop-color:rgb(0, 102, 255);stop-opacity:2" id="stop2"></stop>
+                            <stop offset="100%" style="stop-color:rgb(255, 0, 255);stop-opacity:2" id="stop2"></stop>
+                          </linearGradient>
+                        </defs>
+                        <text x="50%" y="20%" text-anchor="middle" dy=".1em">战神之刃是一把造型独特、设计精美的长剑。剑身呈现出深邃的银色，仿佛夜空中最耀眼的星辰，剑刃上流动着淡淡的蓝光</text>
+                        <text x="50%" y="40%" text-anchor="middle" dy=".2em">给人一种神秘而不可侵犯的感觉。剑柄部分用精致的金属打造，上面雕刻着繁复的符文，这些符文不仅增添了武器的美感，更蕴含着强大的魔法力量。剑格部分则镶嵌着一颗璀璨的宝石，</text>
+                        <text x="50%" y="60%" text-anchor="middle" dy=".3em"> 这颗宝石是战神之刃力量的源泉，每当它闪耀时，都预示着强大的攻击即将来临，战神之刃之所以被誉为战神之器，是因为它拥有着令人难以置信的力量。在动画中，这把剑能够轻易斩</text>
+                        <text x="50%" y="80%" text-anchor="middle" dy=".4em">断任何阻碍，无论是坚硬的岩石还是强大的敌人，都在它锋利的剑刃下化为齑粉。此外，战神之刃还拥有着神秘的魔法属性，能够释放出强大的能量波动，对敌人造成毁灭性的打击</text>
+                      </svg>
+                    <div style="text-align: center; ">
+                            <div style="width: 300px; height: 150px; background-color: #000; display: inline-block; max-width: 100%;">
+                                <span style="text-align: center; width: 100%; display: inline-block; height: 35px; padding-top: 10px;">武器展示：TNT战刃</span><br>
+                                <span style="text-align: center; width: 100%; display: inline-block;">
+                                    <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=113589083970650&bvid=BV1LBzSYBEGH&cid=27164019629&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+                                </span>
+                            </div>
+                            <div style="width: 300px; height: 150px; background-color: #000; display: inline-block;">
+                                <span style="text-align: center; width: 100%; display: inline-block; height: 35px; padding-top: 10px;">技能展示：噬魂蛇刃技能特效</span><br>
+                                <span style="text-align: center; width: 100%; display: inline-block;">
+                                    <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=112964283728899&bvid=BV1rbete4EGj&cid=500001650072510&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+                                </span>
+                            </div>
+                            <div style="width: 300px; height: 150px; background-color: #000; display: inline-block;">
+                                <span style="text-align: center; width: 100%; display: inline-block; height: 35px; padding-top: 10px;">整合包开发：铁傀儡侦察兵模型制作</span><br>
+                                <span style="text-align: center; width: 100%; display: inline-block;">
+                                    <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=1455784464&bvid=BV1ai421e7wA&cid=1593740337&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+                                </span>
+                            </div>
+                            <br>
+                            <div style="width: 300px; height: 150px; background-color: #000; display: inline-block;">
+                                <span style="text-align: center; width: 100%; display: inline-block; height: 35px; padding-top: 10px;">武器展示：血腥巨剑</span><br>
+                                <span style="text-align: center; width: 100%; display: inline-block;">
+                                    <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=1055387832&bvid=BV1hn4y1d7pa&cid=1566652545&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+                                </span>
+                            </div>
+                           
+                            <div style="width: 300px; height: 150px; background-color: #000; display: inline-block;">
+                                <span style="text-align: center; width: 100%; display: inline-block; height: 35px; padding-top: 10px;">特效展示：战神之刃刀光</span><br>
+                                <span style="text-align: center; width: 100%; display: inline-block;">
+                                    <iframe src="https://player.bilibili.com/player.html?isOutside=true&aid=1505400597&bvid=BV1YD421g7Vb&cid=1573822466&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div style="padding-top:14px;" class="text-sub">
+                        <div class="banner">
+                            <span style="padding-left: 10px; float: left; font-size:16px;" class="d2124"><b>整合包下载</b></span>
+                            <span style="padding-right: 10px; float: right; opacity: 0.3"  class="d2124">▼</span>
+                        </div>
+                        <div class="text-sub" style="text-align: left; " id="submit_js_div">
+                            <div class="text-sub" style="margin: 0px; text-align: left;">
+                                <a class="l17" href="https://pan.quark.cn/s/9d824f593ff3" target="_blank" style="display: inline-block;">
+                                    <div class="l02221">
+                                        <img src="download.png" class="image" style="width: 32px;">
+                                        <span style="top: -13px;display: inline-block;position: relative;">立刻下载</span>
+                                    </div>
+                                </a>
+                                最新版本：
+                                <span style="font-size:16px;">v2.2.2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="padding-top:14px; font-size:16px;" class="text-sub" id="connect">
+                        <div class="banner">
+                            <span style="padding-left: 10px; float: left;" class="d2124"><b>联系方式</b></span>
+                            <span style="padding-right: 10px; float: right; opacity: 0.3" class="d2124">▼</span>
+                        </div>
+                        <div class="text-sub" style="text-align: left; " id="submit_js_div">
+                            <div class="text-sub" style="margin: 0px; text-align: left;">
+                                <span>作者：B站 玩了114514分钟mc</span>
+                                <br>
+                                <span style="padding-top: 3px; display: inline-block;">QQ：785319346</span>
+                                <br>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-sub" style="margin-top: 26px;">
+                        <hr class="dotted-line">
+                    </div>
+                    
+                    <div class="text-sub ts1" style="display: flex; padding-bottom: 10px;">
+                        
+                        <div style="flex:2">
+                            <span style="font-size: 9px; opacity: 0.9;">
+                                Copyright © 烦村黄昏 ，All right reserved。
+                            </span>
+                            <br>
+                            <span style="font-size: 10px; opacity: 0.9; padding-top: 5px; display: inline-block;">
+                                视频展示：<span style="border-bottom: 2px solid #cccccc; cursor: pointer;" onclick="window.open('https://space.bilibili.com/1015730693');">Bilibili</span>
+                                下载空间：<span style="border-bottom: 2px solid #cccccc; cursor: pointer" onclick="window.open('https://space.bilibili.com/1015730693');">夸克网盘</span>
+                            </span>
+                            
+                        </div>
+                        <div style="flex:1">
+                            <div style="display: flex;">
+                                <div style="flex:1; text-align: right; padding-right: 5px;">
+                                    <span style="font-size:6px; opacity: 0.1;">
+                                        MineCraft中文MOD
+                                        <br>
+                                    </span>
+                                </div>
+                                <div style="flex:1; text-align: center;">
+                                    <img src="minecraft.png" class="image" style="width: 48px;">
+                                </div>
+                                <div style="flex:1; text-align: left; padding-left: 5px;">
+                                    <span style="font-size:6px; opacity: 0.1;">
+                                        烦村黄昏
+                                        <br>
+                                        villager dusk
+                                    </span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function(){
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("main").style.display = "block";
+            middle_options();
+        }
+    </script>
+    <script>
+        function animateGradient() {
+          const stop1 = document.getElementById('stop1');
+          const stop2 = document.getElementById('stop2');
+          let offset1 = 0;
+          let offset2 = 0.5;
+          let direction = 0.5;
+      
+          function updateGradient() {
+            offset1 += 0.01 * direction;
+            offset2 -= 0.01 * direction;
+      
+            if (offset1 >= 1) {
+              offset1 = 1;
+              direction = -1;
+            } else if (offset1 <= 0) {
+              offset1 = 0;
+              direction = 1;
+            }
+      
+            stop1.setAttribute('offset', `${offset1 * 100}%`);
+            stop2.setAttribute('offset', `${offset2 * 100}%`);
+      
+            requestAnimationFrame(updateGradient);
+          }
+      
+          updateGradient();
+        }
+      
+        animateGradient();
+      </script>
+</body>
+
+</html>
