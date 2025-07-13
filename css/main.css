@@ -1,1 +1,769 @@
+/* 基础全局样式设置 */
+html, body, #appName {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;  /* 水平居中 */
+    padding: 0;  /* 去除默认内边距 */
+}
+.nav {
+    position: fixed;;
+}
+.nav-item{
+    font-size: 16px;
+}
+.nav-item:hover{
+    color: rgb(255, 81, 0)
+}
+/* 主应用容器样式 */
+#appName {
+    background-size: cover;  /* 背景图覆盖整个容器 */
+    display: -webkit-flex;  /* 兼容旧版webkit浏览器 */
+    display: flex;  /* 使用flex布局 */
+    flex-direction: column;  /* 垂直排列子元素 */
+}
+/* 内容区域容器 */
+.sectionCon {
+    width: auto;
+    padding: 0 0px;
+    /*overflow: auto;*/
+    border-radius: 20px;
+}
+/* 默认内容区域样式 */
+.section {
+    display: block;  /* 默认隐藏 */
+    width: 100%;
+    height: 100%;
+    overflow: hidden;  /* 内容溢出时显示滚动条 */
+    background-size: cover;
+    -webkit-background-size: cover;  /* 兼容旧版webkit浏览器 */
+    -o-background-size: cover;  /* 兼容旧版Opera浏览器 */
+    
+}
+/* 激活的内容区域显示 */
+.section.active {
+    display: block;
+}
+/* 第一个内容区域特殊样式 */
+.Introduction {
+    overflow: hidden;  /* 隐藏溢出内容 */
+    height: 460px;;
+}
+/* 头部导航栏样式 */
+.header {
+    width: 100%;
+    color: #ffffff;
+    background: #000;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    height: 76px;
+}
+.video {
+    position: absolute;  /* 绝对定位 */
+    object-fit: cover;  /* 视频填充整个容器 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
 
+/* 头部内容容器 */
+.headerCon {
+    padding: 0 40px;  /* 左右内边距 */
+}
+
+/* 导航菜单样式 */
+.headerCon ul {
+    position: relative;
+}
+
+.header ul {
+    float: right;  /* 右浮动 */
+    margin-right: 200px;  /* 右侧外边距 */
+}
+
+.header ul li {
+    list-style: none;  /* 去除列表样式 */
+    float: left;  /* 左浮动使菜单项水平排列 */
+    padding: 0 20px;  /* 左右内边距 */
+    cursor: pointer;  /* 鼠标指针变为手形 */
+    position: relative;  /* 相对定位 */
+}
+
+.header ul li a {
+    color: #fff;
+    text-decoration-line: none;  /* 去除下划线 */
+}
+
+
+/* 内容区域头部样式 */
+.section .sectionhead {
+    color: #ffffff;
+    text-align: center;  /* 文本居中 */
+}
+
+.section .sectionhead h3 {
+    font-size: 30px;
+    font-weight: normal;  /* 正常字体粗细 */
+    margin: 0;  /* 去除外边距 */
+}
+
+/* 栅格系统样式 */
+.row {
+    width: 100%;
+}
+
+.row .col-4 {
+    width: 25%;  /* 四分之一宽度 */
+    float: left;  /* 左浮动 */
+}
+
+.row .col-2 {
+    width: 50%;  /* 一半宽度 */
+    float: left;
+}
+
+.row .col-1 {
+    width: 100%;  /* 全宽度 */
+    float: left;
+}
+
+/* 第二个内容区域的栅格特殊样式 */
+.detail > .row {
+    width: 1160px;
+    margin: 0 auto;  /* 水平居中 */
+    overflow: hidden;  /* 清除浮动 */
+}
+
+/* 第一个内容区域主体样式 */
+.sectionbody1 {
+    padding-top: 80px;
+    overflow: hidden;  /* 清除浮动 */
+}
+
+.detail .sectionhead {
+    margin: 50px;
+}
+
+.detail .sectionhead h3 {
+    margin: 0px;
+}
+
+/* 卡片样式 */
+.sectionbody1 .col-4 > div {
+    border-radius: 17px 17px 0 0;  /* 圆角 */
+    background: #ffffff;
+    margin: 0px 8px 0px 8px;
+    padding: 0 20px 20px 20px;
+    height: 168px;
+    position: relative;
+    overflow: hidden;
+}
+
+.sectionbody1 .col-4 > div p {
+    font-size: 12px;
+    color: rgba(0,0,0,.7);  /* 半透明黑色文字 */
+}
+
+.sectionbody1 img {
+    position: absolute;
+    right: -20px;
+    top: -20px;
+}
+
+/* 第二个内容区域的卡片样式 */
+.sectionbody2 .col-4 > div {
+    height: 325px;
+    background: rgba(0,0,0,.3);  /* 半透明黑色背景 */
+    margin: 0px 8px 10px 8px;
+    padding: 73px 26px 0 26px;
+    border-radius: 0 0 17px 17px;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* 卡片悬停效果 */
+.sectionbody2 .col-4 > div:hover {
+    background: rgba(255,81,0,0.75);  /* 悬停时变为橙色 */
+}
+
+.sectionbody2 .col-4 > div h3 {
+    margin: 0;
+    margin-top: 40px;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.sectionbody2 .col-4 > div img {
+    text-align: center;
+}
+
+.sectionbody2 .col-4 > div p {
+    font-size: 12px;
+    line-height: 22px;
+}
+
+/* 第三个内容区域样式 */
+.download {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.download > .row {
+    width: 1160px;
+    margin: 0 auto;
+}
+
+.download .sectionhead {
+    padding-top: 60px;
+    height: 126px;
+}
+
+.download .sectionhead h3 {
+    margin: 0;
+}
+
+/* 左右盒子样式 */
+.download .leftbox, .download .rightbox {
+    padding: 0 12px;
+}
+
+/* 左盒子卡片样式 */
+.download .leftbox .col-2 > div, .download .leftbox .col-1 > div {
+    border-radius: 17px;
+    background: #ffffff;
+    margin: 0px 7px 10px 0px;
+    padding: 14px 30px 0 30px;
+    height: 320px;
+    position: relative;
+}
+
+/* 右盒子卡片样式 */
+.download .rightbox .col-2 > div, .download .rightbox .col-1 > div {
+    border-radius: 17px;
+    background: rgba(255,255,255,.28);  /* 半透明白色背景 */
+    margin: 0px 7px 10px 0px;
+    padding: 20px 20px 0 20px;
+    height: 224px;
+    position: relative;
+}
+
+.download .leftbox h2, .download .rightbox h2 {
+    font-size: 24px;
+}
+
+.download .leftbox h2 {
+    color: #000000;
+}
+
+.download .leftbox img, .download .rightbox img {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.download .leftbox p {
+    color: #666666;
+    font-size: 14px;
+    text-align: center;
+}
+
+.download .rightbox {
+    background: rgba(255,255,255,.18);
+}
+
+.download .rightbox ul {
+    padding-left: 18px;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+/* 下载按钮样式 */
+.download .downloadbtn {
+    color: #fa8552;
+    line-height: 28px;
+    padding: 0 15px;
+    float: right;
+    background: #ffffff;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+/* 第四个内容区域样式 */
+.faqs {
+    color: #ffffff;
+    font-size: 16px;
+    min-height: 810px;
+    height: auto;
+    padding-bottom: 30px;
+}
+
+.faqs table {
+    font-size: 14px;
+}
+
+.faqs .sectionhead {
+    padding-top: 60px;
+    margin-bottom: 30px;
+}
+
+/* 表格区域样式 */
+.faqs .sectionbody dl {
+    position: relative;
+    width: 1117px;
+    margin: 0 auto;
+}
+
+.faqs .sectionbody dl dd {
+    position: absolute;
+    top: 50px;
+    left: -76px;
+}
+
+/* 激活的标签样式 */
+.faqs .sectionbody dl dd p.active {
+    background: rgba(255,255,255,.24);  /* 半透明白色背景 */
+}
+
+.faqs .sectionbody dl dd p {
+    margin: 0px;
+    word-wrap: break-word;  /* 允许长单词换行 */
+    background: rgba(255,255,255,.09);  /* 轻微半透明白色背景 */
+    border-bottom-left-radius: 17px;
+    border-top-left-radius: 17px;
+    padding: 16px 10px;
+    cursor: pointer;
+    width: 16px;
+}
+
+/* 表格列表样式 */
+.faqs .sectionbody dl .tablelist {
+    background: rgba(131, 128, 128, 0.24);
+    border-radius: 17px;
+    overflow: hidden;
+    display: none;  /* 默认隐藏 */
+}
+
+.faqs .sectionbody dl dt.show {
+    display: block;
+    min-height: 100px;
+}
+
+.faqs .sectionbody dl dt table {
+    padding: 24px 30px 0px 30px;
+}
+
+.faqs .sectionbody dl dt table thead tr th {
+    text-align: left;
+    padding-left: 30px;
+}
+
+/* 特定列的样式 */
+.faqs .sectionbody dl dt table thead tr th:nth-child(4),
+.faqs .sectionbody dl dt table thead tr th:nth-child(5),
+.faqs .sectionbody dl dt table thead tr th:nth-child(6) {
+    padding-left: 27px;
+}
+
+.faqs .sectionbody dl dt table tbody tr td {
+    border-bottom: 1px solid rgba(231,231,231,.1);  /* 半透明底部边框 */
+    padding: 12px 30px;
+}
+
+/* 数字标签样式 */
+.faqs .sectionbody dl dt table tbody tr td.number span {
+    width: 50px;
+    height: 29px !important;
+    padding-left: 0px;
+    color: #484d5f;
+    font-size: 14px;
+    line-height: 29px !important;
+    border-radius: 20px;
+    background: #fff;
+    text-align: center;
+    display: inline-block;
+}
+
+.faqs .sectionbody {
+    margin-bottom: 10px;
+}
+
+.faqs .sectionbody dl dt table tbody tr td:nth-child(3) {
+    color: rgba(255,255,255,.7);  /* 半透明白色文字 */
+}
+
+.faqs .sectionbody dl dt table tbody tr td img {
+    vertical-align: middle;  /* 垂直居中 */
+}
+
+/* 更多按钮样式 */
+.morebtn {
+    background: #ff5100;  /* 橙色背景 */
+    border-radius: 30px;
+    padding: 10px 60px;
+    line-height: 34px;
+    color: #fff;
+    border: none;
+    font-size: 22px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+.morebtn:hover {
+    opacity: 1;
+    
+}
+/* 更多按钮样式 */
+.morebtn2 {
+    background: #ff5100;  /* 橙色背景 */
+    border-radius: 30px;
+    padding: 0px 30px;
+    line-height: 34px;
+    color: #fff;
+    border: none;
+    font-size: 12px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+.morebtn2:hover {
+    opacity: 1;
+}
+
+/* 第五个内容区域样式 */
+.connect {
+    color: #ffffff;
+    font-size: 16px;
+    height: auto;
+}
+
+.connect .sectionhead {
+    padding-top: 60px;
+}
+
+.connect .sectionhead h3 {
+    font-size: 30px;
+    font-weight: normal;
+}
+
+/* 主体区域样式 */
+.connect .sectionbody {
+    margin: 60px auto;
+    width: 50%;
+    background-color: #0e794d;  /* 橙色背景 */
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 50px 0px 0px 0px;
+}
+
+/* 列样式 */
+.connect .sectionbody .clo-6 {
+    width: 50%;
+    float: left;
+    text-align: left;
+}
+
+.connect .sectionbody .clo-12 {
+    width: 100%;
+    float: left;
+    text-align: left;
+}
+
+.connect .sectionbody .clo-6 p, .connect .sectionbody .clo-6 img {
+    padding: 0 113px;
+}
+
+.connect .sectionfooter {
+    text-align: center;
+    padding:0 0 20px 0;
+}
+
+/* 响应式设计 - 1920px及以下 */
+@media screen and (max-width: 1920px) {
+    .header ul {
+        margin-right: 200px;
+    }
+    .connect .sectionbody .clo-12 p, .connect .sectionbody .clo-12 img {
+        padding: 0 70px 0 150px;
+    }
+    .connect .sectionbody .clo-6 p {
+        padding: 0 70px 0 150px;
+    }
+    .connect .sectionbody .clo-6 img {
+        padding: 0 70px 16px 150px;
+    }
+}
+
+/* 响应式设计 - 4096px及以下 */
+@media screen and (max-width: 4096px) {
+    .header ul {
+        margin-right: 200px;
+    }
+    .connect .sectionbody .clo-12 p, .connect .sectionbody .clo-12 img {
+        padding: 0 70px 0 150px;
+    }
+    .connect .sectionbody .clo-6 p {
+        padding: 0 70px 0 150px;
+    }
+    .connect .sectionbody .clo-6 img {
+        padding: 0 70px 16px 150px;
+    }
+}
+
+@media screen and (min-width: 4096px) {
+    .header ul {
+        margin-right: 200px;
+    }
+    .connect .sectionbody .clo-12 p, .connect .sectionbody .clo-12 img {
+        padding: 0 70px 0 150px;
+    }
+    .connect .sectionbody .clo-6 p {
+        padding: 0 70px 0 150px;
+    }
+    .connect .sectionbody .clo-6 img {
+        padding: 0 70px 16px 150px;
+    }
+}
+
+/* 响应式设计 - 1448px及以下 */
+@media screen and (max-width: 1448px) {
+    .header ul {
+        margin-right: 10px;
+    }
+    .connect .sectionbody .clo-6 p, .connect .sectionbody .clo-12 p {
+        padding: 0 50px 0 100px;
+    }
+    .connect .sectionbody .clo-6 img, .connect .sectionbody .clo-12 img {
+        padding: 0 50px 16px 100px;
+    }
+    /* 表格调整 */
+    .faqs .sectionbody dl dt table {
+        padding: 15px 30px 0px 30px;
+    }
+    .faqs .sectionbody {
+        font-size: 14px;
+    }
+    .faqs .sectionbody dl dt table tbody tr {
+        height: inherit;
+    }
+    .faqs .sectionbody dl dt table tbody tr td {
+        padding: 12px 28px;
+    }
+    .faqs .sectionbody dl dt table tbody tr td.number span {
+        height: 24px !important;
+        font-size: 12px;
+        line-height: 24px !important;
+    }
+    .faqs .sectionbody dl dd {
+        left: -74px;
+    }
+}
+
+/* 响应式设计 - 1366px及以下 */
+@media screen and (max-width: 1366px) {
+    .header {
+        top: 10px;
+    }
+    .header ul {
+        margin-right: 60px;
+    }
+    /* 第五部分调整 */
+    .connect .sectionbody {
+        width: 68%;
+    }
+    /* 第四部分调整 */
+    .faqs .sectionhead {
+        margin-bottom: 30px;
+    }
+    /* 第二部分调整 */
+    .detail .sectionhead {
+        margin: 30px;
+    }
+    .detail > .row {
+        width: 78%;
+    }
+    /* 卡片高度调整 */
+    .sectionbody1 .col-4 > div {
+        height: 100px;
+    }
+    .sectionbody2 .col-4 > div {
+        min-height: 270px;
+        padding: 32px 26px 0 26px;
+    }
+    /* 第三部分调整 */
+    .download .sectionhead {
+        padding-top: 28px;
+        height: 136px;
+    }
+}
+
+/* 响应式设计 - 1200px及以下 */
+@media screen and (max-width: 1200px) {
+    .faqs .sectionbody dl {
+        width: 90%;
+    }
+    .download > .row {
+        width: 90%;
+    }
+}
+
+/* 响应式设计 - 1024px及以下 */
+@media screen and (max-width: 1024px) {
+    .header ul {
+        margin-right: 0px;
+    }
+    .connect .sectionbody {
+        width: 68%;
+    }
+    .detail > .row {
+        width: 90%;
+    }
+    .download > .row {
+        width: 90%;
+    }
+}
+
+
+
+.f1{
+    font-size:40px;
+}
+.f2{
+    font-size: 80px;
+}
+.f3{
+    font-size: 30px;;
+}
+.f4{
+    font-size: 60px;;
+}
+
+.detail{
+    height: 760px;;
+}
+/* 响应式设计 - 992px及以下 (移动设备) */
+@media screen and (max-width: 992px) {
+    /* 布局调整为移动端 */
+    .section {
+        display: block;
+    }
+
+    .detail{
+        height: auto;;
+    }
+
+    /* 头部样式调整 */
+    .header {
+        margin-top: 0px;
+        background: #000;
+        position:relative;
+        top: 0px;
+        font-size:10px;
+    }
+    .headerCon {
+        padding: 16px;
+    }
+    
+    .nav-item {
+        font-size:12px;
+    }
+
+    .section {
+        height: auto;
+    }
+    /* 栅格系统调整为单列 */
+    .row .col-xs-12 {
+        width: 100% !important;
+    }
+    /* 各部分内边距调整 */
+    .sectionbody1, .sectionbody2 {
+        padding: 16px;
+    }
+    /* 卡片外边距调整 */
+    .sectionbody1 .col-4 > div, .sectionbody2 .col-4 > div {
+        margin: 0px 0px 10px 0px;
+    }
+    /* 第四部分表格调整 */
+    .faqs .sectionbody dl {
+        width: 90%;
+        margin-left: 35px;
+    }
+    .faqs .sectionbody dl dt table {
+        padding: 15px 10px 0px 10px;
+    }
+    .faqs .sectionbody dl dt table tbody tr td {
+        padding: 4px 4px;
+    }
+    /* 第五部分调整 */
+    .connect .sectionbody {
+        width: auto !important;
+        margin: 0 16px;
+    }
+    .Introduction{
+        height: 260px;
+    }
+
+    .f1{
+        font-size:14px;
+    }
+    .f2{
+        font-size: 24px;
+    }
+    .f3{
+        font-size: 10px;;
+    }
+    .f4{
+        font-size: 22px;;
+    }
+
+    /* 卡片样式 */
+    .sectionbody1 .col-4 > div {
+        border-radius: 17px;  /* 圆角 */
+        background: #ffffff;
+        margin: 0px 8px 10px 8px;
+        padding: 0 20px 20px 20px;
+        height: 168px;
+        position: relative;
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .Introduction {
+        height: 180px;;
+    }
+    .sectionfooter{
+        font-size:13px;
+    }
+    
+}
+@media screen and (max-width: 800px) {
+.header{
+        height: 120px;
+    }
+}
+
+/* 响应式设计 - 网页屏幕高度640px及以下 */
+@media screen and (max-height: 640px) {
+    .Introduction{
+        height:auto;
+    }
+}
+
+.arrow_down{
+    width: 28px; height: 28px; filter: invert(70%);
+    cursor: pointer;
+}
+.arrow_down:hover{
+    filter: invert(100%);
+}
+.more{
+    font-size:28px; opacity: 0.6; padding-right:5px;
+    cursor: pointer;
+}
+.more:hover{
+    opacity: 1;
+}
+
+.loading{
+    text-shadow: 1px 2px 5px #ffffff; display:block;color:#ffffff; text-align: center; font-weight: 400; width: 400px; height: 100px; position: absolute; left: 50%; top: 50%;margin: -50px 0 0 -200px; font-size: 26px;
+}
