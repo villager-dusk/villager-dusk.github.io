@@ -41,7 +41,7 @@
                     <span class="f4">不一样的PK玩法！</span>
                 </div>
             </div>
-            <video id="video" src="video.mp4" autoplay loop muted height="auto" width="100%" class="video" style="display:none;"></video>
+            <video id="video" src="video.mp4" autoplay loop muted height="auto" width="100%" class="video" style="display:none; filter: blur(10px);"></video>
             <img id="picture" src="images/bg2.png" class="video" style="display: block;">
             <script>
                 const video = document.getElementById('video');
@@ -193,7 +193,7 @@
                                     <span style="font-size:10px; ">包含整合包及MC客户端1.19.2、Forge43.4.0，下载并安装，即可直接进入游戏。</span>
                                 </p>
                                 <p>
-                                    <button type="button" class="morebtn" onclick="alert('抱歉，更新中，目前暂不提供下载...');">
+                                    <button type="button" class="morebtn" onclick="alert('抱歉，更新中，目前暂不提供下载...');" style="font-size:16px;">
                                         整合包+客户端
                                         <span style="font-size:12px; padding-left:2px;">下载</span>
                                     </button>
@@ -257,18 +257,6 @@
                         </div>
                         <div style="padding: 7px 20px; margin: 9px; font-size:12px;">
                             答：MineCraft 1.19.2、Forge 43.4.0+。
-                        </div>
-                    </dt>
-                </dl>
-            </div>
-            <div class="sectionbody">
-                <dl>
-                    <dt class="tableview tablelist show" >
-                        <div style="font-size:16px;border-radius: 20px;background: #fff;color: #000;padding: 10px 20px;opacity: 0.8;margin: 9px;">
-                            问：烦村黄昏有服务器吗？
-                        </div>
-                        <div style="padding: 7px 20px; margin: 9px; font-size:12px;">
-                            答：有。烦村黄昏的专门的官网服务器，稳定、长期开放，可供多人一起联机游玩，请联系我们，获取服务器地址。
                         </div>
                     </dt>
                 </dl>
@@ -457,6 +445,18 @@
         document.getElementById("loading").style.display = "none";
         document.getElementById("main").style.display = "block";
     }
+    function detail_background(){
+        return;
+        if(window.innerWidth > 2160){
+            document.getElementById("detail").style.background = "";
+        }else{
+            document.getElementById("detail").style.background = "url('images/bg2.png')";
+            document.getElementById("detail").style.backgroundSize = "cover";
+        }
+    }
+    setInterval(function(){
+        document.getElementById("video").style.filter = "blur("+ getRandomElement([0,1,0,3,0,5,0,7])+"px)"
+    },1000);
 </script>
 </body>
 </html>
