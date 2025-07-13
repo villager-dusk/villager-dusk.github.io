@@ -1,0 +1,27 @@
+﻿
+<script src="md5.js"></script>
+
+<script>
+
+var auth_code = prompt("验证码");
+
+//md5
+var hash = md5(auth_code + "wlw");
+hash = hash.toUpperCase().substring(0,16);
+
+var d_day = prompt("授权终止日期");
+//终止日期
+var end_day = 99999999 - d_day;
+
+//转16进制
+end_day = end_day.toString(16);
+end_day = end_day.toUpperCase();
+
+do {
+    end_day = "0" + end_day;
+}
+while (end_day.toString().length < 8);
+
+document.write (hash+end_day);
+</script>
+

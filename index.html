@@ -1,0 +1,462 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>烦村黄昏 - Village Dusk - 高质量MineCraft战斗整合包</title>
+    <link rel="stylesheet" href="css/main.css">
+    
+</head>
+<body style="font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: #000;">
+<div id="main" style="display: none;">
+    <div class="header">
+        <div class="headerCon">
+            <div style="float: left;">
+                <img src="images/logo.png" style="cursor:pointer; width:64px; height:64px;">
+                <span>
+                    <span style="position: relative; top:-32px; font-size: 15px;">烦村黄昏</span>
+                    <span style="position: relative; font-size: 11px; left: -66px; top: -14px; opacity: 0.5;">高质量MineCraft战斗整合包</span>
+                </span>
+            </div>
+            <ul id="nav" class="nav">
+                <li><a href="#Introduction" class="nav-item">介绍</a></li>
+                <li><a href="#download" class="nav-item">下载</a></li>
+                <li><a href="#faqs" class="nav-item">FAQs</a></li>
+                <li><a href="#partner" class="nav-item">合作伙伴</a></li>
+                <li><a href="#connect" class="nav-item">联系我们</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="sectionCon">
+        <a id="Introduction" class="section Introduction active">
+            <div style="position:relative; color:#fff; z-index: 9999; text-shadow: 1px 2px 5px #ffffff;  text-align: center; background: rgba(0,0,0,0.2);padding: 20px; width: 100%; top: 16%;">
+                <div><span class="f2">烦村黄昏</span>
+                    <span style="padding-left: 10px;"></span>
+                    <span class="f1">高质量MineCraft战斗整合包</span>
+                </div>
+                <div class="f3">
+                    <span class="f1">热血动作、激烈战斗</span>，
+                    让您在MC中体验
+                    <span class="f4">不一样的PK玩法！</span>
+                </div>
+            </div>
+            <video id="video" src="video.mp4" autoplay loop muted height="auto" width="100%" class="video" style="display:none;"></video>
+            <img id="picture" src="images/bg2.png" class="video" style="display: block;">
+            <script>
+                const video = document.getElementById('video');
+                video.addEventListener('canplaythrough', function() {
+                    // 视频已加载足够内容可以流畅播放
+                    video.style.display = 'block';
+                    try {
+                        video.play();
+                    } catch (e) {
+                        console.log('视频播放被阻止:', e);
+                    }
+                    document.getElementById('picture').style.display = "none";
+                });
+                video.addEventListener('error', function() {
+                    console.error('视频加载失败');
+                    // 这里可以添加错误处理逻辑
+                });
+            </script>
+        </a>
+        <a id="detail" class="section detail" style="background: url('images/bg2.png'); background-size:cover;">
+            <div class="row sectionbody1">
+                <div class="col-4 col-xs-12">
+                    <div>
+                        <img src="images/s1_1.png" alt="">
+                        <h3><span style="font-size: 60px;">50+</span>原创角色</h3>
+                        <p>
+                            例如，烦人的村民中的典型角色：
+                            史蒂夫、格雷夫、蛇刃Herobrine、黯锤Herobrine、芥末等等。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-4 col-xs-12">
+                    <div>
+                        <img src="images/s1_2.png" alt="">
+                        <h3><span style="font-size: 60px;">90+</span>专属技能</h3>
+                        <p>不同的角色可释放不同的专属技能，例如：芥末的铁傀儡雨、蛇刃Herobrine的解放蛇刃、蓝恶魔的三叉戟狂欢节、史蒂夫的战神之刃觉醒等等。</p>
+                    </div>
+                </div>
+                <div class="col-4 col-xs-12">
+                    <div>
+                        <img src="images/s1_3.png" alt="">
+                        <h3><span style="font-size: 60px;">30+</span>战斗动作</h3>
+                        <p>对应角色技能，不同的技能有不同的专属战斗动作。</p>
+                    </div>
+                </div>
+                <div class="col-4 col-xs-12">
+                    <div>
+                        <img src="images/s1_4.png" alt="">
+                        <h3><span style="font-size: 60px;">40+</span>绚丽特效</h3>
+                        <p>众多技能都有独特的绚丽特效，如大范围爆炸、连锁闪电、兵器碰撞火花等等。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row sectionbody2">
+                
+                <div class="col-4 col-xs-12">
+                    <div>
+                        <img id="m" src="images/m1.gif" style="width: 128px;height: 128px;border-radius: 64px;">
+                        <h3>示例角色</h3>
+                        <p>点击可随机切换、查看其它角色形象。</p>
+                        <p><button type="button" class="morebtn2" onclick="random_m();">点此切换</button></p>
+                        
+                    </div>
+                </div>
+                <div class="col-4 col-xs-12">
+                    <div>
+                        <img id="j" src="images/j1.gif" style="width: 128px;height: 128px;border-radius: 64px;">
+                        <h3>示例技能</h3>
+                        <p>点击可随机切换、查看其它技能效果。</p>
+                        <p><button type="button" class="morebtn2" onclick="random_j();">点此切换</button></p>
+                    </div>
+                </div>
+                <div class="col-4 col-xs-12">
+                    <div>
+                        <img id="d" src="images/d1.gif" style="width: 128px;height: 128px;border-radius: 64px;">
+                        <h3>示例动作</h3>
+                        <p>点击可随机切换、查看其它角色动作。</p>
+                        <p><button type="button" class="morebtn2" onclick="random_d();">点此切换</button> </p>
+                    </div>
+                </div>
+                <div class="col-4 col-xs-12">
+                    <div>
+                        <img id="t" src="images/t1.gif" style="width: 128px;height: 128px;border-radius: 64px;">
+                        <h3>示例特效</h3>
+                        <p>点击可随机切换、查看其它技能特效。</p>
+                        <p><button type="button" class="morebtn2" onclick="random_t();">点此切换</button></p>
+                    </div>
+                </div>
+                <script>
+                    function getRandomElement(array) {
+                        const randomIndex = Math.floor(Math.random() * array.length);
+                        return array[randomIndex];
+                    }
+                    function random_m(){
+                        var arr = [1];
+                        document.getElementById("m").src = "images/m" + getRandomElement(arr)+".gif";
+                    }
+                    random_m();
+                    function random_j(){
+                        var arr = [1,2,3,4];
+                        document.getElementById("j").src = "images/j" + getRandomElement(arr)+".gif";
+                    }
+                    random_j();
+                    function random_d(){
+                        var arr = [1,2,3];
+                        document.getElementById("d").src = "images/d" + getRandomElement(arr)+".gif";
+                    }
+                    random_d();
+                    function random_t(){
+                        var arr = [1,2,3];
+                        document.getElementById("t").src = "images/t" + getRandomElement(arr)+".gif";
+                    }
+                    random_t();
+                </script>
+            </div>
+        </a>
+        <a id="download" class="section download" style="min-height: 820px; height: auto; padding-bottom: 20px; background: url('images/bg3.png'); background-size:cover;">
+            <div class="row">
+                <div class="col-2 col-xs-12">
+                    <div class="sectionhead">
+                        <h3 style="font-size: 44px;">烦村黄昏<span style="font-size:24px; padding-left:5px;">整合包下载</span></h3>
+                        <p>
+                            最新版本：v2.2.4c
+                            <span style="padding-left: 5px; font-size: 11px; opacity: 0.7;">v3.0.1c即将发布...</span>
+                        </p>
+                    </div>
+                    <div class="row leftbox">
+                        <div class="col-1 col-xs-12">
+                            <div>
+                                <img src="images/s1_3.png">
+                                <p >
+                                    <span style="font-size:26px; ">1.</span>
+                                    <span style="font-size:12px; ">纯整合包下载</span>
+                                    <span style="font-size:9px; padding-left: 3px;">体积小</span>
+                                    <br>
+                                    <span style="font-size:10px; ">下载后需手动安装整合包到MC客户端，客户端要求：MineCraft1.19.2、Forge43.4.0+。</span>
+                                </p>
+                                <p>
+                                    <button type="button" class="morebtn" onclick="window.open('https://pan.quark.cn/s/df7c9e8bb074');">
+                                        整合包
+                                        <span style="font-size:12px; padding-left:2px;">下载</span>
+                                    </button>
+                                </p>
+                                <p >
+                                    <span style="font-size:26px; ">2.</span>
+                                    <span style="font-size:12px; ">整合包+客户端下载</span>
+                                    <span style="font-size:9px; padding-left: 3px;">体积大，但方便</span>
+                                    <br>
+                                    <span style="font-size:10px; ">包含整合包及MC客户端1.19.2、Forge43.4.0，下载并安装，即可直接进入游戏。</span>
+                                </p>
+                                <p>
+                                    <button type="button" class="morebtn" onclick="alert('抱歉，更新中，目前暂不提供下载...');">
+                                        整合包+客户端
+                                        <span style="font-size:12px; padding-left:2px;">下载</span>
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-2 col-xs-12">
+                    <div class="sectionhead">
+                        <h3>烦村黄昏<span style="font-size:12px; padding-left:5px;">子整合包下载</span></h3>
+                        <p style="padding: 0 20px; font-size:13px;">
+                            村黄昏有众多内容，根据玩家反馈得知，许多人钟情于其中某个单独功能，为此下面提供了部分独立功能子整合包，可供单独下载。
+                            <span style="padding-left: 2px; font-size: 11px; opacity: 0.7;">客户端要求：MineCraft1.19.2、Forge43.4.0+</span>
+                        </p>
+                    </div>
+                    <div class="row rightbox">
+                        <div class="col-2 col-xs-12">
+                            <div>
+                                <h2>泛光刀光<span style="font-size: 10px; padding-left: 5px;">特效</span></h2>
+                                <ul>
+                                    <li>刀光整合包，可让光刀呈现非常亮丽的发光效果。</li>
+                                    <p><button type="button" class="morebtn2" onclick="window.open('https://pan.quark.cn/s/c997f2e9e8a4');">点此下载</button></p>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-2 col-xs-12">
+                            <div>
+                                <h2>双太刀<span style="font-size: 10px; padding-left: 5px;">武器</span></h2>
+                                <ul>
+                                    <li>使玩家可以双持太刀进行战斗。<br><span style="font-size: 10px;">注：又持后，有独立的战斗动作和技能。</span></li>
+                                    <p><button type="button" class="morebtn2" onclick="window.open('https://pan.quark.cn/s/c07fe22c524e');">点此下载</button></p>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-2 col-xs-12">
+                            <div>
+                                <h2>只狼糖<span style="font-size: 10px; padding-left: 5px;">物品</span></h2>
+                                <ul>
+                                    <li>可以让玩家获得特殊的药水效果。<br><span style="font-size: 10px;">注：药水效果：以损失部分生命值为代价，在一定时间内提高攻击力。</span></li>
+                                    <p><button type="button" class="morebtn2" onclick="window.open('https://pan.quark.cn/s/e24566bf1db4');">点此下载</button></p>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a id="faqs" class="section faqs" style="background: url('images/bg4.png'); background-size:cover;">
+            <div class="sectionhead">
+                <h3>FAQs</h3>
+                <p style="padding:0 20px;">常见问题及解答，如这里没有您想了解的信息，请联系我们咨询或反馈。</p>
+            </div>
+            <div class="sectionbody">
+                <dl>
+                    <dt class="tableview tablelist show" >
+                        <div style="font-size:16px;border-radius: 20px;background: #fff;color: #000;padding: 10px 20px;opacity: 0.8;margin: 9px;">
+                            问：烦村黄昏整合包需要什么客户端环境？
+                        </div>
+                        <div style="padding: 7px 20px; margin: 9px; font-size:12px;">
+                            答：MineCraft 1.19.2、Forge 43.4.0+。
+                        </div>
+                    </dt>
+                </dl>
+            </div>
+            <div class="sectionbody">
+                <dl>
+                    <dt class="tableview tablelist show" >
+                        <div style="font-size:16px;border-radius: 20px;background: #fff;color: #000;padding: 10px 20px;opacity: 0.8;margin: 9px;">
+                            问：烦村黄昏有服务器吗？
+                        </div>
+                        <div style="padding: 7px 20px; margin: 9px; font-size:12px;">
+                            答：有。烦村黄昏的专门的官网服务器，稳定、长期开放，可供多人一起联机游玩，请联系我们，获取服务器地址。
+                        </div>
+                    </dt>
+                </dl>
+            </div>
+            <div class="sectionbody">
+                <dl>
+                    <dt class="tableview tablelist show" >
+                        <div style="font-size:16px;border-radius: 20px;background: #fff;color: #000;padding: 10px 20px;opacity: 0.8;margin: 9px;">
+                            问：整合包+客户端，需要什么版本的Java环境？
+                        </div>
+                        <div style="padding: 7px 20px; margin: 9px; font-size:12px;">
+                            答：Java 17+，即：JDK 17+。
+                        </div>
+                    </dt>
+                </dl>
+            </div>
+            <div class="sectionbody">
+                <dl>
+                    <dt class="tableview tablelist show" >
+                        <div style="font-size:16px;border-radius: 20px;background: #fff;color: #000;padding: 10px 20px;opacity: 0.8;margin: 9px;">
+                            问：下载单独的整合包后怎样安装？
+                        </div>
+                        <div style="padding: 7px 20px; margin: 9px; font-size:12px;">
+                            答：PCL/PCL-CE启动器：直接把下载好的整合包文件拖进启动器窗口即可。<br>
+                            HMCL/FCL启动器：下载 -> 整合包 -> 安装整合包 -> 导入本地整合包 -> 选下载好的整合包文件。
+                        </div>
+                    </dt>
+                </dl>
+            </div>
+            <div class="sectionbody">
+                <dl>
+                    <dt class="tableview tablelist show" >
+                        <div style="font-size:16px;border-radius: 20px;background: #fff;color: #000;padding: 10px 20px;opacity: 0.8;margin: 9px;">
+                            问：使用此整合包时，还可以自行添加其他模组吗？
+                        </div>
+                        <div style="padding: 7px 20px; margin: 9px; font-size:12px;">
+                            答：当然可以。与使用正常的MC客户端一样。
+                        </div>
+                    </dt>
+                </dl>
+            </div>
+            <div class="sectionbody">
+                <dl>
+                    <dt class="tableview tablelist show" >
+                        <div style="font-size:16px;border-radius: 20px;background: #fff;color: #000;padding: 10px 20px;opacity: 0.8;margin: 9px;">
+                            问：整合包有官方视频频道吗？
+                        </div>
+                        <div style="padding: 7px 20px; margin: 9px; font-size:12px;">
+                            答：在哔哩哔哩平台有，https://space.bilibili.com/1015730693，是烦村黄昏在的B站的官频道，这里会发布整合包里新信息及游戏视频，欢迎大家关注。
+                        </div>
+                    </dt>
+                </dl>
+            </div>
+            <div class="sectionbody">
+                <dl>
+                    <dt class="tableview tablelist show" >
+                        <div style="font-size:16px;border-radius: 20px;background: #fff;color: #000;padding: 10px 20px;opacity: 0.8;margin: 9px;">
+                            问：玩家可以发布模组介绍或游戏视频吗？
+                        </div>
+                        <div style="padding: 7px 20px; margin: 9px; font-size:12px;">
+                            答：可以，可自由录制模组相关的视频并发布到各视频平台。
+                        </div>
+                    </dt>
+                </dl>
+            </div>
+            <div style="display: block;" id="more_btn">
+                <div class="sectionbody">
+                    <dl>
+                        <dt class="tableview tablelist show" style="background: rgba(0,0,0,0.1);">
+                            <div style="padding: 13px 0 0 0; margin: 9px; font-size:12px; text-align: center;">
+                                <div>
+                                    <span class="more" onclick="more_faqs();">查看更多...</span>
+                                    <script>
+                                        function more_faqs(){
+                                            document.getElementById("more_btn").style.display = "none";
+                                            document.getElementById("more_faqs").style.display = "block";
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                        </dt>
+                    </dl>
+                </div>
+            </div>
+            <div id="more_faqs" style="display: none;">
+                <div class="sectionbody">
+                    <dl>
+                        <dt class="tableview tablelist show" >
+                            <div style="font-size:16px;border-radius: 20px;background: #fff;color: #000;padding: 10px 20px;opacity: 0.8;margin: 9px;">
+                                问：游戏中，整合包的NPC生物太强了、打不过怎么办？
+                            </div>
+                            <div style="padding: 7px 20px; margin: 9px; font-size:12px;">
+                                答：开启作弊模式。在游戏中，输入：/gamerule domob...此时会有提示。例如：domobusefireball为是否启用火焰弹、domobuseenderperal为是否启用末影珍珠，等等，以增强自己。
+                            </div>
+                        </dt>
+                    </dl>
+                </div>
+                <div class="sectionbody">
+                    <dl>
+                        <dt class="tableview tablelist show" >
+                            <div style="font-size:16px;border-radius: 20px;background: #fff;color: #000;padding: 10px 20px;opacity: 0.8;margin: 9px;">
+                                问：游戏中，怎样调整模组NPC生物的格挡率？
+                            </div>
+                            <div style="padding: 7px 20px; margin: 9px; font-size:12px;">
+                                答：输入/gamerule clashpercent+数字。注：数字为1时，格挡概率为10%、数字为5时，格挡概率为50%，以此类推，数字为0时，格挡概率为0%、数字为10时，挡概率为100%。
+                            </div>
+                        </dt>
+                    </dl>
+                </div>
+                <div class="sectionbody">
+                    <dl>
+                        <dt class="tableview tablelist show" >
+                            <div style="font-size:16px;border-radius: 20px;background: #fff;color: #000;padding: 10px 20px;opacity: 0.8;margin: 9px;">
+                                问：整合包中有哪些二创武器？
+                            </div>
+                            <div style="padding: 7px 20px; margin: 9px; font-size:12px;">
+                                答：烦村黄昏二创武器丰富多样，以下是部分武器介绍：<br>
+                                战神之刃类：有TNT战神之刃、雷电战神之刃、冰火战神之刃、战神之刃、双大剑战神之刃、火焰战神之刃、绿宝石战神之刃等，部分武器蹲下右键可释放技能。<br>
+                                蛇刃类：包括未解放蛇刃、解放蛇刃、战蛇之刃、超级解放蛇刃。<br>
+                                影锤：Shift+右键可让玩家原地飞起来。<br>
+                                影镰：能召唤末影龙。<br>
+                                黑曜石长枪：动作和奇迹武器里的痛苦之枪相似。<br>
+                                暗影之镰：属于玩家投稿的概念性DIY武器，只能在创造模式下获取。<br>
+                                某些武器还有格外功能，如：黑盾有格挡技能；红宝剑有星火燎原技能；盔影胸甲有突刺技能。<br>
+                            </div>
+                        </dt>
+                    </dl>
+                </div>
+            </div>
+            
+        </a>
+        <div id="partner" class="section connect" style="min-height:620px; background: url('images/bg5.png'); background-size:cover;">
+            <div class="sectionhead">
+                <h3>合作伙伴</h3>
+                <p style="padding:0 10px 0 10px;">欢迎与我们成为合作伙伴，期待商业合作、技术合作、服务器赞助，等...</p>
+            </div>
+            <div class="sectionbody row" style="height: 260px; max-width:1600px; opacity: 0.86; background: #211923;"> 
+                <div class="clo-12 col-xs-12" style="font-size: 12px;">
+                    <div style="text-align: center;">
+                        <a onclick="window.open('https://space.bilibili.com/1015730693/');" target="_blank" style="cursor: pointer;">
+                            <img src="images/bilibili.png" style="height: 48px; padding:10px;">
+                        </a>
+                        <a href="https://www.jshaman.com/" target="_blank">
+                            <img src="images/jshaman.png" style="height: 46px; padding:10px;">
+                        </a>
+                        <img src="images/github.io.svg" style="height: 32px; padding:10px; opacity: 0.5;">
+                        <img src="images/kuake.png" style="height: 48px; filter: invert(100%); padding:10px; opacity: 0.5;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a id="connect" class="section connect" style="min-height:720px; background: url('images/bg6.png'); background-size:cover; ">
+            <div class="sectionhead">
+                <h3>联系我们</h3>
+                <p style="padding:0 10px 0 10px;">如您在整合包使用过程中、游戏过程中遇到问题或进行合作、咨询、建议等，请用以下方式联系我们。</p>
+            </div>
+            <div class="sectionbody row" style="min-height: 260px; max-width:1600px; opacity: 0.86; padding-bottom: 30px;"> 
+                <div class="clo-12 col-xs-12" style="font-size: 12px;">
+                    <p>
+                        <span style="font-size:20px">烦村黄昏</span>
+                        高质量MineCraft战斗整合包
+                    </p>
+                    <p><span style="font-size:16px">www.Village-Dusk.com</span></p>
+                    <p></p>
+                </div>
+                <div class="clo-12 col-xs-12">
+                    <p><b>联系方式</b></p>
+                    <p>QQ：<span style="font-size: 39px;">785319346</span></p>
+                </div>
+                <hr style="margin:10px 20px 10px 20px;">
+                <div class="clo-12 col-xs-12" style="font-size:12px; opacity: 0.9;">
+                    <p>玩家QQ群：828359394</p>
+                </div>
+            </div>
+            <div class="sectionfooter">
+                <p>Copyright © 2025 www.Village-Dusk.com, All right reserved.</p>
+            </div>
+        </a>
+    </div>
+</div>
+<div id="loading" class="loading">
+    正在加载...
+</div>
+<script>
+    window.onload = function() { 
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("main").style.display = "block";
+    }
+</script>
+</body>
+</html>
