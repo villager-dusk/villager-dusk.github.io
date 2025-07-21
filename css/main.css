@@ -37,17 +37,21 @@ html, body, #appName {
     background-size: cover;
     -webkit-background-size: cover;  /* 兼容旧版webkit浏览器 */
     -o-background-size: cover;  /* 兼容旧版Opera浏览器 */
-    
+    border-radius: 30px;
+    margin: 20px auto;
+    width: 90%;
 }
 /* 激活的内容区域显示 */
 .section.active {
     display: block;
+    position: relative;
 }
 /* 第一个内容区域特殊样式 */
 .Introduction {
     overflow: hidden;  /* 隐藏溢出内容 */
     height: 460px;;
 }
+
 /* 头部导航栏样式 */
 .header {
     width: 100%;
@@ -67,10 +71,20 @@ html, body, #appName {
     width: 100%;
     z-index: -1;
 }
+.Introduction::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 30%; /* 调整这个值改变渐变高度 */
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    pointer-events: none; /* 确保不影响视频操作 */
+}
 
 /* 头部内容容器 */
 .headerCon {
-    padding: 0 40px;  /* 左右内边距 */
+    padding: 10px 40px;  /* 左右内边距 */
 }
 
 /* 导航菜单样式 */
@@ -138,7 +152,7 @@ html, body, #appName {
 
 /* 第一个内容区域主体样式 */
 .sectionbody1 {
-    padding-top: 80px;
+    padding-top: 40px;
     overflow: hidden;  /* 清除浮动 */
 }
 
@@ -156,7 +170,7 @@ html, body, #appName {
     background: #ffffff;
     margin: 0px 8px 0px 8px;
     padding: 0 20px 20px 20px;
-    height: 168px;
+    height: 220px;
     position: relative;
     overflow: hidden;
 }
@@ -234,8 +248,9 @@ html, body, #appName {
     border-radius: 17px;
     background: #ffffff;
     margin: 0px 7px 10px 0px;
-    padding: 14px 30px 0 30px;
-    height: 320px;
+    padding: 14px 30px 10px 30px;
+    min-height: 220px;
+    height: auto;
     position: relative;
 }
 
@@ -244,9 +259,10 @@ html, body, #appName {
     border-radius: 17px;
     background: rgba(255,255,255,.28);  /* 半透明白色背景 */
     margin: 0px 7px 10px 0px;
-    padding: 20px 20px 0 20px;
-    height: 224px;
+    padding: 20px 20px 20px 20px;
+    min-height: 224px;
     position: relative;
+    height: auto;
 }
 
 .download .leftbox h2, .download .rightbox h2 {
@@ -347,7 +363,6 @@ html, body, #appName {
 
 .faqs .sectionbody dl dt.show {
     display: block;
-    min-height: 100px;
 }
 
 .faqs .sectionbody dl dt table {
@@ -530,7 +545,7 @@ html, body, #appName {
         margin-right: 10px;
     }
     .connect .sectionbody .clo-6 p, .connect .sectionbody .clo-12 p {
-        padding: 0 50px 0 100px;
+        padding: 0 50px 0 80px;
     }
     .connect .sectionbody .clo-6 img, .connect .sectionbody .clo-12 img {
         padding: 0 50px 16px 100px;
@@ -734,7 +749,9 @@ html, body, #appName {
     .sectionfooter{
         font-size:13px;
     }
-    
+    .connect .sectionbody .clo-6 p, .connect .sectionbody .clo-12 p {
+        padding: 0 50px 0 40px;
+    }
 }
 @media screen and (max-width: 800px) {
 .header{
@@ -765,5 +782,59 @@ html, body, #appName {
 }
 
 .loading{
-    text-shadow: 1px 2px 5px #ffffff; display:block;color:#ffffff; text-align: center; font-weight: 400; width: 400px; height: 100px; position: absolute; left: 50%; top: 50%;margin: -50px 0 0 -200px; font-size: 26px;
+    text-shadow: 1px 2px 5px #ffffff; display:block;color:#ffffff; text-align: center; font-weight: 400; width: 400px; height: 100px; position: absolute; left: 50%; top: 50%;margin: -50px 0 0 -200px; 
+    font-size: 13px;
+}
+
+.language{
+	font-size:11px; 
+	position: absolute; 
+	right:55px; 
+    cursor: pointer; 
+	padding: 1px 12px 1px 12px;
+	background: #fff;
+	color: #333;
+	border-radius: 0 0 10px 10px;
+	width: 70px;
+	height: 20px;
+	text-align: center;
+	-webkit-transition:.3s;
+    transition:.3s;
+    z-index: 999;
+    padding-top: 3px;
+}
+
+.english{
+    padding: 2px;
+}
+.english:hover{
+    color: rgb(255, 81, 0)
+}
+
+.connectqq{
+    font-size: 20px;
+}
+
+.faq_title{
+    display: block; float: right;width: 20px;height: 20px;background: #666;text-align: center;border-radius: 10px;color: #fff;
+    cursor: pointer;
+}
+.faq_title:hover{
+    background-color: #333;
+}
+.faq_detail{
+    padding: 7px 20px; margin: 9px; font-size:12px; display: none;
+    line-height: 21px;
+}
+.faq_img{
+    max-width: 512px;
+    width: 100%;
+}
+.faq_detail img{
+    border: 6px solid #222;
+    border-radius: 5px;
+}
+
+.faq_detail_show{
+    padding: 7px 20px; margin: 9px; font-size:12px;
 }
