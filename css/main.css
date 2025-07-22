@@ -752,6 +752,9 @@ html, body, #appName {
     .connect .sectionbody .clo-6 p, .connect .sectionbody .clo-12 p {
         padding: 0 50px 0 40px;
     }
+    .sectionbody dl dt div span{
+        font-size:12px;
+    }
 }
 @media screen and (max-width: 800px) {
 .header{
@@ -838,3 +841,4 @@ html, body, #appName {
 .faq_detail_show{
     padding: 7px 20px; margin: 9px; font-size:12px;
 }
+
