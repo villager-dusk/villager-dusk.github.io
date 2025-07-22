@@ -10,6 +10,7 @@
         "HMCL/FCL启动器：下载 -> 整合包 -> 安装整合包 -> 导入本地整合包 -> 选下载好的整合包文件。": "HMCL/FCL Launcher: Download -> Modpack -> Install Modpack -> Import Local Modpack -> Select downloaded modpack file.",
         "v3.0.1c即将发布...": "v3.0.1c coming soon...",
         "下载": "Download",
+        "最新版本：":"Version:",
         "下载后需手动安装整合包到MC客户端，客户端要求：MineCraft1.19.2、Forge43.4.0+。": "After downloading, manually install the modpack to MC client. Client requirements: Minecraft 1.19.2, Forge 43.4.0+.",
         "不一样的PK玩法！": "Unique PvP gameplay!",
         "不同的角色可释放不同的专属技能，例如：芥末的铁傀儡雨、蛇刃Herobrine的解放蛇刃、蓝恶魔的三叉戟狂欢节、史蒂夫的战神之刃觉醒等等。": "Different characters can unleash unique skills, e.g.: Wasabi's Iron Golem Rain, Snakeblade Herobrine's Unleashed Snakeblade, Blue Demon's Trident Carnival, Steve's War God Blade Awakening, etc.",
