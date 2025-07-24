@@ -231,7 +231,7 @@ html, body, #appName {
 
 .download .sectionhead {
     padding-top: 60px;
-    height: 126px;
+    height: auto;
 }
 
 .download .sectionhead h3 {
@@ -607,7 +607,7 @@ html, body, #appName {
     /* 第三部分调整 */
     .download .sectionhead {
         padding-top: 28px;
-        height: 136px;
+        height: auto;
     }
 }
 
