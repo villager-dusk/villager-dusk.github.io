@@ -3,6 +3,39 @@
     //是否翻译
     var translate = false; 
 
+    //从参数中获取language参数，如果参数值为chinese则翻译
+    function getParameterByName(name) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'), results = regex.exec(window.location.href);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+    var language = getParameterByName('language');
+    if(language == "english"){
+        //翻译
+        translate = true;
+    }
+
+    //获取浏览器语言
+    function getBrowserLanguage() {
+        // 优先尝试 navigator.languages
+        if (navigator.languages && navigator.languages.length) {
+            return navigator.languages[0];
+        }
+        // 回退到 navigator.language 或其他属性
+        return navigator.language || navigator.userLanguage || navigator.browserLanguage || 'en';
+    }
+    // 获取简化的语言代码（前两位）
+    function getSimplifiedLanguage() {
+        const lang = getBrowserLanguage();
+        return lang.substr(0, 2).toLowerCase();
+    }
+    const userLang = getSimplifiedLanguage(); // "zh", "en" 等
+    if(userLang == "en"){
+        translate = true;
+    }
+
     // 翻译字典：键为英，值为中文
     var translationDict = {
         "模组目前有“生存”、“竞技场”两种模式，游戏加载、玩法、操作、常见疑问等，":"The mod currently has two modes: Survival and Arena, including game loading, gameplay, controls, frequently asked questions, etc.",
@@ -147,7 +180,19 @@
         "问：怎样进入烦村黄昏“竞技场”模式？": "Q: How to enter the 'Arena' mode in Villager Dusk?",
         "问：烦村黄昏整合包怎么加载和玩？": "Q: How to load and play the Villager Dusk modpack?",
         "，为此我们提供了部分独立功能子整合包、子模组，供单独下载使用。": ",\n For this, we provide standalone sub-modpacks and sub-mods for separate download and use.",
-        "，如这里没有您想了解的信息，请联系我们咨询或反馈。": ", If the information you need is not here, please contact us for inquiries or feedback."
+        "，如这里没有您想了解的信息，请联系我们咨询或反馈。": ", If the information you need is not here, please contact us for inquiries or feedback.",
+        "ALT：战斗翻滚；": "ALT: Combat Roll;",  
+        "E：物品栏；": "E: Inventory;",  
+        "F：切换主手副手武器；": "F: Switch Main/Off-hand Weapon;",  
+        "Z：投掷末影珍珠；": "Z: Throw Ender Pearl;",  
+        "竞技场中共有数十种NPC生物（具体生物数量请加入战斗，自行探索吧，^_^...!），NPC强度由弱到强，击杀较弱生物后，会出现更强大的生物。": "The arena contains dozens of NPC creatures (join the battle to explore the exact number, ^_^...!). NPCs range from weak to strong, and defeating weaker ones will spawn more powerful creatures.",  
+        "问：整合包常用操作按键有哪些？": "Q: What are the common keybindings in the modpack?",  
+        "鼠标侧键1：翻滚：": "Mouse Side Button 1: Roll;",  
+        "鼠标侧键2：技能；": "Mouse Side Button 2: Skill;",  
+        "鼠标右键：防御；": "Right Mouse Button: Block/Defend;",  
+        "鼠标左键：攻击；": "Left Mouse Button: Attack;",  
+        "进入游戏后，默认游戏操作按键如下（都可在设置里的按键绑定中修改）：": "After entering the game, the default keybindings are as follows (all can be modified in the Controls settings):",
+        "R：开启、关闭战斗模式或查找物品配方；": "R: Toggle Combat Mode or Search Item Recipes."
     };
 
     // 获取所有可见的文本节点
@@ -191,6 +236,17 @@
     function translateDocument() {
         var textNodes = getTextNodes(document.body);
         textNodes.forEach(translateTextNode);
+
+        if(document.getElementById("language").innerHTML == "English"){
+            document.getElementById("language").innerHTML = "Chinese";
+            document.title =  "Villager Dusk High-quality Minecraft Combat Modpack";
+            document.querySelector('meta[name="description"]').content = 'Villager Dusk homepage,Villager-dusk modpack.';
+        }else{
+            document.getElementById("language").innerHTML = "English";
+            document.title =  "烦村黄昏 - Villager Dusk - 高质量MineCraft战斗整合包";
+            document.querySelector('meta[name="description"]').content = 'Villager Dusk、Villager-Dusk、烦村黄昏官网，Minecraft战斗整合包、MC整合包、MC模组。';
+        }
+        translationDict = swapKeysAndValues(translationDict)
     }
 
     // 重写 alert、confirm方法以支持翻译
@@ -213,8 +269,6 @@
     //初始翻译
     if(translate == true){
         translateDocument();
-        translationDict = swapKeysAndValues(translationDict)
-        console.log(translationDict)
     }
 
     // 交换键值

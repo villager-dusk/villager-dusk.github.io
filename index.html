@@ -17,16 +17,6 @@
     <script>
         function EnCn(){
             translateDocument();
-            if(document.getElementById("language").innerHTML == "English"){
-                document.getElementById("language").innerHTML = "Chinese";
-                document.title =  "Villager Dusk High-quality Minecraft Combat Modpack";
-                document.querySelector('meta[name="description"]').content = 'Villager Dusk homepage,Villager-dusk modpack.';
-            }else{
-                document.getElementById("language").innerHTML = "English";
-                document.title =  "烦村黄昏 - Villager Dusk - 高质量MineCraft战斗整合包";
-                document.querySelector('meta[name="description"]').content = 'Villager Dusk、Villager-Dusk、烦村黄昏官网，Minecraft战斗整合包、MC整合包、MC模组。';
-            }
-            translationDict = swapKeysAndValues(translationDict)
         }
     </script>
     <div class="header">
@@ -198,7 +188,7 @@
                             <div>
                                 <img src="images/s1_3.png">
                                 <p>
-                                    <button type="button" class="morebtn" onclick="window.open('https://pan.quark.cn/s/40d903d01d3a');">
+                                    <button type="button" class="morebtn" onclick="window.open('https://pan.quark.cn/s/41462312d322');">
                                         整合包
                                         <span style="font-size:12px; padding-left:2px;">下载</span>
                                     </button>
@@ -436,7 +426,30 @@
                 <dl>
                     <dt class="tableview tablelist show" >
                         <div style="font-size:16px;border-radius: 20px;background: #fff;color: #000;padding: 10px 20px;opacity: 0.8;margin: 9px;">
-                            <span onclick="show_faq(4)" style="cursor: pointer;">问：怎样进入烦村黄昏“竞技场”模式？<span>
+                            <span onclick="show_faq(5)" style="cursor: pointer;">问：整合包常用操作按键有哪些？</span>
+                            <span id="faq_title_5" class="faq_title" onclick="show_faq(5)">?</span>
+                        </div>
+                        <div id="faq_detail_5" class="faq_detail">
+                            答：<br>
+                            进入游戏后，默认游戏操作按键如下（都可在设置里的按键绑定中修改）：<br>
+                            R：开启、关闭战斗模式或查找物品配方；<br>
+                            F：切换主手副手武器；<br>
+                            E：物品栏；<br>
+                            ALT：战斗翻滚；<br>
+                            鼠标侧键1：翻滚：<br>
+                            鼠标侧键2：技能；<br>
+                            鼠标右键：防御；<br>
+                            鼠标左键：攻击；<br>
+                            Z：投掷末影珍珠；<br>
+                        </div>
+                    </dt>
+                </dl>
+            </div>
+            <div class="sectionbody">
+                <dl>
+                    <dt class="tableview tablelist show" >
+                        <div style="font-size:16px;border-radius: 20px;background: #fff;color: #000;padding: 10px 20px;opacity: 0.8;margin: 9px;">
+                            <span onclick="show_faq(4)" style="cursor: pointer;">问：怎样进入烦村黄昏“竞技场”模式？</span>
                             <span id="faq_title_4" class="faq_title" onclick="show_faq(4)">?</span>
                         </div>
                         <div id="faq_detail_4" class="faq_detail">
@@ -548,6 +561,12 @@
             </div>
         </div>
         `;
+        
+        //动态设置完faqs内容后，再加载翻译js、执行翻译
+        var script = document.createElement('script');
+        script.src = 'translate.js';
+        document.head.appendChild(script);
+        
     }
     function detail_background(){
         return;
@@ -562,6 +581,5 @@
         document.getElementById("video").style.filter = "blur("+ getRandomElement([0,1,0,3,0,5,0,7])+"px)"
     },1000);
 </script>
-<script src="translate.js"></script>
 </body>
 </html>
