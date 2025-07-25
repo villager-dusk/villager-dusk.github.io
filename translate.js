@@ -32,7 +32,7 @@
         return lang.substr(0, 2).toLowerCase();
     }
     const userLang = getSimplifiedLanguage(); // "zh", "en" 等
-    if(userLang == "en"){
+    if(userLang != "zh"){
         translate = true;
     }
 
@@ -98,8 +98,9 @@
         "烦村黄昏": "Villager Dusk",
         "热血动作、激烈战斗": "Intense action combat",
         "物品模组": "Item",
+        "villager-dusk.github.io":"https://villager-dusk.github.io",
         "特效模组": "Effect",
-        "玩家QQ群：828359394": "Player QQ Group: 828359394",
+        "玩家QQ群：828359394": "Thank you for your donation!",
         "示例动作": "Sample Animation",
         "示例技能": "Sample Skill",
         "示例特效": "Sample VFX",
@@ -241,10 +242,12 @@
             document.getElementById("language").innerHTML = "Chinese";
             document.title =  "Villager Dusk High-quality Minecraft Combat Modpack";
             document.querySelector('meta[name="description"]').content = 'Villager Dusk homepage,Villager-dusk modpack.';
+            document.getElementById("donate").style.display = "block";
         }else{
             document.getElementById("language").innerHTML = "English";
             document.title =  "烦村黄昏 - Villager Dusk - 高质量MineCraft战斗整合包";
             document.querySelector('meta[name="description"]').content = 'Villager Dusk、Villager-Dusk、烦村黄昏官网，Minecraft战斗整合包、MC整合包、MC模组。';
+            document.getElementById("donate").style.display = "none";
         }
         translationDict = swapKeysAndValues(translationDict)
     }
