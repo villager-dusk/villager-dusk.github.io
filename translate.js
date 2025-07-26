@@ -241,12 +241,12 @@
         if(document.getElementById("language").innerHTML == "English"){
             document.getElementById("language").innerHTML = "Chinese";
             document.title =  "Villager Dusk High-quality Minecraft Combat Modpack";
-            document.querySelector('meta[name="description"]').content = 'Villager Dusk homepage,Villager-dusk modpack.';
+            document.querySelector('meta[name="description"]').content = 'Villager Dusk homepage, Villager-dusk modpack, Annoying Village Modpack.';
             document.getElementById("donate").style.display = "block";
         }else{
             document.getElementById("language").innerHTML = "English";
             document.title =  "烦村黄昏 - Villager Dusk - 高质量MineCraft战斗整合包";
-            document.querySelector('meta[name="description"]').content = 'Villager Dusk、Villager-Dusk、烦村黄昏官网，Minecraft战斗整合包、MC整合包、MC模组。';
+            document.querySelector('meta[name="description"]').content = 'Villager Dusk、Villager-Dusk、烦村黄昏官网，Minecraft战斗整合包、MC整合包、MC模组、烦村整合包。';
             document.getElementById("donate").style.display = "none";
         }
         translationDict = swapKeysAndValues(translationDict)
