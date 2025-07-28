@@ -163,7 +163,7 @@
         "常见问题及解答": "Frequently Asked Questions (FAQs)",
         "开启“允许作弊”，因为游戏中可能会需要输入特殊指令。": "Enable 'Allow Cheats' as special commands may be needed in the game.",
         "数字为1时，格挡概率为10%、数字为5时，格挡概率为50%，以此类推，数字为0时，格挡概率为0%、数字为10时，挡概率为100%。": "When the number is 1, the block chance is 10%; when it's 5, the chance is 50%, and so on. At 0, the chance is 0%, and at 10, it's 100%.",
-        "村黄昏有众多内容，许多人钟情于其中某个单独功能，或某种特殊玩法，例如纯PK：": "Villager Dusk has rich content, and many players favor specific features or playstyles, such as pure PVP:",
+        "烦村黄昏有众多内容，许多人钟情于其中某个单独功能，或某种特殊玩法，例如纯PK：": "Villager Dusk has rich content, and many players favor specific features or playstyles, such as pure PVP:",
         "此时，可以多人组队，一起欺负NPC生物啦。": "At this point, you can team up with others to fight NPCs together.",
         "此时，将技能书放到物品栏，以准备学习技能。": "Now, place the skill book in your inventory to prepare for learning skills.",
         "注：NPC生物除了会使用技能攻击，还会使用末影珍珠、吃金苹果等，很强的。": "Note: NPCs not only use skill attacks but also ender pearls, golden apples, etc.—they are strong.",
