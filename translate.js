@@ -45,7 +45,7 @@
         "下载": "Download",
         "高质量Mineraft战斗整合包":"Minecraft Combat Modpack",
         "最新版本：":"Version:",
-        "下载后需手动安装整合包到MC客户端，客户端要求：MineCraft1.19.2、Forge43.4.0+。": "After downloading, manually install the modpack to MC client. Client requirements: Minecraft 1.19.2, Forge 43.4.0+.",
+        "下载后需手动安装整合包到MC客户端，客户端要求：Minecraft1.19.2、Forge43.4.0+。": "After downloading, manually install the modpack to MC client. Client requirements: Minecraft 1.19.2, Forge 43.4.0+.",
         "不一样的PK玩法！": "Unique PvP gameplay!",
         "不同的角色可释放不同的专属技能，例如：芥末的铁傀儡雨、蛇刃Herobrine的解放蛇刃、蓝恶魔的三叉戟狂欢节、史蒂夫的战神之刃觉醒等等。": "Different characters can unleash unique skills, e.g.: Wasabi's Iron Golem Rain, Snakeblade Herobrine's Unleashed Snakeblade, Blue Demon's Trident Carnival, Steve's War God Blade Awakening, etc.",
         "专属技能": "Exclusive Skills",
@@ -64,7 +64,7 @@
         "合作伙伴": "Partners",
         "如您在整合包使用过程中、游戏过程中遇到问题或进行合作、咨询、建议等，请用以下方式联系我们。": "For issues while using the modpack or during gameplay, as well as for collaborations, inquiries, or suggestions, contact us via:",
         "子整合包下载": "Sub-Modpack Download",
-        "客户端要求：MineCraft1.19.2、Forge43.4.0+": "Client requirements: Minecraft 1.19.2, Forge 43.4.0+",
+        "客户端要求：Minecraft1.19.2、Forge43.4.0+": "Client requirements: Minecraft 1.19.2, Forge 43.4.0+",
         "对应角色技能，不同的技能有不同的专属战斗动作。": "Character-specific skills with unique combat animations.",
         "常见问题及解答，如这里没有您想了解的信息，请联系我们咨询或反馈。": "FAQs. Contact us if your question isn't answered here.",
         "影锤：Shift+右键可让玩家原地飞起来。": "Shadow Hammer: Shift+RMB to levitate.",
@@ -107,7 +107,7 @@
         "示例特效": "Sample VFX",
         "示例角色": "Sample Character",
         "答：Java 17+，即：JDK 17+。": "A: Java 17+ (JDK 17+ required).",
-        "答：MineCraft 1.19.2、Forge 43.4.0+。": "A: Minecraft 1.19.2, Forge 43.4.0+.",
+        "答：Minecraft 1.19.2、Forge 43.4.0+。": "A: Minecraft 1.19.2, Forge 43.4.0+.",
         "答：PCL/PCL-CE启动器：直接把下载好的整合包文件拖进启动器窗口即可。": "A: For PCL/PCL-CE launcher: Drag downloaded modpack file into launcher.",
         "答：可以，可自由录制模组相关的视频并发布到各视频平台。": "A: Yes, you may create/share mod-related videos freely.",
         "答：在哔哩哔哩平台有，https://space.bilibili.com/1015730693，是烦村黄昏在的B站的官频道，这里会发布整合包里新信息及游戏视频，欢迎大家关注。": "A: Official Bilibili: https://space.bilibili.com/1015730693 (posts updates/gameplay videos).",
@@ -130,7 +130,7 @@
         "问：游戏中，整合包的NPC生物太强了、打不过怎么办？": "Q: NPCs are too strong - solutions?",
         "问：烦村黄昏整合包需要什么客户端环境？": "Q: Client requirements for Villager Dusk?",
         "问：玩家可以发布模组介绍或游戏视频吗？": "Q: Can players create mod videos?",
-        "高质量MineCraft战斗整合包": "High-quality Minecraft Combat Modpack",
+        "高质量Minecraft战斗整合包": "High-quality Minecraft Combat Modpack",
         "黑曜石长枪：动作和奇迹武器里的痛苦之枪相似。": "Obsidian Spear: Animations resemble Painkiller from W@W.",
         "1、整合包安装：": "1. Modpack Installation:",
         "1、进入游戏，并创建新世界：": "1. Enter the game and create a new world:",
@@ -144,7 +144,7 @@
         "5、除了初始的物品，模组中还存在大量其它物品。打开物品栏，查找配方，可看到物品的合成方式。": "5. In addition to the initial items, the mod contains many other items. Open the inventory and check recipes to see how items are crafted.",
         "6、进行这些初步了解后，就可以进行游戏了...": "6. After this basic introduction, you can start playing...",
         "HMCL/FCL启动器：游戏 -> 游戏管理 -> 模组管理 -> 模组文件夹 -> 将模组文件放入打开的文件夹中。": "HMCL/FCL Launcher: Game -> Game Management -> Mod Management -> Mod Folder -> Place mod files into the opened folder.",
-        "JDK（Java）17+、MineCraft1.19.2、Forge 43.4.1+": "JDK (Java) 17+, Minecraft 1.19.2, Forge 43.4.1+",
+        "JDK（Java）17+、Minecraft1.19.2、Forge 43.4.1+": "JDK (Java) 17+, Minecraft 1.19.2, Forge 43.4.1+",
         "PCL/PCL-CE启动器：直接把下载好的整合包文件拖进启动器窗口即可。": "PCL/PCL-CE Launcher: Simply drag the downloaded modpack file into the launcher window.",
         "PCL/PCL-CE启动器：直接把下载好的模组文件拖进启动器窗口即可。": "PCL/PCL-CE Launcher: Simply drag the downloaded mod file into the launcher window.",
         "PVP或PVE": "PVP or PVE",
@@ -246,7 +246,7 @@
             document.getElementById("donate").style.display = "block";
         }else{
             document.getElementById("language").innerHTML = "English";
-            document.title =  "烦村黄昏 - Villager Dusk - 高质量MineCraft战斗整合包";
+            document.title =  "烦村黄昏 - Villager Dusk - 高质量Minecraft战斗整合包";
             document.querySelector('meta[name="description"]').content = 'Villager Dusk、Villager-Dusk、烦村黄昏官网，Minecraft战斗整合包、MC整合包、MC模组、烦村整合包。';
             document.getElementById("donate").style.display = "none";
         }

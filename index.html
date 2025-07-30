@@ -25,7 +25,7 @@
                 <img src="images/logo.png" style="cursor:pointer; width:64px; height:64px; border-radius: 10px; padding-right: 2px;">
                 <span>
                     <span style="position: relative; top:-32px; font-size: 15px;">烦村黄昏</span>
-                    <span style="position: relative; font-size: 11px; left: -66px; top: -14px; opacity: 0.5;">高质量MineCraft战斗整合包</span>
+                    <span style="position: relative; font-size: 11px; left: -66px; top: -14px; opacity: 0.5;">高质量Minecraft战斗整合包</span>
                 </span>
             </div>
             <ul id="nav" class="nav">
@@ -40,11 +40,11 @@
     </div>
     <div class="sectionCon">
         <a id="Introduction" class="section Introduction active">
-            <div style="position:relative; color:#fff; z-index: 9999; text-shadow: 1px 2px 5px #ffffff;  text-align: center; background: rgba(0,0,0,0.2);padding: 20px; top: 20%; ">
+            <div style="position:relative; color:#fff; z-index: 9999; text-shadow: 1px 2px 5px #ffffff;  text-align: center; background: rgba(0,0,0,0);padding: 20px; top: 20%; ">
                 <div>
                     <span class="f2">烦村黄昏</span>
                     <span style="padding-left: 10px;"></span>
-                    <span class="f1">高质量MineCraft战斗整合包</span>
+                    <span class="f1">高质量Minecraft战斗整合包</span>
                 </div>
                 <div class="f3">
                     <span class="f1">热血动作、激烈战斗</span>，
@@ -52,10 +52,11 @@
                     <span class="f4">不一样的PK玩法！</span>
                 </div>
             </div>
-            <video id="video" src="video.mp4" autoplay loop muted height="auto" width="100%" class="video" style="display:none; filter: blur(10px);"></video>
-            <img id="picture" src="images/bg2.png" class="video" style="display: block; border-radius: 20px;">
+            <video id="video" src="video1.mp4" autoplay loop muted height="auto" width="100%" class="video" style="display:none; filter: blur(10px);"></video>
+            <img id="picture" src="images/video_bg.png" class="video" style="display: block; border-radius: 20px;">
             <script>
                 const video = document.getElementById('video');
+                video.src = "video" + Math.floor(Math.random() * [1,2].length +1)+".mp4";
                 video.addEventListener('canplaythrough', function() {
                     // 视频已加载足够内容可以流畅播放
                     video.style.display = 'block';
@@ -175,7 +176,7 @@
                         <span style="font-size: 44px; padding-right: 10px;">烦村黄昏，整合包、模组</span>下载
                     </h3>
                     <p style="font-size: 18px;">
-                        <span style="font-size: 30px; padding-right: 10px;">客户端要求：</span>JDK（Java）17+、MineCraft1.19.2、Forge 43.4.1+
+                        <span style="font-size: 30px; padding-right: 10px;">客户端要求：</span>JDK（Java）17+、Minecraft1.19.2、Forge 43.4.1+
                     </p>
                 </div>
                 <div class="col-2 col-xs-12">
