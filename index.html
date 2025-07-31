@@ -40,7 +40,7 @@
     </div>
     <div class="sectionCon">
         <a id="Introduction" class="section Introduction active">
-            <div style="position:relative; color:#fff; z-index: 9999; text-shadow: 1px 2px 5px #ffffff;  text-align: center; background: rgba(0,0,0,0);padding: 20px; top: 20%; ">
+            <div style="position:relative; color:#fff; z-index: 9999; text-shadow: 3px 6px 5px #3232327a; text-align: center; background: rgba(0,0,0,0);padding: 20px; top: 20%; ">
                 <div>
                     <span class="f2">烦村黄昏</span>
                     <span style="padding-left: 10px;"></span>
@@ -52,26 +52,9 @@
                     <span class="f4">不一样的PK玩法！</span>
                 </div>
             </div>
-            <video id="video" src="video1.mp4" autoplay loop muted height="auto" width="100%" class="video" style="display:none; filter: blur(10px);"></video>
+            <video id="video" src="video1.mp4" autoplay loop muted height="auto" width="100%" class="video" style="display:none; filter: blur(10px); border-radius: 30px;"></video>
             <img id="picture" src="images/video_bg.png" class="video" style="display: block; border-radius: 20px;">
-            <script>
-                const video = document.getElementById('video');
-                video.src = "video" + Math.floor(Math.random() * [1,2].length +1)+".mp4";
-                video.addEventListener('canplaythrough', function() {
-                    // 视频已加载足够内容可以流畅播放
-                    video.style.display = 'block';
-                    try {
-                        video.play();
-                    } catch (e) {
-                        console.log('视频播放被阻止:', e);
-                    }
-                    document.getElementById('picture').style.display = "none";
-                });
-                video.addEventListener('error', function() {
-                    console.error('视频加载失败');
-                    // 这里可以添加错误处理逻辑
-                });
-            </script>
+            
         </a>
         <a id="detail" class="section detail" style="background: url('images/bg2.png'); background-size:cover;">
             <div class="row sectionbody1">
@@ -572,18 +555,27 @@
         document.head.appendChild(script);
         
     }
-    function detail_background(){
-        return;
-        if(window.innerWidth > 2160){
-            document.getElementById("detail").style.background = "";
-        }else{
-            document.getElementById("detail").style.background = "url('images/bg2.png')";
-            document.getElementById("detail").style.backgroundSize = "cover";
+
+    var video = document.getElementById('video');
+    video.src = "video" + Math.floor(Math.random() * [1,2].length +1)+".mp4";
+    video.addEventListener('canplaythrough', function() {
+        // 视频已加载足够内容可以流畅播放
+        video.style.display = 'block';
+        try {
+            video.play();
+        } catch (e) {
+            console.log('视频播放被阻止:', e);
         }
-    }
-    setInterval(function(){
-        document.getElementById("video").style.filter = "blur("+ getRandomElement([0,1,0,3,0,5,0,7])+"px)"
-    },1000);
+        document.getElementById('picture').style.display = "none";
+        setInterval(function(){
+            document.getElementById("video").style.filter = "blur("+ getRandomElement([0,1,0,3,0,5,0,7])+"px)"
+        },1000);
+    });
+    video.addEventListener('error', function() {
+        console.error('视频加载失败');
+        // 这里可以添加错误处理逻辑
+    });
+
 </script>
 </body>
 </html>
