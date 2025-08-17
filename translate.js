@@ -1,7 +1,7 @@
     //全网页中英文翻译
 
     //是否翻译
-    var translate = false; 
+    var auto_translate = false; 
 
     //从参数中获取language参数，如果参数值为chinese则翻译
     function getParameterByName(name) {
@@ -14,7 +14,7 @@
     var language = getParameterByName('language');
     if(language == "english"){
         //翻译
-        translate = true;
+        auto_translate = true;
     }
 
     //获取浏览器语言
@@ -33,7 +33,7 @@
     }
     const userLang = getSimplifiedLanguage(); // "zh", "en" 等
     if(userLang != "zh"){
-        translate = true;
+        auto_translate = true;
     }
 
     // 翻译字典：键为英，值为中文
@@ -248,11 +248,17 @@
             document.title =  "Villager Dusk High-quality Minecraft Combat Modpack";
             document.querySelector('meta[name="description"]').content = 'Villager Dusk homepage, Villager-dusk modpack, Annoying Village Modpack.';
             document.getElementById("donate").style.display = "block";
+
+            document.getElementById("videos").style.display = "none";
+            document.getElementById("videos_title").style.display ="none";
         }else{
             document.getElementById("language").innerHTML = "English";
             document.title =  "烦村黄昏 - Villager Dusk - 高质量Minecraft战斗整合包";
             document.querySelector('meta[name="description"]').content = 'Villager Dusk、Villager-Dusk、烦村黄昏官网，Minecraft战斗整合包、MC整合包、MC模组、烦村整合包。';
             document.getElementById("donate").style.display = "none";
+
+            document.getElementById("videos").style.display = "block";
+            document.getElementById("videos_title").style.display ="block";
         }
         translationDict = swapKeysAndValues(translationDict)
     }
@@ -275,8 +281,8 @@
     };
 
     //初始翻译
-    if(translate == true){
-        translateDocument();
+    if(auto_translate == true){
+        //translateDocument();
     }
 
     // 交换键值
