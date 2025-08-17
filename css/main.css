@@ -849,3 +849,74 @@ html, body, #appName {
 .d25817:hover{
     color: #ffe300;
 }
+.d258172{
+    opacity: 0.6;
+}
+.d258172:hover{
+    opacity: 1;
+}
+
+.d258173{
+    opacity: 0.9;
+    height: 120px; 
+    padding:10px;
+    cursor: pointer;
+    border-radius:20px;
+}
+.d258173:hover{
+    opacity: 1;
+}
+
+.d258174{
+    opacity: 0.7;
+    cursor: pointer;
+}
+.d258174:hover{
+    opacity: 1;
+}
+
+.d258175{
+    opacity: 0.9;
+}
+.d258175:hover{
+    opacity: 1;
+}
+
+.image-with-text {
+    width: 336px;
+    height: 189px;
+    background-size: contain;
+    color: white;
+    font-size: 13px;
+    display: inline-flex;
+    flex-direction: column; /* 改为垂直排列 */
+    margin: 20px 20px 50px 20px;
+    border-radius: 20px;
+    zoom: 0.8;
+    position: relative; /* 为播放按钮定位做准备 */
+}
+
+.image-with-text > span:first-child {
+    position: absolute; /* 播放按钮绝对定位 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 居中 */
+    font-size: 40px; /* 增大播放按钮 */
+    cursor: pointer;
+}
+
+.image-with-text > span:last-child {
+    margin-top: 189px; /* 文字放在图片下方 */
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.d258177{
+    opacity: 0.7;
+    font-size: 13px;
+}
+.d258177:hover{
+    opacity: 1;
+    cursor: pointer;
+}
