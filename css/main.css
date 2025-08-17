@@ -842,3 +842,10 @@ html, body, #appName {
     padding: 7px 20px; margin: 9px; font-size:12px;
 }
 
+.d25817{
+    font-size:13px;
+    cursor: pointer;
+}
+.d25817:hover{
+    color: #ffe300;
+}
