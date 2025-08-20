@@ -1,6 +1,8 @@
     //全网页中英文翻译
 
-    //是否翻译
+    //自动翻译开关，true、false为启用或禁用自动翻译
+    var auto_translate_enable = false;
+    //是否自动翻译
     var auto_translate = false; 
 
     //从参数中获取language参数，如果参数值为chinese则翻译
@@ -281,8 +283,8 @@
     };
 
     //初始翻译
-    if(auto_translate == true){
-        //translateDocument();
+    if(auto_translate == true && auto_translate_enable == true){
+        translateDocument();
     }
 
     // 交换键值
