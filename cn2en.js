@@ -242,7 +242,7 @@
 
     //整合包下载地址
     var cn_download_1 = document.getElementById('d1').getAttribute('onclick')
-    var en_download_1 = "window.open('https://www.curseforge.com/minecraft/modpacks/villager-dusk');";
+    var en_download_1 = "window.open('https://drive.google.com/file/d/17uD3aibZ6KYeCFzd9WULJiFRb-AKoocn/view?usp=sharing');"; //"window.open('https://www.curseforge.com/minecraft/modpacks/villager-dusk');";
     //发光刀光模组
     var cn_download_2 = document.getElementById('d2').getAttribute('onclick')
     var en_download_2 = "window.open('https://www.curseforge.com/minecraft/mc-mods/epicfight-light-trail');";
