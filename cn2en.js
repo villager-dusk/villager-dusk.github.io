@@ -136,7 +136,7 @@
         "问：游戏中，整合包的NPC生物太强了、打不过怎么办？": "Q: NPCs are too strong - solutions?",
         "问：烦村黄昏整合包需要什么客户端环境？": "Q: Client requirements for Villager Dusk?",
         "问：玩家可以发布模组介绍或游戏视频吗？": "Q: Can players create mod videos?",
-        "高质量Minecraft战斗整合包": "High-quality Minecraft Combat Modpack",
+        "高质量Minecraft史诗战斗整合包": "High-quality Minecraft Combat Modpack",
         "黑曜石长枪：动作和奇迹武器里的痛苦之枪相似。": "Obsidian Spear: Animations resemble Painkiller from W@W.",
         "1、整合包安装：": "1. Modpack Installation:",
         "1、进入游戏，并创建新世界：": "1. Enter the game and create a new world:",
@@ -274,8 +274,8 @@
 
         }else{
             document.getElementById("language").innerHTML = "English";
-            document.title =  "烦村黄昏 - Villager Dusk - 高质量Minecraft战斗整合包";
-            document.querySelector('meta[name="description"]').content = 'Villager Dusk、Villager-Dusk、烦村黄昏官网，Minecraft战斗整合包、MC整合包、MC模组、烦村整合包。';
+            document.title =  "Minecraft史诗战斗整合包、烦村整合包 - 烦村黄昏";
+            document.querySelector('meta[name="description"]').content = '烦村黄昏，英文名：Villager Dusk，是一款高质量Minecraft史诗战斗整合包、烦村整合包。热血动作、激烈战斗，让您在MC中体验不一样的PK玩法！';
             document.getElementById("donate").style.display = "none";
 
             document.getElementById("videos").style.display = "block";
