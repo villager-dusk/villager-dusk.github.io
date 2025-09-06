@@ -53,7 +53,7 @@
                     <span class="f4">不一样的PK玩法！</span>
                 </div>
             </div>
-            <video id="video" src="video1.mp4" autoplay loop muted height="auto" width="100%" class="video" style="display:none; filter: blur(0px); border-radius: 30px;"></video>
+            <video id="video" src="video1.mp4" autoplay loop muted height="auto" width="100%" class="video" style="display:none; filter: blur(0px); border-radius: 30px; transition: opacity 0.8s ease, filter 1s ease;"></video>
             <img id="picture" src="images/video_bg.png" class="video" style="display: block; border-radius: 20px;">
             
         </a>
@@ -625,6 +625,13 @@
 
     var video = document.getElementById('video');
     video.src = "video" + Math.floor(Math.random() * [1,2,3,4,5].length +1)+".mp4";
+    setInterval(function(){
+            video.src = "video" + Math.floor(Math.random() * [1,2,3,4,5].length +1)+".mp4";
+    },7800);
+    setInterval(function(){
+        document.getElementById("video").style.filter = "blur("+ getRandomElement([0, 0.1, 0, 0.1, 0, 0.2, 0, 0.1])+"px)"
+    },1000);
+
     video.addEventListener('canplaythrough', function() {
         // 视频已加载足够内容可以流畅播放
         video.style.display = 'block';
@@ -634,12 +641,7 @@
             console.log('视频播放被阻止:', e);
         }
         document.getElementById('picture').style.display = "none";
-        setInterval(function(){
-               video.src = "video" + Math.floor(Math.random() * [1,2,3,4,5].length +1)+".mp4";
-        },7800);
-        setInterval(function(){
-            document.getElementById("video").style.filter = "blur("+ getRandomElement([0, 0.1, 0, 0.1, 0, 0.2, 0, 0.1])+"px)"
-        },1000);
+        
     });
     video.addEventListener('error', function() {
         console.error('视频加载失败');
