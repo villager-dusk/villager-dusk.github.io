@@ -89,12 +89,19 @@
         "欢迎与我们成为合作伙伴，期待商业合作、技术合作、服务器赞助，等...": "Partner with us! We welcome commercial and technical collaborations, server sponsorships, and other opportunities.",
         "正在加载...": "Loading...",
         "武器模组": "Weapon",
-        "刀光模组，可让光刀呈现非常亮丽的发光效果。":"The Sword Trails Mod adds vibrant glowing effects to blade weapons, creating stunning visual trails.",
+        "技能模组": "Skill",
+        "概率裁决": "Random Skill",
+        "增强玩家伤害。":"Enhances player damage.",
+        "玩家击中目标时，有概率触随机释放雷击、爆炸、火焰、风刃、中毒等技能，对目标进行二次打击。":"When the player hits a target, there is a chance to trigger an additional attack, releasing random skills such as lightning strikes, explosions, flames, wind blades, or poison, dealing a second blow to the target.",
+        "守护契约":"Random Shield",
+        "增强玩家防护。":"Enhances player protection.",
+        "当玩家被攻击时，有概率触发回血、护盾、隐身、霸体、急跑等效果，使玩家不易被击杀。": "When the player is attacked, there is a chance to trigger effects such as health regeneration, shields, invisibility, super armor, or sprinting, making the player harder to kill.",
+        "刀光模组，可让光刀呈现非常亮丽的发光效果。":"Adds vibrant glowing effects to blade weapons, creating stunning visual trails.",
         "QQ：": "Email:",
         "语言：": "Language:",
         "785319346": "785319346@qq.com",
         "泛光刀光": "Glowing Blade Trails",
-        "注：又持后，有独立的战斗动作和技能。": "Note: Dual-wielding enables unique combat mechanics.",
+        "注：右持后，有独立的战斗动作和技能。": "Note: Dual-wielding enables unique combat mechanics.",
         "注：药水效果：以损失部分生命值为代价，在一定时间内提高攻击力。": "Note: Potion effect: Boosts attack at HP cost.",
         "点击可随机切换、查看其它技能效果。": "Click to randomly view other skill effects.",
         "点击可随机切换、查看其它技能特效。": "Click to randomly view other skill VFX.",
@@ -175,7 +182,7 @@
         "注：NPC生物除了会使用技能攻击，还会使用末影珍珠、吃金苹果等，很强的。": "Note: NPCs not only use skill attacks but also ender pearls, golden apples, etc.—they are strong.",
         "注：“生存模式”、“竞技场模式”，都可使用此方法。": "Note: This method works for both 'Survival Mode' and 'Arena Mode'.",
         "注：每次进入竞技场时，玩家会获得不同的装备、武器，可拥有不同强度的技能哦。": "Note: Each time you enter the arena, you'll receive different equipment and weapons, granting skills of varying strengths.",
-        "烦村黄昏，整合包、模组": "Villager Dusk: Modpack & Mod",
+        "烦村黄昏，整合包、模组": "Villager Dusk: Modpack & Mods",
         "竞技场中共有数十种NPC生物（具体生物数量请加入战斗，自行探索吧，^^...!），NPC强度由弱到强，击杀较弱生物后，会出现更强大的生物。": "The arena features dozens of NPC creatures (join the battle to explore the exact number, ^^...!). NPCs range from weak to strong—defeating weaker ones will spawn stronger ones.",
         "答：": "Answer:",
         "答：可以开启作弊模式。在游戏中，输入：/gamerule domob...此时会有提示。": "Answer: You can enable cheat mode. In-game, enter: /gamerule domob... Prompts will appear.",
@@ -272,6 +279,8 @@
             document.getElementById('d3').setAttribute('onclick', en_download_3);
             document.getElementById('d4').setAttribute('onclick', en_download_4);
 
+            document.getElementById("fgdg").style.fontSize = 10;
+
             document.querySelector('meta[http-equiv="content-language"]').content = "en-us";
 
         }else{
@@ -287,6 +296,8 @@
             document.getElementById('d2').setAttribute('onclick', cn_download_2);
             document.getElementById('d3').setAttribute('onclick', cn_download_3);
             document.getElementById('d4').setAttribute('onclick', cn_download_4);
+
+            document.getElementById("fgdg").style.fontSize = 14;
 
             document.querySelector('meta[http-equiv="content-language"]').content = "zh";
         }
