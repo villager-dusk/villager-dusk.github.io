@@ -92,7 +92,7 @@
         "技能模组": "Skill",
         "概率裁决": "Random Skill",
         "增强玩家伤害。":"Enhances player damage.",
-        "玩家击中目标时，有概率触随机释放雷击、爆炸、火焰、风刃、中毒等技能，对目标进行二次打击。":"When the player hits a target, there is a chance to trigger an additional attack, releasing random skills such as lightning strikes, explosions, flames, wind blades, or poison, dealing a second blow to the target.",
+        "玩家击中目标时，有概率随机释放雷击、爆炸、火焰、风刃、中毒等技能，对目标进行二次打击。":"When the player hits a target, there is a chance to trigger an additional attack, releasing random skills such as lightning strikes, explosions, flames, wind blades, or poison, dealing a second blow to the target.",
         "守护契约":"Random Shield",
         "增强玩家防护。":"Enhances player protection.",
         "当玩家被攻击时，有概率触发回血、护盾、隐身、霸体、急跑等效果，使玩家不易被击杀。": "When the player is attacked, there is a chance to trigger effects such as health regeneration, shields, invisibility, super armor, or sprinting, making the player harder to kill.",
