@@ -207,7 +207,14 @@
         "鼠标右键：防御；": "Right Mouse Button: Block/Defend;",  
         "鼠标左键：攻击；": "Left Mouse Button: Attack;",  
         "进入游戏后，默认游戏操作按键如下（都可在设置里的按键绑定中修改）：": "After entering the game, the default keybindings are as follows (all can be modified in the Controls settings):",
-        "R：开启、关闭战斗模式或查找物品配方；": "R: Toggle Combat Mode or Search Item Recipes."
+        "R：开启、关闭战斗模式或查找物品配方；": "R: Toggle Combat Mode or Search Item Recipes.",
+        "红蓝阵营":"Red and Blue",
+        "战术模组": "Tactical",
+        "用于多人联机游戏，可使不同的玩家处于红蓝两种阵营，以便进行团队式战斗。":"Designed for multiplayer online games, this module allows players to be divided into red and blue factions for team-based battles.",
+        "玩家脚下会有自己阵营颜色的特效光圈，可以此区分敌友。":"Players will have a special effect ring in their faction's color beneath their feet, which can be used to distinguish allies from enemies.",
+        "注：队友间攻击不会产生直接伤害，但不会阻止特殊效果，如燃烧等带有的额外伤害。":"Note: Attacks between teammates do not cause direct damage but do not prevent special effects, such as additional damage from burning or other status effects."
+        
+
     };
 
     // 获取所有可见的文本节点
