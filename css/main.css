@@ -56,7 +56,6 @@ html, body, #appName {
 .header {
     width: 100%;
     color: #ffffff;
-    background: #000;
     padding-top: 20px;
     padding-bottom: 10px;
     height: 76px;
@@ -669,7 +668,6 @@ html, body, #appName {
     /* 头部样式调整 */
     .header {
         margin-top: 0px;
-        background: #000;
         position:relative;
         top: 0px;
         font-size:10px;
@@ -919,4 +917,88 @@ html, body, #appName {
 .d258177:hover{
     opacity: 1;
     cursor: pointer;
+}
+
+@keyframes slideShow {
+    0% {
+     opacity:0;
+     transform:scale(1);
+     -ms-transform:scale(1)
+    }
+    5% {
+     opacity:0.2
+    }
+    25% {
+     opacity:0.3
+    }
+    30% {
+     opacity:0.4;
+     transform:scale(1.1);
+     -ms-transform:scale(1.1)
+    }
+    100% {
+     opacity:0;
+     transform:scale(1);
+     -ms-transform:scale(1)
+    }
+}
+@-o-keyframes slideShow {
+    0% {
+     opacity:0;
+     -o-transform:scale(1)
+    }
+    5% {
+     opacity:0.2
+    }
+    25% {
+     opacity:0.3
+    }
+    30% {
+     opacity:0.4;
+     -o-transform:scale(1.1)
+    }
+    100% {
+     opacity:0;
+     -o-transform:scale(1)
+    }
+}
+@-moz-keyframes slideShow {
+    0% {
+     opacity:0;
+     -moz-transform:scale(1)
+    }
+    5% {
+     opacity:0.2
+    }
+    25% {
+     opacity:0.3
+    }
+    30% {
+     opacity:0.4;
+     -moz-transform:scale(1.1)
+    }
+    100% {
+     opacity:0;
+     -moz-transform:scale(1)
+    }
+}
+@-webkit-keyframes slideShow {
+    0% {
+     opacity:0;
+     -webkit-transform:scale(1)
+    }
+    5% {
+     opacity:0.2
+    }
+    25% {
+     opacity:0.3
+    }
+    30% {
+     opacity:0.4;
+     -webkit-transform:scale(1.1)
+    }
+    100% {
+     opacity:0;
+     -webkit-transform:scale(1)
+    }
 }
