@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/loading.css">
 </head>
-<body style="font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: #000;">
+<body style="font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: #000; overflow-x: hidden;">
 <div id="main" style="display: none;">
     <div class="language">
         <span class="english" onclick="EnCn();" id="language">English</span>
@@ -684,6 +684,141 @@
         // 这里可以添加错误处理逻辑
     });
 
+    
+    /* -=[ 背景动画 ]=- */
+
+    // 创建div元素
+    const div = document.createElement('div');
+
+    // 设置所有样式属性
+    div.id = "my_div";
+    div.style.backgroundSize = '100% 100%';
+    div.style.webkitBackgroundSize = '100% 100%';
+    div.style.oBackgroundSize = '100% 100%';
+    div.style.position = 'absolute';
+    div.style.zIndex = '-99';
+    div.style.top = '0';
+    div.style.left = '0';
+    div.style.height = '100%';
+    div.style.width = '100%';
+    div.style.overflow = 'hidden';
+    div.style.opacity = '0.5';
+    div.style.flex = '1';
+    div.style.display = 'block';
+    div.style.filter = "blur(1px)";
+
+    // 将div添加到body中
+    document.body.appendChild(div);
+
+    for(i=1; i<10; i++){
+        var bg_div = document.createElement("div");
+        bg_div.style.overflow ="hidden";
+        bg_div.setAttribute("id","bg_ani_div_"+i);
+        bg_div.setAttribute("width","fit-content");
+        bg_div.style.position = "static";
+        bg_div.style.color = "#ffffff";
+        bg_div.style.opacity = 0;
+        document.getElementById("my_div").appendChild(bg_div);
+    }
+
+    //动画句柄
+    var animation_handle;
+    //初始字体大小
+    var font_size;
+    //初始透明度
+    var font_opacity;
+
+    /* 动画实现函数 */
+    function bg_animation(){
+        for(j=0; j<10; j++){
+            try{
+                //定位元素
+                var x = "bg_ani_div_" + (1 + parseInt( 9 * Math.random() ));
+                var rnd = document.getElementById(x);
+                rnd.style.overflow = "hidden";
+
+                //随机字符串
+                var str = [
+                    "*",
+                    "❄"
+                ]
+                rnd.innerHTML = str[parseInt( str.length * Math.random() )];
+
+                //随机字体
+                var fonts = [
+                    "verdana",
+                ]
+                rnd.style.fontFamily = fonts[parseInt( fonts.length * Math.random() )];
+
+                //设定随机位置
+                var padding_left = parseInt(document.body.clientWidth * Math.random() /5 );
+                if(padding_left > 600){
+                    padding_left = (50 + padding_left + Math.floor(Math.random() * 200)) + "px";
+                }else{
+                    padding_left = (60 + padding_left + padding_left + Math.floor(Math.random() * 160)) +"px";
+                }
+                var padding_top = parseInt(document.body.clientHeight * Math.random() /10 );
+                if(padding_top > 40){
+                    padding_top = Math.floor(Math.random() * 4) + "px"; 
+                }else{
+                    padding_top = padding_top + "px";
+                }
+                
+                //console.log(padding_left)
+                
+                rnd.style.paddingLeft = padding_left;
+                rnd.style.paddingTop = padding_top;
+                rnd.className = "bg_ani";
+                rnd.style.animation = 'slideShow 6s infinite';
+            
+                //较短的字符串
+                if(rnd.innerHTML.length < 10){
+                    //随机字体大小
+                    font_size = parseInt( 20 * Math.random() + 20);
+                }else{
+
+                    //随机字体大小
+                    font_size = parseInt( 10 * Math.random() + 20);
+                }
+
+                //透明度
+                if(font_size < 20){
+
+                    //随机透明度
+                    font_opacity = Math.floor(Math.random() * 10) / 10;
+                    if(font_opacity >= 0.8){
+                        font_opacity = font_opacity - 0.65;
+                    }
+                    rnd.style.opacity = font_opacity;
+                    rnd.style.fontWeight = 160;
+                    font_size = font_size + 5;
+                    font_size = font_size + "px";
+                }else{
+                    rnd.style.fontWeight = 200;
+                    //随机透明度
+                    font_opacity = Math.floor(Math.random() * 10) / 10;
+                    if(font_opacity > 0.6){
+                        font_opacity = font_opacity - 0.5;
+                    }
+                    rnd.style.opacity = font_opacity;
+                    font_size = font_size + "px";
+                }
+                
+                rnd.style.fontSize = font_size;
+                rnd.style.left = font_size;
+            
+            }catch(e){
+                console.log(e)
+            }
+        }
+    }
+
+    bg_animation();
+
+    //循环执行
+    animation_handle = setInterval("bg_animation()",1900);
+
 </script>
+<script src="bgpoint.js"></script>
 </body>
 </html>
