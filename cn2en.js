@@ -212,9 +212,10 @@
         "战术模组": "Tactical",
         "用于多人联机游戏，可使不同的玩家处于红蓝两种阵营，以便进行团队式战斗。":"Designed for multiplayer online games, this module allows players to be divided into red and blue factions for team-based battles.",
         "玩家脚下会有自己阵营颜色的特效光圈，可以此区分敌友。":"Players will have a special effect ring in their faction's color beneath their feet, which can be used to distinguish allies from enemies.",
-        "注：队友间攻击不会产生直接伤害，但不会阻止特殊效果，如燃烧等带有的额外伤害。":"Note: Attacks between teammates do not cause direct damage but do not prevent special effects, such as additional damage from burning or other status effects."
-        
-
+        "注：队友间攻击不会产生直接伤害，但不会阻止特殊效果，如燃烧等带有的额外伤害。":"Note: Attacks between teammates do not cause direct damage but do not prevent special effects, such as additional damage from burning or other status effects.",
+        "无弓之箭":"Quick Arrow",
+        "一个简单却有用的小功能，让你不需要弓或弩，点右鼠标即可快速、连续、大量的射出箭。":"This is a simple mod that adds a straightforward yet useful feature: in the game, when holding arrows (placed and selected in the inventory), you don't need a bow or crossbow—just right-click to quickly shoot arrows.",
+        "当然，前题是事先装备好了大量的箭矢。":"Note: Make sure to prepare a large quantity of arrows in advance, so you can shoot them continuously and in large numbers. And, it is recommended to use the first person for shooting."
     };
 
     // 获取所有可见的文本节点
@@ -256,16 +257,25 @@
 
     //整合包下载地址
     var cn_download_1 = document.getElementById('d1').getAttribute('onclick')
-    var en_download_1 = "window.open('https://drive.google.com/file/d/17uD3aibZ6KYeCFzd9WULJiFRb-AKoocn/view?usp=sharing');"; //"window.open('https://www.curseforge.com/minecraft/modpacks/villager-dusk');";
+    var en_download_1 = "window.open('https://drive.google.com/file/d/17uD3aibZ6KYeCFzd9WULJiFRb-AKoocn/view?usp=sharing');"; 
     //发光刀光模组
     var cn_download_2 = document.getElementById('d2').getAttribute('onclick')
-    var en_download_2 = "window.open('https://www.curseforge.com/minecraft/mc-mods/epicfight-light-trail');";
+    var en_download_2 = "window.open('https://www.curseforge.com/members/playedminecraftfor114514min/projects');";
     //双太刀模组
     var cn_download_3 = document.getElementById('d3').getAttribute('onclick')
-    var en_download_3 = "window.open('https://www.curseforge.com/minecraft/mc-mods/epicfight-dual-tachi-dual-longsword');";
+    var en_download_3 = "window.open('https://www.curseforge.com/members/playedminecraftfor114514min/projects');";
     //只狼糖模组
     var cn_download_4 = document.getElementById('d4').getAttribute('onclick')
-    var en_download_4 = "window.open('https://www.curseforge.com/minecraft/mc-mods/epicfight-sekiro-candy');";
+    var en_download_4 = "window.open('https://www.curseforge.com/members/playedminecraftfor114514min/projects');";
+
+    var cn_download_5 = document.getElementById('d5').getAttribute('onclick')
+    var en_download_5 = "window.open('https://www.curseforge.com/members/playedminecraftfor114514min/projects');";
+    var cn_download_6 = document.getElementById('d6').getAttribute('onclick')
+    var en_download_6 = "window.open('https://www.curseforge.com/members/playedminecraftfor114514min/projects');";
+    var cn_download_7 = document.getElementById('d7').getAttribute('onclick')
+    var en_download_7 = "window.open('https://www.curseforge.com/members/playedminecraftfor114514min/projects');";
+    var cn_download_8 = document.getElementById('d8').getAttribute('onclick')
+    var en_download_8 = "window.open('https://www.curseforge.com/members/playedminecraftfor114514min/projects');";
 
     // 遍历并翻译整个文档
     function translateDocument() {
@@ -285,6 +295,10 @@
             document.getElementById('d2').setAttribute('onclick', en_download_2);
             document.getElementById('d3').setAttribute('onclick', en_download_3);
             document.getElementById('d4').setAttribute('onclick', en_download_4);
+            document.getElementById('d5').setAttribute('onclick', en_download_5);
+            document.getElementById('d6').setAttribute('onclick', en_download_6);
+            document.getElementById('d7').setAttribute('onclick', en_download_7);
+            document.getElementById('d8').setAttribute('onclick', en_download_8);
 
             document.getElementById("fgdg").style.fontSize = 10;
 
@@ -303,6 +317,10 @@
             document.getElementById('d2').setAttribute('onclick', cn_download_2);
             document.getElementById('d3').setAttribute('onclick', cn_download_3);
             document.getElementById('d4').setAttribute('onclick', cn_download_4);
+            document.getElementById('d5').setAttribute('onclick', cn_download_5);
+            document.getElementById('d6').setAttribute('onclick', cn_download_6);
+            document.getElementById('d7').setAttribute('onclick', cn_download_7);
+            document.getElementById('d8').setAttribute('onclick', cn_download_8);
 
             document.getElementById("fgdg").style.fontSize = 14;
 
@@ -343,3 +361,75 @@
         }
         return swapped;
     }
+
+    // 创建样式
+        const style = document.createElement('style');
+        style.textContent = `
+            #backToTopBtn {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                width: 30px;
+                height: 30px;
+                padding-bottom: 5px;
+                background: #ff5100;
+                color: white;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                font-size: 12px;
+                transition: all 0.3s ease;
+                opacity: 0;
+                visibility: hidden;
+                z-index: 1000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            #backToTopBtn.show {
+                opacity: 0.7;
+                visibility: visible;
+            }
+            
+            #backToTopBtn:hover {
+                transform: translateY(-1px);
+                opacity: 1;
+            }
+            
+            #backToTopBtn:active {
+                transform: translateY(0);
+            }
+        `;
+        document.head.appendChild(style);
+
+        // 创建返回顶部按钮
+        const backToTopBtn = document.createElement('button');
+        backToTopBtn.id = 'backToTopBtn';
+        backToTopBtn.innerHTML = '↑';
+        backToTopBtn.title = '返回顶部';
+        document.body.appendChild(backToTopBtn);
+        
+        // 滚动事件监听
+        window.addEventListener('scroll', function() {
+            // 更新滚动指示器
+            const winHeight = window.innerHeight;
+            const docHeight = document.documentElement.scrollHeight - winHeight;
+            const scrollTop = window.pageYOffset;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            
+            // 控制返回顶部按钮显示/隐藏
+            if (scrollTop > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        
+        // 点击按钮返回顶部
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
