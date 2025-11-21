@@ -304,6 +304,9 @@
 
             document.querySelector('meta[http-equiv="content-language"]').content = "en-us";
 
+            document.getElementById("thanks").style.display = "none";
+            document.getElementById("thanks_div").style.display = "none";
+
         }else{
             document.getElementById("language").innerHTML = "English";
             document.title =  "Minecraft史诗战斗整合包、烦村整合包 - 烦村黄昏";
@@ -325,6 +328,9 @@
             document.getElementById("fgdg").style.fontSize = 14;
 
             document.querySelector('meta[http-equiv="content-language"]').content = "zh";
+
+            document.getElementById("thanks").style.display = "block";
+            document.getElementById("thanks_div").style.display = "block";
         }
         translationDict = swapKeysAndValues(translationDict)
     }
