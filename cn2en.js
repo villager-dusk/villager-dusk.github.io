@@ -86,7 +86,7 @@
         "村黄昏有众多内容，根据玩家反馈得知，许多人钟情于其中某个单独功能，为此下面提供了部分独立功能子整合包，可供单独下载。": "Village Dusk offers modular sub-modpacks for standalone features.",
         "某些武器还有格外功能，如：黑盾有格挡技能；红宝剑有星火燎原技能；盔影胸甲有突刺技能。": "Some weapons have extra functions: Black Shield blocks, Red Sword ignites, Shadow Chestplate thrusts.",
         "查看更多...": "View more...",
-        "欢迎与我们成为合作伙伴，期待商业合作、技术合作、服务器赞助，等...": "Partner with us! We welcome commercial and technical collaborations, server sponsorships, and other opportunities.",
+        "欢迎与我们成为合作伙伴，期待商业合作、技术合作、赞助，等...": "Partner with us! We welcome commercial and technical collaborations, server sponsorships, and other opportunities.",
         "正在加载...": "Loading...",
         "武器模组": "Weapon",
         "技能模组": "Skill",
