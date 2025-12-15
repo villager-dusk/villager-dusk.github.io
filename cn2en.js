@@ -307,9 +307,12 @@
             document.getElementById("thanks").style.display = "none";
             document.getElementById("thanks_div").style.display = "none";
 
+            document.getElementById("qqq").style.display = "none";
+
         }else{
             document.getElementById("language").innerHTML = "English";
             document.title =  "Minecraft史诗战斗整合包、烦村整合包 - 烦村黄昏";
+            
             document.querySelector('meta[name="description"]').content = '烦村黄昏，英文名：Villager Dusk，是一款高质量Minecraft史诗战斗整合包、烦村整合包。热血动作、激烈战斗，让您在MC中体验不一样的PK玩法！';
             document.getElementById("donate").style.display = "none";
 
@@ -331,6 +334,8 @@
 
             document.getElementById("thanks").style.display = "block";
             document.getElementById("thanks_div").style.display = "block";
+
+            document.getElementById("qqq").style.display = "block";
         }
         translationDict = swapKeysAndValues(translationDict)
     }
