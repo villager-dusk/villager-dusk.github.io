@@ -1,657 +1,1115 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Minecraft史诗战斗整合包、烦村整合包 - 烦村黄昏</title>
-    <meta name="description" content="烦村黄昏，英文名：Villager Dusk，是一款高质量Minecraft史诗战斗整合包、烦村整合包。热血动作、激烈战斗，让您在MC中体验不一样的PK玩法！"/>
-    <meta http-equiv="content-language" content="zh">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/loading.css">
-</head>
-<body style="font-family: Verdana, Geneva, Tahoma, sans-serif; background-color: #000; overflow-x: hidden;">
-<div id="main" style="display: none;">
-    <div class="language">
-        <span class="english" onclick="EnCn();" id="language">English</span>
-    </div>
-    <script>
-        function EnCn(){
-            translateDocument();
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>烦村黄昏 | Villager Dusk - Minecraft史诗战斗整合包、烦村整合包</title>
+    <meta name="description" content="烦村黄昏是一款高质量的Minecraft史诗战斗整合包，包含50+原创角色、90+专属技能、30+战斗动作和40+绚丽特效，让您在MC中体验不一样的PK玩法！" />
+    <meta name="keywords" content="Minecraft,烦村黄昏,整合包,史诗战斗,烦人的村民,模组" />
+    
+    <!-- 图标 -->
+    <link rel="stylesheet" href="all.min.css" />
+    
+    <style>
+        /* 添加Loading样式 */
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
         }
-    </script>
-    <div class="header">
-        <div class="headerCon">
-            <div style="float: left;">
-                <img src="images/logo.png" style="cursor:pointer; width:64px; height:64px; border-radius: 10px; padding-right: 2px;">
-                <span>
-                    <span style="position: relative; top:-32px; font-size: 15px;">烦村黄昏</span>
-                    <span style="position: relative; font-size: 11px; left: -66px; top: -14px; opacity: 0.5;">高质量Minecraft史诗战斗整合包</span>
-                </span>
-            </div>
-            <ul id="nav" class="nav">
-                <li><a href="#Introduction" class="nav-item">介绍</a></li>
-                <li><a href="#download" class="nav-item">下载</a></li>
-                <li><a href="#faqs" class="nav-item">FAQs</a></li>
-                <li id="videos_title"><a href="#videos" class="nav-item">视频</a></li>
-                <li><a href="#partner" class="nav-item">合作伙伴</a></li>
-                <li id="thanks"><a href="#thanks_div" class="nav-item">感谢名单</a></li>
-                <li><a href="#connect" class="nav-item">联系我们</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="sectionCon">
-        <a id="Introduction" class="section Introduction active">
-            <div style="position:relative; color:#fff; z-index: 9999; text-shadow: 3px 6px 5px #3232327a; text-align: center; background: rgba(0,0,0,0);padding: 20px; top: 20%; ">
-                <div>
-                    <span class="f2">烦村黄昏</span>
-                    <span style="padding-left: 10px;"></span>
-                    <span class="f1">高质量Minecraft史诗战斗整合包</span>
-                </div>
-                <div class="f3">
-                    <span class="f1">热血动作、激烈战斗</span>，
-                    <span>让您在MC中体验</span>
-                    <span class="f4">不一样的PK玩法！</span>
-                </div>
-            </div>
-            <video id="video" src="video1.mp4" autoplay loop muted height="auto" width="100%" class="video" style="display:none; filter: blur(0px); border-radius: 30px; transition: opacity 0.8s ease, filter 1s ease;"></video>
-            <img id="picture" src="images/video_bg.png" class="video" style="display: block; border-radius: 20px;">
-            
-        </a>
-        <a id="detail" class="section detail" style="background: url('images/bg2.png'); background-size:cover;">
-            <div class="row sectionbody1">
-                <div class="col-4 col-xs-12">
-                    <div>
-                        <img src="images/s1_1.png" alt="">
-                        <h3><span style="font-size: 60px;">50+</span>原创角色</h3>
-                        <p>
-                            例如，烦人的村民中的典型角色：史蒂夫、格雷夫、蛇刃Herobrine、黯锤Herobrine、芥末等等。
-                        </p>
-                    </div>
-                </div>
-                <div class="col-4 col-xs-12">
-                    <div>
-                        <img src="images/s1_2.png" alt="">
-                        <h3><span style="font-size: 60px;">90+</span>专属技能</h3>
-                        <p>不同的角色可释放不同的专属技能，例如：芥末的铁傀儡雨、蛇刃Herobrine的解放蛇刃、蓝恶魔的三叉戟狂欢节、史蒂夫的战神之刃觉醒等等。</p>
-                    </div>
-                </div>
-                <div class="col-4 col-xs-12">
-                    <div>
-                        <img src="images/s1_3.png" alt="">
-                        <h3><span style="font-size: 60px;">30+</span>战斗动作</h3>
-                        <p>对应角色技能，不同的技能有不同的专属战斗动作。</p>
-                    </div>
-                </div>
-                <div class="col-4 col-xs-12">
-                    <div>
-                        <img src="images/s1_4.png" alt="">
-                        <h3><span style="font-size: 60px;">40+</span>绚丽特效</h3>
-                        <p>众多技能都有独特的绚丽特效，如大范围爆炸、连锁闪电、兵器碰撞火花等等。</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row sectionbody2">
-                
-                <div class="col-4 col-xs-12">
-                    <div>
-                        <img id="m" src="images/m1.gif" style="width: 128px;height: 128px;border-radius: 64px;">
-                        <h3>示例角色</h3>
-                        <p>点击可随机切换、查看其它角色形象。</p>
-                        <p><button type="button" class="morebtn2" onclick="random_m();">点此切换</button></p>
-                        
-                    </div>
-                </div>
-                <div class="col-4 col-xs-12">
-                    <div>
-                        <img id="j" src="images/j1.gif" style="width: 128px;height: 128px;border-radius: 64px;">
-                        <h3>示例技能</h3>
-                        <p>点击可随机切换、查看其它技能效果。</p>
-                        <p><button type="button" class="morebtn2" onclick="random_j();">点此切换</button></p>
-                    </div>
-                </div>
-                <div class="col-4 col-xs-12">
-                    <div>
-                        <img id="d" src="images/d1.gif" style="width: 128px;height: 128px;border-radius: 64px;">
-                        <h3>示例动作</h3>
-                        <p>点击可随机切换、查看其它角色动作。</p>
-                        <p><button type="button" class="morebtn2" onclick="random_d();">点此切换</button> </p>
-                    </div>
-                </div>
-                <div class="col-4 col-xs-12">
-                    <div>
-                        <img id="t" src="images/t1.gif" style="width: 128px;height: 128px;border-radius: 64px;">
-                        <h3>示例特效</h3>
-                        <p>点击可随机切换、查看其它技能特效。</p>
-                        <p><button type="button" class="morebtn2" onclick="random_t();">点此切换</button></p>
-                    </div>
-                </div>
-                <script>
-                    function getRandomElement(array) {
-                        const randomIndex = Math.floor(Math.random() * array.length);
-                        return array[randomIndex];
-                    }
-                    function random_m(){
-                        var arr = [1];
-                        document.getElementById("m").src = "images/m" + getRandomElement(arr)+".gif";
-                    }
-                    random_m();
-                    function random_j(){
-                        var arr = [1,2,3,4];
-                        document.getElementById("j").src = "images/j" + getRandomElement(arr)+".gif";
-                    }
-                    random_j();
-                    function random_d(){
-                        var arr = [1,2,3];
-                        document.getElementById("d").src = "images/d" + getRandomElement(arr)+".gif";
-                    }
-                    random_d();
-                    function random_t(){
-                        var arr = [1,2,3];
-                        document.getElementById("t").src = "images/t" + getRandomElement(arr)+".gif";
-                    }
-                    random_t();
-                </script>
-            </div>
-        </a>
-        <a id="download" class="section download" style="min-height: 920px; height: auto; padding-bottom: 20px; background: url('images/bg3.png'); background-size:cover;">
-            <div class="row">
-                <div class="sectionhead sectionhead_padding">
-                    <h3>
-                        <span style="font-size: 44px; padding-right: 10px;">烦村黄昏，整合包、模组</span>下载
-                    </h3>
-                    <p style="font-size: 18px;">
-                        <span style="font-size: 30px; padding-right: 10px;">客户端要求：</span>JDK（Java）17+、Minecraft1.19.2、Forge 43.4.1+
-                    </p>
-                </div>
-                <div class="col-2 col-xs-12">
-                    <div class="sectionhead">
-                        <h3 style="font-size: 44px;">烦村黄昏<span style="font-size:24px; padding-left:5px;">整合包下载</span></h3>
-                        <p>最新版本：<span>v3.4.1</span></p>
-                    </div>
-                    <div class="row leftbox">
-                        <div class="col-1 col-xs-12">
-                            <div>
-                                <img src="images/s1_3.png">
-                                <p>
-                                    <button id="d1" type="button" class="morebtn" onclick="window.open('https://pan.quark.cn/s/40907aff35a1');">
-                                        整合包
-                                        <span style="font-size:12px; padding-left:2px;">下载</span>
-                                    </button>
-                                </p>
-                                <p style="font-size: 11px;">模组目前有“生存”、“竞技场”两种模式，游戏加载、玩法、操作、常见疑问等，<br>请见下方FAQs中的详细介绍。</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="col-2 col-xs-12">
-                    <div class="sectionhead">
-                        <h3>烦村黄昏<span style="font-size:12px; padding-left:5px;">子功能</span></h3>
-                        <p style="padding: 0 20px; font-size:13px;">
-                            烦村黄昏有众多内容，许多人钟情于其中某个单独功能，或某种特殊玩法，例如纯PK：
-                            <span style="font-size:16px; ">PVP或PVE</span>
-                            <span>，为此我们提供了部分独立功能子整合包、子模组，供单独下载使用。</span>
-                        </p>
-                    </div>
-                    <div class="row rightbox">
-                        
-                        <div class="col-2 col-xs-12">
-                            <div>
-                                <h2>泛光刀光<span style="font-size: 10px; padding-left: 5px;">特效模组</span></h2>
-                                <ul>
-                                    <li id="fgdg">刀光模组，可让光刀呈现非常亮丽的发光效果。</li>
-                                    <p><button id="d2" type="button" class="morebtn2" onclick="window.open('https://pan.quark.cn/s/c997f2e9e8a4');">点此下载</button></p>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-2 col-xs-12">
-                            <div>
-                                <h2>双太刀<span style="font-size: 10px; padding-left: 5px;">武器模组</span></h2>
-                                <ul>
-                                    <li>使玩家可以双持太刀进行战斗。<br><span style="font-size: 10px;">注：右持后，有独立的战斗动作和技能。</span></li>
-                                    <p><button id="d3" type="button" class="morebtn2" onclick="window.open('https://pan.quark.cn/s/c07fe22c524e');">点此下载</button></p>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-2 col-xs-12">
-                            <div>
-                                <h2>概率裁决<span style="font-size: 10px; padding-left: 5px;">技能模组</span></h2>
-                                <ul>
-                                    <li>增强玩家伤害。<br><span style="font-size: 10px;">玩家击中目标时，有概率随机释放雷击、爆炸、火焰、风刃、中毒等技能，对目标进行二次打击。</span></li>
-                                    <p><button id="d6" type="button" class="morebtn2" onclick="window.open('https://pan.quark.cn/s/06db2911acfa');">点此下载</button></p>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-2 col-xs-12">
-                            <div>
-                                <h2>守护契约<span style="font-size: 10px; padding-left: 5px;">技能模组</span></h2>
-                                <ul>
-                                    <li>增强玩家防护。<br><span style="font-size: 10px;">当玩家被攻击时，有概率触发回血、护盾、隐身、霸体、急跑等效果，使玩家不易被击杀。</span></li>
-                                    <p><button id="d5" type="button" class="morebtn2" onclick="window.open('https://pan.quark.cn/s/f775ce57475f');">点此下载</button></p>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-2 col-xs-12">
-                            <div>
-                                <h2>只狼糖<span style="font-size: 10px; padding-left: 5px;">物品模组</span></h2>
-                                <ul>
-                                    <li>可以让玩家获得特殊的药水效果。<br><span style="font-size: 10px;">注：药水效果：以损失部分生命值为代价，在一定时间内提高攻击力。</span></li>
-                                    <p><button id="d4" type="button" class="morebtn2" onclick="window.open('https://pan.quark.cn/s/e24566bf1db4');">点此下载</button></p>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-2 col-xs-12">
-                            <div>
-                                <h2>红蓝阵营<span style="font-size: 10px; padding-left: 5px;">战术模组</span></h2>
-                                <ul>
-                                    <li>用于多人联机游戏，可使不同的玩家处于红蓝两种阵营，以便进行团队式战斗。<br><span style="font-size: 10px;">玩家脚下会有自己阵营颜色的特效光圈，可以此区分敌友。</span><br><span style="font-size: 10px;">注：队友间攻击不会产生直接伤害，但不会阻止特殊效果，如燃烧等带有的额外伤害。</span></li>
-                                    <p><button id="d7" type="button" class="morebtn2" onclick="window.open('https://pan.quark.cn/s/dff073454b6f');">点此下载</button></p>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-2 col-xs-12">
-                            <div>
-                                <h2>无弓之箭<span style="font-size: 10px; padding-left: 5px;">技能模组</span></h2>
-                                <ul>
-                                    <li>一个简单却有用的小功能，让你不需要弓或弩，点右鼠标即可快速、连续、大量的射出箭。<br><span style="font-size: 10px;">当然，前题是事先装备好了大量的箭矢。</span></li>
-                                    <p><button id="d8" type="button" class="morebtn2" onclick="window.open('https://pan.quark.cn/s/b1078569b97e');">点此下载</button></p>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a id="faqs" class="section faqs" style="background: url('images/bg4.png'); background-size:cover;">
-            <div class="sectionhead">
-                <h3>FAQs</h3>
-                <p style="padding:0 20px;"><span style="font-size: 28px;">常见问题及解答</span>，如这里没有您想了解的信息，请联系我们咨询或反馈。</p>
-            </div>
-            <script>
-                function show_faq(n){
-                    var faq_title = document.getElementById("faq_title_"+n);
-                    var faq_detail = document.getElementById("faq_detail_"+n);
-                    if(faq_title.innerHTML == "?"){
-                        faq_title.innerHTML = "-"
-                        faq_detail.style.display = "block";
-                    }else{
-                        faq_title.innerHTML = "?"
-                        faq_detail.style.display = "none";
-                    }
-                }
-            </script>
-            <div id="faq_content">
-                
-                
-            </div>
-            <script>
-                function more_faqs(){
-                    document.getElementById("more_btn").style.display = "none";
-                    document.getElementById("more_faqs").style.display = "block";
-                }
-            </script>
-        </a>
-        <div id="videos" class="section connect" style="min-height:620px; background: url('images/bg7.png'); background-size:cover;">
-            <div class="sectionhead">
-                <h3>
-                    视频
-                    <span onclick="window.open('https://space.bilibili.com/2010633729/')" class="d258177">点此查看更多视频...</span>
-                </h3>
-                <p style="padding:0 10px 0 10px;">通过视频更直观的了解“烦村黄昏”，视频包括更新介绍、玩法说明、效果展示等...</p>
-            </div>
-            <div class="sectionbody row" style="min-height: 360px; max-width:1600px; width: 90%; background: rgba(131, 128, 128, 0.24); padding-bottom: 30px;"> 
-                <div class="clo-12 col-xs-12" style="font-size: 12px;">
-                    <div style="text-align: center;">
 
-                        <div class="image-with-text d258175" style="background-image: url('images/b12.webp');">
-                            <span class="d258174" onclick="window.open('https://www.bilibili.com/video/BV1Pza1zKEbu/');">▶</span>
-                            <span>遇到这种局怎么打？请果断按下Alt+F4。^_^...</span>
-                        </div>
-                        <div class="image-with-text d258175" style="background-image: url('images/b11.webp');">
-                            <span class="d258174" onclick="window.open('https://www.bilibili.com/video/BV1Dje7zNEMN/');">▶</span>
-                            <span>"烦村黄昏"3.0.3c发布，内容速览。</span>
-                        </div>
-                        <div class="image-with-text d258175" style="background-image: url('images/b10.webp');">
-                            <span class="d258174" onclick="window.open('https://www.bilibili.com/video/BV1w4b5zAENx/');">▶</span>
-                            <span>烦村黄昏v3.0.1，新增：盾击、铁傀儡召唤</span>
-                        </div>
-                        <div class="image-with-text d258175" style="background-image: url('images/b9.webp');">
-                            <span class="d258174" onclick="window.open('https://www.bilibili.com/video/BV1DuthzREFP/');">▶</span>
-                            <span>烦村黄昏 v3.0.0 hoxfix3，新增：踢击、处决技能</span>
-                        </div>
-                        <div class="image-with-text d258175" style="background-image: url('images/b1.webp');">
-                            <span class="d258174" onclick="window.open('https://www.bilibili.com/video/BV1DBYqzoE8D/');">▶</span>
-                            <span>赤手空拳1v2，击败俩暴民！</span>
-                        </div>
-                        <div class="image-with-text d258175" style="background-image: url('images/b2.webp');">
-                            <span class="d258174" onclick="window.open('https://www.bilibili.com/video/BV1GQYezHED2/');">▶</span>
-                            <span>战斧vs欧洲大剑。</span>
-                        </div>
-                        <div class="image-with-text d258175" style="background-image: url('images/b5.webp');">
-                            <span class="d258174" onclick="window.open('https://www.bilibili.com/video/BV1DMbtzQEc4/');">▶</span>
-                            <span>村口的战斗，看谁是最强村民！</span>
-                        </div>
-                        <div class="image-with-text d258175" style="background-image: url('images/b3.webp');">
-                            <span class="d258174" onclick="window.open('https://www.bilibili.com/video/BV1GQYezHED2/');">▶</span>
-                            <span>两名南非战士激烈对拼！</span>
-                        </div>
-                        <div class="image-with-text d258175" style="background-image: url('images/b6.webp');">
-                            <span class="d258174" onclick="window.open('https://www.bilibili.com/video/BV1rJbWzZENU/');">▶</span>
-                            <span>斯蒂夫vs格雷夫，斯蒂夫：“我有一套从天而降的刀法！”</span>
-                        </div>
-                        <div class="image-with-text d258175" style="background-image: url('images/b4.webp');">
-                            <span class="d258174" onclick="window.open('https://www.bilibili.com/video/BV1DMbtzQEc4/');">▶</span>
-                            <span>狂暴蓝恶魔vs一群铁傀儡，蓝恶魔不敌，选择自爆！</span>
-                        </div>
-                        <div class="image-with-text d258175" style="background-image: url('images/b7.webp');">
-                            <span class="d258174" onclick="window.open('https://www.bilibili.com/video/BV1bKt7znEWq/');">▶</span>
-                            <span>技能演示：格挡与反击。</span>
-                        </div>
-                        <div class="image-with-text d258175" style="background-image: url('images/b8.webp');">
-                            <span class="d258174" onclick="window.open('https://www.bilibili.com/video/BV1PNhnzbEVZ/');">▶</span>
-                            <span>刀斧手vs黑曜石突刺。</span>
-                        </div>
-                    </div>
-                    <div style="text-align: center;">
-                    </div>
-                </div>
-            </div>
+        #loading.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loading-text {
+            font-family: "-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif";
+            color: var(--text-color-secondary);
+            font-weight: 500;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        /* 环形进度条 */
+        .circular-progress {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .circular-progress svg {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+        }
+
+        .circular-progress circle {
+            fill: none;
+            stroke-width: 6;
+            stroke-linecap: round;
+        }
+
+        .circular-progress circle.bg {
+            stroke: rgba(255, 123, 58, 0.2);
+        }
+
+        .circular-progress circle.progress {
+            stroke: var(--primary-color);
+            /* 2 * π * r = 2 * 3.14159 * 36 ≈ 226.2 */
+            stroke-dasharray: 226.2;
+            stroke-dashoffset: 226.2;
+            transition: stroke-dashoffset 0.3s ease;
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-color-secondary);
+        }
+
+        /* 隐藏页面内容直到加载完成 */
+        .page-content {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .page-content.visible {
+            opacity: 1;
+        }
+
+        :root {
+            --bg-color: #fff;
+            --text-color: #2c3e50;
+            --text-color-secondary: #3a5169;
+            --primary-color: #ff7b3a;
+            --border-color: #eaecef;
+            --code-bg-color: #f8f8f8;
+            --content-width: 740px;
+            --navbar-height: 100px;
+            --sidebar-width: 20rem;
+        }
+
+        html[data-theme="dark"] {
+            --bg-color: #1d1e1f;
+            --text-color: #adbac7;
+            --text-color-secondary: #768390;
+            --border-color: #444c56;
+            --code-bg-color: #2d333b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .b{
+            opacity: 0.9;
+            padding: 0 5px 0 5px;
+        }
+        .b:hover{
+            text-decoration: none;
+            opacity: 1;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* 导航栏 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--navbar-height);
+            background-color: var(--bg-color);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .navbar .brand {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+        .navbar .brand:hover{
+            text-decoration: none;
+        }
+
+        .navbar .logo {
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 6px;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            margin-left: auto;
+            gap: 2rem;
+        }
+
+        .navbar .nav-link {
+            color: var(--text-color-secondary);
+            font-weight: 500;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        /* 窄屏时只显示图标 */
+        @media (max-width: 768px) {
+            .navbar .nav-link span {
+                display: none;
+            }
+            
+            .navbar .nav-links {
+                gap: 1.5rem;
+            }
+            
+            .navbar .nav-link i {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* 主内容 */
+        .main-content {
+            margin-top: var(--navbar-height);
+            padding: 2rem 0;
+            min-height: calc(100vh - var(--navbar-height));
+        }
+
+        /* Hero区域 */
+        .hero {
+            text-align: center;
+            padding: 3rem 1rem 5rem 1rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .hero .logo-large {
+            height: 120px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .hero .description {
+            font-size: 1.5rem;
+            color: var(--text-color-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .action-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .action-button.primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+
+        .action-button.primary:hover {
+            background-color: #e66a2c;
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 123, 58, 0.3);
+        }
+
+        .action-button.default {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .action-button.default:hover {
+            background-color: rgba(255, 123, 58, 0.1);
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+
+        /* 特性面板 */
+        .feature-panel {
+            padding: 4rem 0 6rem 0;
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        .feature-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            background: var(--bg-color);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-item h3 i {
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .feature-item p {
+            color: var(--text-color-secondary);
+            line-height: 1.6;
+        }
+
+        /* 内容区域 */
+        .content-section {
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .content-section h1 {
+            font-size: 2.2rem;
+            margin: 2rem 0 1.5rem;
+            color: var(--text-color);
+        }
+
+        .content-section h2 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            color: var(--text-color);
+        }
+
+        .content-section h3 {
+            font-size: 1.4rem;
+            margin: 1.5rem 0 1rem;
+            color: var(--text-color);
+        }
+
+        .content-section p {
+            margin: 1rem 0;
+            line-height: 1.8;
+        }
+
+        /* 代码块 */
+        .code-block {
+            background-color: var(--code-bg-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+        }
+
+        .code-block code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.9em;
+            color: var(--text-color);
+        }
+
+        /* 表格 */
+        .content-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95em;
+        }
+
+        .content-table th,
+        .content-table td {
+            border: 1px solid var(--border-color);
+            padding: 0.8rem 1rem;
+            text-align: left;
+        }
+
+        .content-table th {
+            background-color: rgba(0, 0, 0, 0.03);
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .content-table tr:nth-child(even) {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        /* 下载区块 */
+        .download-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 4rem 0;
+            border-radius: 16px;
+            margin: 3rem 0;
+        }
+
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 2rem auto;
+        }
+
+        .download-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .download-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .download-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .version-tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.2rem 0.8rem 0.3rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.8rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-top: 1.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #e66a2c;
+            text-decoration: none;
+        }
+
+        .download-btn i {
+            margin-right: 8px;
+        }
+
+        /* 模组展示区块 */
+        .mods-section {
+            padding: 4rem 0;
+        }
+
+        .mods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        .mod-card {
+            background: var(--bg-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .mod-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .mod-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .mod-type {
+            background-color: rgba(255, 123, 58, 0.1);
+            color: var(--primary-color);
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .mod-desc {
+            color: var(--text-color-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .mod-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0.6rem;
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .mod-btn:hover {
+            background-color: rgba(255, 123, 58, 0.1);
+            text-decoration: none;
+        }
+
+        .mod-btn i {
+            margin-right: 6px;
+        }
+
+        /* FAQ样式 */
+        .faq-section {
+            margin: 3rem 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+            color: var(--primary-color);
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: var(--text-color-secondary);
+            line-height: 1.7;
+        }
+
+        .faq-answer.show {
+            max-height: 500px;
+            padding-top: 1rem;
+        }
+
+        /* 页脚 */
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #adbac7;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #444c56;
+            color: #adbac7;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 0 1rem;
+            }
+            
+            .navbar .nav-links {
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .description {
+                font-size: 1.2rem;
+            }
+            
+            .feature-wrapper,
+            .mods-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-section {
+                padding: 2rem 1rem;
+            }
+            
+            .hero {
+                padding: 3rem 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            
+            .hero .actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .action-button {
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .navbar .brand span {
+                display: none;
+            }
+        }
+
+        /* 斜角HOT标签样式 */
+        .download-card {
+            position: relative; /* 确保有相对定位 */
+            overflow: hidden; /* 防止标签溢出 */
+        }
+
+        .hot-ribbon {
+            position: absolute;
+            top: 0px;
+            right: -35px;
+            background: #ff7b3a;
+            color: white;
+            padding: 6px 35px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transform: rotate(45deg);
+            z-index: 10;
+        }
+        .hot-ribbon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: rotate(-45deg) translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading界面 -->
+    <div id="loading">
+        
+        <div class="circular-progress">
+            <svg>
+                <circle class="bg" cx="40" cy="40" r="36"></circle>
+                <circle class="progress" id="progressBar" cx="40" cy="40" r="36"></circle>
+            </svg>
+            <div class="progress-text" id="progressText">0%</div>
         </div>
-        <div id="partner" class="section connect" style="min-height:620px; background: url('images/bg5.png'); background-size:cover;">
-            <div class="sectionhead">
-                <h3>合作伙伴</h3>
-                <p style="padding:0 10px 0 10px;">欢迎与我们成为合作伙伴，期待商业合作、技术合作、赞助，等...</p>
-            </div>
-            <div class="sectionbody row" style="height: 120px; max-width:1600px; opacity: 0.86; background: #211923;"> 
-                <div class="clo-12 col-xs-12" style="font-size: 12px;">
-                    <div style="text-align: center;">
-                        <a onclick="window.open('https://space.bilibili.com/1015730693/');" target="_blank" style="cursor: pointer;">
-                            <img src="images/bilibili.png" style="height: 48px; padding:10px;" class="d258172">
-                        </a>
-                        <a href="https://www.jshaman.com/" target="_blank">
-                            <img src="images/jshaman.png" style="height: 46px; padding:10px;" class="d258172">
-                        </a>
-                        <img src="images/github.io.svg" style="height: 32px; padding:10px; opacity: 0.5;">
-                        <img src="images/kuake.png" style="height: 48px; filter: invert(100%); padding:10px; opacity: 0.5;">
-                    </div>
-                    <div style="text-align: center;">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="thanks_div" class="section connect" style="min-height:620px; background: url('images/bg7.png'); background-size:cover;">
-            <div class="sectionbody row" style="height: fit-content; max-width:1600px; opacity: 0.86; background: #211923; padding-top: 10px; padding-bottom: 20px;"> 
-                <div class="sectionhead">
-                    <h3>感谢名单</h3>
-                </div>
-                <p style="padding:0 10px 0 10px; text-align: center;">
-                    感谢以下B站用户为作者UP主充电打赏！
-                    <span style="padding-left: 2px; text-align: center; font-size: 12px;">如有遗漏，请联系补充...</span>
-                    <br>
-                    <span style="padding:0 10px 0 10px; text-align: center; font-size: 12px;">烦村黄昏是免费整合包，您的支持是我们持续更新的动力！</span>
-                </p>
-                <div class="clo-12 col-xs-12" style="font-size: 12px;">
-                    <div style="text-align: center; padding:15px 20px 20px 20px; background:rgba(0,0,0,0.4);border-radius: 5px;margin: 10px;">
-                        TWZ_ztw、清柯立峰、NAPFALL、MC-附魔台、Sculk_steve、miki114514514、叫我劳姜就行、李华之阴鱼梦想、伍名
-                    </div>
-                </div>
-            </div>
-        </div>
-        <a id="connect" class="section connect" style="min-height:720px; background: url('images/bg6.png'); background-size:cover; ">
-            <div class="sectionhead">
-                <h3>联系我们</h3>
-                <p style="padding:0 10px 0 10px;">如您在整合包使用过程中、游戏过程中遇到问题或进行合作、咨询、建议等，请用以下方式联系我们。</p>
-            </div>
-            <div class="sectionbody row" style="min-height: 260px; max-width:1600px; opacity: 0.86; padding-bottom: 30px;"> 
-                <div class="clo-12 col-xs-12" style="font-size: 12px;">
-                    <p>
-                        <span style="font-size:20px;padding-right: 5px;">烦村黄昏</span>
-                        高质量Mineraft战斗整合包
-                    </p>
-                    <p>官网：<span style="font-size:13px">https:villager-dusk.github.io</span></p>
-                    <p>
-                        哔哩哔哩
-                        <span style="font-size:10px;margin-left:3px;">频视频道：</span>
-                        <span class="d25817" onclick="window.open('https://space.bilibili.com/1015730693');">https://space.bilibili.com/1015730693</span>
-                        『欢迎关注』
-                    </p>
-                    <p></p>
-                </div>
-                <div class="clo-12 col-xs-12">
-                    <p><b>联系方式</b></p>
-                    <p>QQ：<span class="connectqq">785319346</span></p>
-                </div>
-                <hr style="margin:10px 20px 10px 20px;">
-                <div class="clo-12 col-xs-12" style="font-size:12px; opacity: 0.9;">
-                    <p id="qqq">玩家QQ群：1073218502、1073217587、180748919、828359394、243868451</p>
-                    <p id="donate" style="display: none;">
-                    <button type="button" class="morebtn2" onclick="window.open('https://paypal.me/w2sft');">Donate with Paypal</button>
-                    </p>
-                </div>
-            </div>
-            <div class="sectionfooter">
-                <p>Copyright © 2025 villager-dusk.github.io, All right reserved.</p>
-            </div>
-        </a>
-        <p style="padding-bottom: 10px;"></p>
+        <div class="loading-text">Loading...</div>
     </div>
-</div>
-<div id="loading" class="loading" style="font-size: 16px;">
-    <div class="txtwav slow" style="padding-bottom: 5px;">
-        <span>
-            <img src="images/logo.png" style="width: 64px; height:64px;border-radius: 5px; padding-right: 2px;">
-        </span>
-    </div>
-    <div class="txtwav slow">
-		<span>L</span>
-		<span>o</span>
-		<span>a</span>
-		<span>d</span>
-        <span>i</span>
-        <span>n</span>
-        <span>g</span>
-		<span>.</span>
-		<span>.</span>
-		<span>.</span>
-	</div>
-</div>
-<script>
-    window.onload = function() { 
-        document.getElementById("loading").style.display = "none";
-        document.getElementById("main").style.display = "block";
-        document.getElementById("faq_content").innerHTML = `
-        <div>
-            <div class="sectionbody">
-                <dl>
-                    <dt class="tableview tablelist show" >
-                        <div style="font-size:16px;border-radius: 20px;background: #fff;color: #000;padding: 10px 20px;opacity: 0.8;margin: 9px;">
-                            问：烦村黄昏整合包需要什么客户端环境？  
-                            
-                        </div>
-                        <div id="faq_detail_1" class="faq_detail_show">
-                            答：烦村黄昏整合包、子功能整合包或模组，需要的客户端环境：JDK（Java） 17+、Minecraft 1.19.2、Forge 43.4.1+。
-                        </div>
-                    </dt>
-                </dl>
-            </div>
-            <div class="sectionbody">
-                <dl>
-                    <dt class="tableview tablelist show" >
-                        <div style="font-size:16px;border-radius: 20px;background: #fff;color: #000;padding: 10px 20px;opacity: 0.8;margin: 9px;">
-                            <span onclick="show_faq(2)" style="cursor: pointer;">问：下载单独的整合包、模组后怎样安装？</span>
-                            <span id="faq_title_2" class="faq_title" onclick="show_faq(2)">?</span>
-                        </div>
-                        <div id="faq_detail_2" class="faq_detail">
-                            答：<br>
-                            <span style="font-size: 16px;">1、整合包安装：</span><br>
-                            PCL/PCL-CE启动器：直接把下载好的整合包文件拖进启动器窗口即可。<br>
-                            HMCL/FCL启动器：下载 -> 整合包 -> 安装整合包 -> 导入本地整合包 -> 选下载好的整合包文件。<br>
-                            <span style="font-size: 16px;">2、模组安装：</span><br>
-                            PCL/PCL-CE启动器：直接把下载好的模组文件拖进启动器窗口即可。<br>
-                            HMCL/FCL启动器：游戏 -> 游戏管理 -> 模组管理 -> 模组文件夹 -> 将模组文件放入打开的文件夹中。
-                        </div>
-                    </dt>
-                </dl>
-            </div>
-            <div class="sectionbody">
-                <dl>
-                    <dt class="tableview tablelist show" >
-                        <div style="font-size:16px;border-radius: 20px;background: #fff;color: #000;padding: 10px 20px;opacity: 0.8;margin: 9px;">
-                            <span onclick="show_faq(3)" style="cursor: pointer;">问：烦村黄昏整合包怎么加载和玩？</span>
-                            <span id="faq_title_3" class="faq_title" onclick="show_faq(3)">?</span>
-                        </div>
-                        <div id="faq_detail_3" class="faq_detail">
-                            答：<br>
-                            <span style="font-size: 16px;">
-                                在Minecraft游戏中，加载烦村黄昏整合包后，核心玩法基本还跟原生模式一样，不同之处在于：烦村黄昏有原创的装备、物品、技能、生物、NPC。玩家可以学习各种技能与NPC生物激烈战斗、与其它玩家热血PK。
-                            </span>
-                            <br>加载烦村黄昏整合包，并进入“生存模式”进行游戏的具体步骤：<br>
-                            1、进入游戏，并创建新世界：<br>
-                            <img class="faq_img" src="images/faq1.png"><br>
-                            开启“允许作弊”，因为游戏中可能会需要输入特殊指令。<br>
-                            <img class="faq_img" src="images/faq2.png"><br>
-                            “游戏规则”中开启“死亡后保留物品栏”。否则可能刚进入游戏就被NPC击杀，会导致模组初始物品，如：技能书、物品等丢失。<br>
-                            <img class="faq_img" src="images/faq3.png"><br>
-                            <img class="faq_img" src="images/faq4.png"><br>
-                            2、进入游戏后，按E键，查看模组初始物品，如技能书、刀、盔甲等。<br>
-                            <img class="faq_img" src="images/faq5.png"><br>
-                            <img class="faq_img" src="images/faq6.png"><br>
-                            此时，将技能书放到物品栏，以准备学习技能。<br>
-                            <img class="faq_img" src="images/faq7.png"><br>
-                            3、按R键，进入战斗模式（否则不能使用战斗技能）。<br>
-                            <img class="faq_img" src="images/faq8.png"><br>
-                            4、然后，使用技能书学习技能。<br>
-                            <img class="faq_img" src="images/faq9.png"><br>
-                            <img class="faq_img" src="images/faq10.png"><br>
-                            学习技能后，技能都有自己的快捷键，可以从“控制”中修改按键。<br>
-                            <img class="faq_img" src="images/faq11.png"><br>
-                            <img class="faq_img" src="images/faq12.png"><br>
-                            <img class="faq_img" src="images/faq13.png"><br>
-                            5、除了初始的物品，模组中还存在大量其它物品。打开物品栏，查找配方，可看到物品的合成方式。<br>
-                            <img class="faq_img" src="images/faq16.png"><br>
-                            <img class="faq_img" src="images/faq14.png"><br>
-                            <img class="faq_img" src="images/faq15.png"><br>
-                            6、进行这些初步了解后，就可以进行游戏了...<br>
-                            <img class="faq_img" src="images/faq17.png"><br>
-                            尽请探索并享受游戏吧！
-                        </div>
-                    </dt>
-                </dl>
-            </div>
-            <div class="sectionbody">
-                <dl>
-                    <dt class="tableview tablelist show" >
-                        <div style="font-size:16px;border-radius: 20px;background: #fff;color: #000;padding: 10px 20px;opacity: 0.8;margin: 9px;">
-                            <span onclick="show_faq(5)" style="cursor: pointer;">问：整合包常用操作按键有哪些？</span>
-                            <span id="faq_title_5" class="faq_title" onclick="show_faq(5)">?</span>
-                        </div>
-                        <div id="faq_detail_5" class="faq_detail">
-                            答：<br>
-                            进入游戏后，默认游戏操作按键如下（都可在设置里的按键绑定中修改）：<br>
-                            R：开启、关闭战斗模式或查找物品配方；<br>
-                            F：切换主手副手武器；<br>
-                            E：物品栏；<br>
-                            ALT：战斗翻滚；<br>
-                            鼠标侧键1：翻滚：<br>
-                            鼠标侧键2：技能；<br>
-                            鼠标右键：防御；<br>
-                            鼠标左键：攻击；<br>
-                            Z：投掷末影珍珠；<br>
-                        </div>
-                    </dt>
-                </dl>
-            </div>
-            <div class="sectionbody">
-                <dl>
-                    <dt class="tableview tablelist show" >
-                        <div style="font-size:16px;border-radius: 20px;background: #fff;color: #000;padding: 10px 20px;opacity: 0.8;margin: 9px;">
-                            <span onclick="show_faq(4)" style="cursor: pointer;">问：怎样进入烦村黄昏“竞技场”模式？</span>
-                            <span id="faq_title_4" class="faq_title" onclick="show_faq(4)">?</span>
-                        </div>
-                        <div id="faq_detail_4" class="faq_detail">
-                            答：<br>
-                            <span style="font-size: 16px;">
-                                “竞技场”模式是烦村黄昏整合包另一种玩法，此模式中，只有战斗，别无其它。玩家可以单独或组队向竞技场中的NPC生物发起挑战。<br>
-                                进入竞技场后，地图中会自动刷新出敌对NPC生物，当被击杀后，会再次出现更为强大的生物，以此类推，直到击杀数十种生物，完成通关。
-                            </span>
-                            <br>
-                            1、加载烦村黄昏整合包，并进入“竞技场”步骤非常简单：<br>
-                            只需要进入游戏时选择竞技场地图即可。<br>
-                            <img class="faq_img" src="images/jjc1.png"><br>
-                            进入后，地图中即自动刷新出NPC生物，战斗直接开始。<br>
-                            <img class="faq_img" src="images/jjc2.png"><br>
-                            竞技场中共有数十种NPC生物（具体生物数量请加入战斗，自行探索吧，^_^...!），NPC强度由弱到强，击杀较弱生物后，会出现更强大的生物。<br>
-                            注：NPC生物除了会使用技能攻击，还会使用末影珍珠、吃金苹果等，很强的。<br>
-                            <img class="faq_img" src="images/jjc3.png"><br>
-                            注：每次进入竞技场时，玩家会获得不同的装备、武器，可拥有不同强度的技能哦。<br>
-                            如果独自打不过NPC生物，可以邀请朋友组队，以多打少，一起在竞技场攻打NPC。<br>
-                            2、多人组队，做为服务器的方法：<br>
-                            调出游戏菜单，选择“对局域网开放”。<br>
-                            <img class="faq_img" src="images/jjc4.png"><br>
-                            依如下所示配置，并“创建一个局域网世界”。<br>
-                            <img class="faq_img" src="images/jjc5.png"><br>
-                            3、加入服务器的方法：<br>
-                            <img class="faq_img" src="images/jjc8.png"><br>
-                            此时，可以多人组队，一起欺负NPC生物啦。<br>
-                            <img class="faq_img" src="images/jjc6.png"><br>
-                            <img class="faq_img" src="images/jjc7.png"><br>
-                        </div>
-                    </dt>
-                </dl>
-            </div>
-            <div class="sectionbody">
-                <dl>
-                    <dt class="tableview tablelist show" >
-                        <div style="font-size:16px;border-radius: 20px;background: #fff;color: #000;padding: 10px 20px;opacity: 0.8;margin: 9px;">
-                            问：游戏中，整合包的NPC生物太强了、打不过怎么办？
-                        </div>
-                        <div style="padding: 7px 20px; margin: 9px; font-size:12px;">
-                            答：可以开启作弊模式。在游戏中，输入：/gamerule domob...此时会有提示。<br>
-                            例如：domobusefireball为是否启用火焰弹、domobuseenderperal为是否启用末影珍珠，等等，以增强自己。<br>
-                            注：“生存模式”、“竞技场模式”，都可使用此方法。
-                        </div>
-                    </dt>
-                </dl>
-            </div>
-            <div class="sectionbody">
-                <dl>
-                    <dt class="tableview tablelist show" >
-                        <div style="font-size:16px;border-radius: 20px;background: #fff;color: #000;padding: 10px 20px;opacity: 0.8;margin: 9px;">
-                            问：游戏中，怎样调整模组NPC生物的格挡率？
-                        </div>
-                        <div style="padding: 7px 20px; margin: 9px; font-size:12px;">
-                            答：输入/gamerule clashpercent+数字。<br>
-                            数字为1时，格挡概率为10%、数字为5时，格挡概率为50%，以此类推，数字为0时，格挡概率为0%、数字为10时，挡概率为100%。<br>
-                            注：“生存模式”、“竞技场模式”，都可使用此方法。
-                        </div>
-                    </dt>
-                </dl>
-            </div>
-            <div style="display: block;" id="more_btn">
-                <div class="sectionbody">
-                    <dl>
-                        <dt class="tableview tablelist show" style="background: rgba(0,0,0,0.1);">
-                            <div style="padding: 13px 0 0 0; margin: 9px; font-size:12px; text-align: center;">
-                                <div>
-                                    <span class="more" onclick="more_faqs();">查看更多...</span>
-                                    
-                                </div>
-                            </div>
-                        </dt>
-                    </dl>
+
+    <!-- 页面内容，初始隐藏 -->
+    <div class="page-content">
+        <!-- 导航栏 -->
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-links">
+                    <a href="#" class="brand">
+                        <img src="images/logo.png" alt="烦村黄昏" class="logo">
+                        <span>烦村黄昏</span>
+                    </a>
+                    <a href="#home" class="nav-link active"><i class="fas fa-home"></i> <span>首页</span></a>
+                    <a href="#features" class="nav-link"><i class="fas fa-bolt"></i> <span>特性</span></a>
+                    <a href="#download" class="nav-link"><i class="fas fa-download"></i> <span>下载</span></a>
+                    <a href="#faq" class="nav-link"><i class="fas fa-question-circle"></i> <span>FAQ</span></a>
+                    <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> <span>联系</span></a>
                 </div>
             </div>
-            <div id="more_faqs" style="display: none;">
-                
-                <div class="sectionbody">
-                    <dl>
-                        <dt class="tableview tablelist show" >
-                            <div style="font-size:16px;border-radius: 20px;background: #fff;color: #000;padding: 10px 20px;opacity: 0.8;margin: 9px;">
-                                问：整合包中有哪些二创武器？
+        </nav>
+
+        <!-- 主内容 -->
+        <main class="main-content">
+            <!-- Hero区域 -->
+            <section id="home" class="hero">
+                <div class="container">
+                    <img src="images/logo.png" alt="烦村黄昏" class="logo-large">
+                    <h1>烦村黄昏 v3.4.1 已发布！</h1>
+                    <h2 style="font-size: 30px;">免费、Java版、高质量Minecraft史诗战斗整合包、烦村整合包</h2>
+                    <p class="description" style="font-weight: 600;">热血动作、激烈战斗，在Minecraft中体验不一样的战斗乐趣！</p>
+                    <div class="actions">
+                        <a href="#download" class="action-button primary"><i class="fas fa-download" style="padding-right:5px;"></i> 立即下载</a>
+                        <a href="#features" class="action-button default"><i class="fas fa-play-circle" style="padding-right:5px;"></i> 查看特性</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 特性面板 -->
+            <section id="features" class="feature-panel">
+                <div class="container">
+                    <h1 style="text-align: center; color: var(--text-color); margin-bottom: 1rem;">烦村黄昏<span style="padding-left: 5px; font-size: 16px;">整合包 特色、优势、亮点</span></h1>
+                    <div class="feature-wrapper">
+                        <div class="feature-item">
+                            <h3><i class="fas fa-user-ninja"></i> 丰富角色</h3>
+                            <p>包含烦人的村民中的典型角色：史蒂夫、格雷夫、蛇刃Herobrine、黯锤Herobrine、芥末等50+原创角色。</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3><i class="fas fa-magic"></i> 炫酷技能</h3>
+                            <p>90+专属技能，如芥末的铁傀儡雨、蛇刃Herobrine的解放蛇刃、蓝恶魔的三叉戟狂欢节等。</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3><i class="fas fa-fire"></i> 战斗特效</h3>
+                            <p>40+绚丽特效，包括大范围爆炸、连锁闪电、兵器碰撞火花等，提升战斗视觉体验。</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3><i class="fas fa-gamepad"></i> 双模式玩法</h3>
+                            <p>支持"生存模式"和"竞技场模式"，满足不同玩家的游戏需求。</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3><i class="fas fa-hands-holding-child"></i> 新手指引</h3>
+                            <p>通过新手指引地图，快速了解游戏操作和玩法，如：熟悉默认键位、学习组合技触发等。</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3><i class="fas fa-tasks-alt"></i> 任务系统</h3>
+                            <p>内置完善任务系统，如：寻找指定物品、击败村民骑兵等，完成任务可获得相应奖励。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 内容区域 -->
+            <section class="content-section">
+                <div class="container">
+                    <h1>烦村黄昏是个怎样的整合包？</h1>
+                    <p>烦村黄昏是一款为Java版Minecraft玩家打造的高质量史诗战斗整合包、烦村整合包。<br>
+                        通过引入烦村原创角色、专属技能和炫酷特效，以热血动作、激烈战斗的理念，彻底改变了Minecraft的游戏体验。<br>
+                        无论你是喜欢PVE生存挑战还是PVP竞技对抗，烦村黄昏都能为你带来前所未有的游戏乐趣。</p>
+                    
+                    <h2>如何安装和使用此整合包？</h2>
+                    <p>安装烦村黄昏整合包非常简单，只需按照以下步骤操作：</p>
+                    <div class="code-block">
+                        <code>1. 下载整合包文件<br>2. 使用PCL/HMCL等启动器导入整合包<br>3. 确保使用Java 17+和Minecraft 1.19.2<br>4. 启动游戏并享受战斗！</code>
+                    </div>
+                    
+                    <h2>系统要求</h2>
+                    <p>烦村黄昏整合包及本站其它独立功能模组您的系统满足以下要求：</p>
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th>组件</th>
+                                <th>最低要求</th>
+                                <th>推荐配置</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Java版本</td>
+                                <td>JDK 17+</td>
+                                <td>JDK 17+</td>
+                            </tr>
+                            <tr>
+                                <td>Minecraft版本</td>
+                                <td>1.19.2</td>
+                                <td>1.19.2</td>
+                            </tr>
+                            <tr>
+                                <td>Forge版本</td>
+                                <td>43.4.1+</td>
+                                <td>43.4.1+</td>
+                            </tr>
+                            <tr>
+                                <td>内存分配</td>
+                                <td>4GB</td>
+                                <td>8GB或更多</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 下载区域 -->
+            <section id="download" class="download-section">
+                <div class="container">
+                    <h1 style="text-align: center; color: var(--text-color); margin-bottom: 1rem;">烦村黄昏<span style="padding-left: 5px; font-size: 16px;">整合包、独立功能模组 下载</span></h1>
+                    <p style="text-align: center; color: var(--text-color-secondary); max-width: 700px; margin: 0 auto 2rem;">
+                        烦村黄昏整合包默认不含独立功能模组，如需要可单独下载使用。
+                    </p>
+                    <div class="download-grid">
+                        
+                        <div class="download-card">
+                            <div class="hot-ribbon">HOT</div>
+                            <h2 style="margin-bottom:1rem;">烦村黄昏<span class="mod-type" style="margin-left: 5px;">v3.4.1</span></h2>
+                            <p>可单人、可联机，可生存、可竞技。<br>
+                                尽请免费下载畅玩！</p>
+                            <button class="download-btn" onclick="downloadFile('main')">
+                                <i class="fas fa-download"></i> 下载整合包
+                            </button>
+                        </div>
+                        <div class="download-card">
+                            <h3>独立功能模组</h3>
+                            <p>烦村黄昏子模组、独立功能模组，您可以根据需要单独下载和使用。</p>
+                            <button class="download-btn action-button default" onclick="showModsSection()">
+                                <i class="fas fa-puzzle-piece"></i> 查看所有模组
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 其他模组区域 -->
+            <section id="mods" class="mods-section" style="display: none;">
+                <div class="container">
+                    <h1 style="text-align: center; margin-bottom: 1rem;">独立功能模组</h1>
+                    <p style="text-align: center; color: var(--text-color-secondary); max-width: 800px; margin: 0 auto 2rem;">
+                        这些模组都可以加载到烦村黄昏整合包中，也可以单独使用。
+                    </p>
+                    
+                    <div class="mods-grid">
+                        <div class="mod-card">
+                            <h4>泛光刀光 <span class="mod-type">特效模组</span></h4>
+                            <p class="mod-desc">刀光模组，可让光刀呈现非常亮丽的发光效果，提升战斗视觉体验。</p>
+                            <button class="mod-btn" onclick="downloadMod('effect')">
+                                <i class="fas fa-download"></i> 下载模组
+                            </button>
+                        </div>
+                        
+                        <div class="mod-card">
+                            <h4>双太刀 <span class="mod-type">武器模组</span></h4>
+                            <p class="mod-desc">使玩家可以双持太刀进行战斗，有独立的战斗动作和技能。</p>
+                            <button class="mod-btn" onclick="downloadMod('weapon')">
+                                <i class="fas fa-download"></i> 下载模组
+                            </button>
+                        </div>
+                        
+                        <div class="mod-card">
+                            <h4>概率裁决 <span class="mod-type">技能模组</span></h4>
+                            <p class="mod-desc">玩家击中目标时，有概率随机释放雷击、爆炸、火焰等技能进行二次打击。</p>
+                            <button class="mod-btn" onclick="downloadMod('skill1')">
+                                <i class="fas fa-download"></i> 下载模组
+                            </button>
+                        </div>
+                        
+                        <div class="mod-card">
+                            <h4>守护契约 <span class="mod-type">技能模组</span></h4>
+                            <p class="mod-desc">玩家被攻击时，有概率触发回血、护盾、隐身等效果，增强防护能力。</p>
+                            <button class="mod-btn" onclick="downloadMod('skill2')">
+                                <i class="fas fa-download"></i> 下载模组
+                            </button>
+                        </div>
+                        
+                        <div class="mod-card">
+                            <h4>只狼糖 <span class="mod-type">物品模组</span></h4>
+                            <p class="mod-desc">以损失部分生命值为代价，在一定时间内提高攻击力的特殊药水效果。</p>
+                            <button class="mod-btn" onclick="downloadMod('item')">
+                                <i class="fas fa-download"></i> 下载模组
+                            </button>
+                        </div>
+                        
+                        <div class="mod-card">
+                            <h4>红蓝阵营 <span class="mod-type">战术模组</span></h4>
+                            <p class="mod-desc">用于多人联机游戏，使不同玩家处于红蓝阵营，进行团队式战斗。</p>
+                            <button class="mod-btn" onclick="downloadMod('tactics')">
+                                <i class="fas fa-download"></i> 下载模组
+                            </button>
+                        </div>
+                        
+                        <div class="mod-card">
+                            <h4>无弓之箭 <span class="mod-type">技能模组</span></h4>
+                            <p class="mod-desc">不需要弓或弩，点击右键即可快速、连续、大量地射出箭矢。</p>
+                            <button class="mod-btn" onclick="downloadMod('arrow')">
+                                <i class="fas fa-download"></i> 下载模组
+                            </button>
+                        </div>
+
+                        <div class="mod-card">
+                            <h4>AI僵尸 <span class="mod-type">人工智能模组</span></h4>
+                            <p class="mod-desc">用Q-learning人工智能算法加强僵尸，使它们具备自主学习能力，越来越聪明。</p>
+                            <button class="mod-btn" onclick="downloadMod('zombie')">
+                                <i class="fas fa-download"></i> 下载模组
+                            </button>
+                        </div>
+
+                         <div class="mod-card">
+                            <h4>超级显血 <span class="mod-type">辅助模组</span></h4>
+                            <p class="mod-desc">1、显示生物血条、血量值；2、给生物名字上色，表示与自己相比的强度：绿色弱、黄色相当、红色强。</p>
+                            <button class="mod-btn" onclick="downloadMod('superhp')">
+                                <i class="fas fa-download"></i> 下载模组
+                            </button>
+                        </div>
+
+                         <div class="mod-card">
+                            <h4>塔Plus <span class="mod-type">塔防模组</span></h4>
+                            <p class="mod-desc">包含有多种塔，如：木塔、黄金塔、闪电塔等等，不同的塔有不同的技能、能力。可用来玩塔防模式。</p>
+                            <button class="mod-btn" onclick="downloadMod('towers')">
+                                <i class="fas fa-download"></i> 下载模组
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div style="text-align: center; margin-top: 3rem;">
+                        <button class="action-button default" onclick="hideModsSection()">
+                            <i class="fas fa-arrow-left" style="padding-right: 5px;"></i> 返回主下载页面
+                        </button>
+                    </div>
+                    
+                </div>
+            </section>
+
+            <!-- FAQ区域 -->
+            <section id="faq" class="content-section">
+                <div class="container">
+                    <h1>常见问题 (FAQ)</h1>
+                    <div class="faq-section">
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>烦村黄昏整合包需要什么客户端环境？</span>
+                                <i class="fas fa-chevron-down"></i>
                             </div>
-                            <div style="padding: 7px 20px; margin: 9px; font-size:12px;">
-                                答：烦村黄昏二创武器丰富多样，以下是部分武器介绍：<br>
+                            <div class="faq-answer">
+                                <p>答：烦村黄昏整合包需要的客户端环境：JDK（Java） 17+、Minecraft 1.19.2、Forge 43.4.1+。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>下载单独的整合包、模组后怎样安装？</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>答：<br>
+                                1、整合包安装：PCL/PCL-CE启动器：直接把下载好的整合包文件拖进启动器窗口即可。HMCL/FCL启动器：下载 -> 整合包 -> 安装整合包 -> 导入本地整合包 -> 选下载好的整合包文件。<br>
+                                2、模组安装：PCL/PCL-CE启动器：直接把下载好的模组文件拖进启动器窗口即可。HMCL/FCL启动器：游戏 -> 游戏管理 -> 模组管理 -> 模组文件夹 -> 将模组文件放入打开的文件夹中。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>烦村黄昏整合包怎么玩？</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>答：在Minecraft游戏中，加载烦村黄昏整合包后，核心玩法基本还跟原生模式一样，不同之处在于：烦村黄昏有原创的装备、物品、技能、生物、NPC。玩家可以学习各种技能与NPC生物激烈战斗、与其它玩家热血PK。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>整合包常用操作按键有哪些？</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>答：进入游戏后，默认游戏操作按键如下（都可在设置里的按键绑定中修改）：<br>
+                                R：开启、关闭战斗模式或查找物品配方；<br>
+                                F：切换主手副手武器；<br>
+                                E：物品栏；<br>
+                                ALT：战斗翻滚；<br>
+                                鼠标侧键1：翻滚；<br>
+                                鼠标侧键2：技能；<br>
+                                鼠标右键：防御；<br>
+                                鼠标左键：攻击；<br>
+                                Z：投掷末影珍珠。</p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>怎样进入烦村黄昏"竞技场"模式？</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>答："竞技场"模式只有战斗，别无其它。玩家可以单独或组队向竞技场中的NPC生物发起挑战。进入竞技场后，地图中会自动刷新出敌对NPC生物，当被击杀后，会再次出现更为强大的生物，以此类推，直到击杀数十种生物，完成通关。<br>
+                                注1：NPC生物除了会使用技能攻击，还会使用末影珍珠、吃金苹果等，很强的。<br>
+                                注2：每次进入竞技场时，玩家会获得不同的装备、武器，可拥有不同强度的技能哦。<br>
+                                注3：如果独自打不过NPC生物，可以开启服务器并邀请朋友组队，以多打少，一起在竞技场挑战NPC。
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>游戏中，整合包的NPC生物太强了、打不过怎么办？ </span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>答：可以开启作弊模式。在游戏中，输入：/gamerule domob...此时会有提示。<br>
+                                例如：domobusefireball为是否启用火焰弹、domobuseenderperal为是否启用末影珍珠，等等，以增强自己。<br>
+                                注："生存模式"、"竞技场模式"，都可使用此方法。 
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>怎样调整烦村黄昏NPC生物的格挡率？ </span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>答：输入/gamerule clashpercent+数字。<br>
+                                数字为1时，格挡概率为10%、数字为5时，格挡概率为50%，以此类推，数字为0时，格挡概率为0%、数字为10时，挡概率为100%。<br>
+                                注："生存模式"、"竞技场模式"，都可使用此方法。 
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>整合包中有哪些二创武器？ </span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>答：烦村黄昏二创武器丰富多样，以下是部分武器介绍：<br>
                                 战神之刃类：有TNT战神之刃、雷电战神之刃、冰火战神之刃、战神之刃、双大剑战神之刃、火焰战神之刃、绿宝石战神之刃等，部分武器蹲下右键可释放技能。<br>
                                 蛇刃类：包括未解放蛇刃、解放蛇刃、战蛇之刃、超级解放蛇刃。<br>
                                 影锤：Shift+右键可让玩家原地飞起来。<br>
@@ -659,193 +1117,313 @@
                                 黑曜石长枪：动作和奇迹武器里的痛苦之枪相似。<br>
                                 暗影之镰：属于玩家投稿的概念性DIY武器，只能在创造模式下获取。<br>
                                 某些武器还有格外功能，如：黑盾有格挡技能；红宝剑有星火燎原技能；盔影胸甲有突刺技能。<br>
+                                </p>
                             </div>
-                        </dt>
-                    </dl>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>使用此整合包时，还可以自行添加其他模组吗？  </span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>答：当然可以。与使用正常的MC客户端一样。 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="sectionbody">
-                    <dl>
-                        <dt class="tableview tablelist show" >
-                            <div style="font-size:16px;border-radius: 20px;background: #fff;color: #000;padding: 10px 20px;opacity: 0.8;margin: 9px;">
-                                问：使用此整合包时，还可以自行添加其他模组吗？
-                            </div>
-                            <div style="padding: 7px 20px; margin: 9px; font-size:12px;">
-                                答：当然可以。与使用正常的MC客户端一样。
-                            </div>
-                        </dt>
-                    </dl>
+            </section>
+        </main>
+
+        <!-- 页脚 -->
+        <footer id="contact" class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>烦村黄昏</h3>
+                    <p>高质量Minecraft史诗战斗整合包、烦村整合包</p>
+                    <p>体验前所未有的Minecraft战斗乐趣</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>快速链接</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#features">特性介绍</a></li>
+                        <li><a href="#download">下载</a></li>
+                        <li><a href="#faq">常见问题</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>联系我们</h3>
+                    <ul class="footer-links">
+                        <li>
+                            作者：
+                            <span style="font-size: 11px;">
+                                B站UP主『<a href="https://space.bilibili.com/1015730693" target="_blank" class="b">玩了114514分钟mc</a>』
+                            </span>
+                            QQ：785319346
+                        </li>
+                        
+                        <li>玩家QQ群：
+                            <span style="font-size: 9px;">1073218502、1073217587、180748919、828359394、243868451</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        `;
-        
-        //动态设置完faqs内容后，再加载翻译js、执行翻译
-        var script = document.createElement('script');
-        script.src = 'cn2en.js';
-        document.head.appendChild(script);
-        
-    }
-
-    var video = document.getElementById('video');
-    video.src = "video" + Math.floor(Math.random() * [1,2,3,4,5].length +1)+".mp4";
-    setInterval(function(){
-            video.src = "video" + Math.floor(Math.random() * [1,2,3,4,5].length +1)+".mp4";
-    },7800);
-    setInterval(function(){
-        document.getElementById("video").style.filter = "blur("+ getRandomElement([0, 0.1, 0, 0.1, 0, 0.2, 0, 0.1])+"px)"
-    },1000);
-
-    video.addEventListener('canplaythrough', function() {
-        // 视频已加载足够内容可以流畅播放
-        video.style.display = 'block';
-        try {
-            video.play();
-        } catch (e) {
-            console.log('视频播放被阻止:', e);
-        }
-        document.getElementById('picture').style.display = "none";
-        
-    });
-    video.addEventListener('error', function() {
-        console.error('视频加载失败');
-        // 这里可以添加错误处理逻辑
-    });
-
-    
-    /* -=[ 背景动画 ]=- */
-
-    // 创建div元素
-    const div = document.createElement('div');
-
-    // 设置所有样式属性
-    div.id = "my_div";
-    div.style.backgroundSize = '100% 100%';
-    div.style.webkitBackgroundSize = '100% 100%';
-    div.style.oBackgroundSize = '100% 100%';
-    div.style.position = 'absolute';
-    div.style.zIndex = '-99';
-    div.style.top = '0';
-    div.style.left = '0';
-    div.style.height = '100%';
-    div.style.width = '100%';
-    div.style.overflow = 'hidden';
-    div.style.opacity = '0.5';
-    div.style.flex = '1';
-    div.style.display = 'block';
-    div.style.filter = "blur(1px)";
-
-    // 将div添加到body中
-    document.body.appendChild(div);
-
-    for(i=1; i<10; i++){
-        var bg_div = document.createElement("div");
-        bg_div.style.overflow ="hidden";
-        bg_div.setAttribute("id","bg_ani_div_"+i);
-        bg_div.setAttribute("width","fit-content");
-        bg_div.style.position = "static";
-        bg_div.style.color = "#ffffff";
-        bg_div.style.opacity = 0;
-        document.getElementById("my_div").appendChild(bg_div);
-    }
-
-    //动画句柄
-    var animation_handle;
-    //初始字体大小
-    var font_size;
-    //初始透明度
-    var font_opacity;
-
-    /* 动画实现函数 */
-    function bg_animation(){
-        for(j=0; j<10; j++){
-            try{
-                //定位元素
-                var x = "bg_ani_div_" + (1 + parseInt( 9 * Math.random() ));
-                var rnd = document.getElementById(x);
-                rnd.style.overflow = "hidden";
-
-                //随机字符串
-                var str = [
-                    "*",
-                    "❄"
-                ]
-                rnd.innerHTML = str[parseInt( str.length * Math.random() )];
-
-                //随机字体
-                var fonts = [
-                    "verdana",
-                ]
-                rnd.style.fontFamily = fonts[parseInt( fonts.length * Math.random() )];
-
-                //设定随机位置
-                var padding_left = parseInt(document.body.clientWidth * Math.random() /5 );
-                if(padding_left > 600){
-                    padding_left = (50 + padding_left + Math.floor(Math.random() * 200)) + "px";
-                }else{
-                    padding_left = (60 + padding_left + padding_left + Math.floor(Math.random() * 160)) +"px";
-                }
-                var padding_top = parseInt(document.body.clientHeight * Math.random() /10 );
-                if(padding_top > 40){
-                    padding_top = Math.floor(Math.random() * 4) + "px"; 
-                }else{
-                    padding_top = padding_top + "px";
-                }
-                
-                //console.log(padding_left)
-                
-                rnd.style.paddingLeft = padding_left;
-                rnd.style.paddingTop = padding_top;
-                rnd.className = "bg_ani";
-                rnd.style.animation = 'slideShow 6s infinite';
             
-                //较短的字符串
-                if(rnd.innerHTML.length < 10){
-                    //随机字体大小
-                    font_size = parseInt( 20 * Math.random() + 20);
-                }else{
+            <div class="copyright">
+                <p>烦村黄昏 | Villager Dusk - Minecraft史诗战斗整合包、烦村整合包</p>
+                <p>Copyright © 2026 villager-dusk.github.io. All rights reserved</p>
+            </div>
+        </footer>
+    </div>
 
-                    //随机字体大小
-                    font_size = parseInt( 10 * Math.random() + 20);
+    <script>
+        // Loading功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const loading = document.getElementById('loading');
+            const pageContent = document.querySelector('.page-content');
+            
+            // 需要加载的资源列表
+            const resources = [
+                // Font Awesome图标字体（外部资源）
+                'all.min.css',
+                
+                // 页面中的图片（根据实际情况添加）
+                'images/logo.png'  // 导航栏logo
+                // 注意：如果hero部分有logo-large图片，也需要添加
+                // 注意：这里只列出了已知的图片，实际项目中应该遍历所有图片
+            ];
+            
+            let loadedCount = 0;
+            const totalResources = resources.length;
+            
+            // 更新进度条函数
+            function updateProgress() {
+                loadedCount++;
+                const progress = Math.round((loadedCount / totalResources) * 100);
+                const progressBar = document.getElementById('progressBar');
+                const progressText = document.getElementById('progressText');
+                
+                if (progressBar) {
+                    // 计算环形进度条的stroke-dashoffset
+                    const circumference = 226.2; // 使用与CSS相同的值
+                    const offset = circumference - (progress / 100) * circumference;
+                    progressBar.style.strokeDashoffset = offset;
                 }
-
-                //透明度
-                if(font_size < 20){
-
-                    //随机透明度
-                    font_opacity = Math.floor(Math.random() * 10) / 10;
-                    if(font_opacity >= 0.8){
-                        font_opacity = font_opacity - 0.65;
-                    }
-                    rnd.style.opacity = font_opacity;
-                    rnd.style.fontWeight = 160;
-                    font_size = font_size + 5;
-                    font_size = font_size + "px";
-                }else{
-                    rnd.style.fontWeight = 200;
-                    //随机透明度
-                    font_opacity = Math.floor(Math.random() * 10) / 10;
-                    if(font_opacity > 0.6){
-                        font_opacity = font_opacity - 0.5;
-                    }
-                    rnd.style.opacity = font_opacity;
-                    font_size = font_size + "px";
+                if (progressText) {
+                    progressText.textContent = `${progress}%`;
                 }
                 
-                rnd.style.fontSize = font_size;
-                rnd.style.left = font_size;
+                // 当所有资源加载完成时
+                if (loadedCount >= totalResources) {
+                    // 模拟一点延迟让用户能看到加载完成
+                    setTimeout(() => {
+                        loading.classList.add('hidden');
+                        pageContent.classList.add('visible');
+                    }, 500);
+                }
+            }
             
-            }catch(e){
-                console.log(e)
+            // 预加载资源
+            resources.forEach(resource => {
+                // 处理字体文件
+                if (resource.endsWith('.css') || resource.endsWith('.woff') || resource.endsWith('.woff2') || resource.endsWith('.ttf')) {
+                    // 对于CSS和字体文件，创建link标签
+                    const link = document.createElement('link');
+                    link.rel = resource.endsWith('.css') ? 'stylesheet' : 'preload';
+                    if (resource.endsWith('.woff')) link.as = 'font';
+                    if (resource.endsWith('.woff2')) link.as = 'font';
+                    if (resource.endsWith('.ttf')) link.as = 'font';
+                    link.href = resource;
+                    link.crossOrigin = 'anonymous';
+                    
+                    link.onload = updateProgress;
+                    link.onerror = updateProgress; // 即使出错也继续
+                    
+                    document.head.appendChild(link);
+                } else {
+                    // 处理图片
+                    const img = new Image();
+                    img.src = resource;
+                    img.onload = updateProgress;
+                    img.onerror = updateProgress; // 即使出错也继续
+                }
+            });
+            
+            // 如果没有资源需要加载，直接完成
+            if (totalResources === 0) {
+                updateProgress();
+            }
+            
+            // 额外检查：等待页面所有内容加载完成
+            window.addEventListener('load', function() {
+                // 确保即使有资源加载失败，页面也能显示
+                setTimeout(() => {
+                    loading.classList.add('hidden');
+                    pageContent.classList.add('visible');
+                }, 1000); // 最长等待1秒
+            });
+        });
+
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.15)';
+            } else {
+                navbar.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
+            }
+            
+            // 更新导航链接active状态
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 更新导航链接active状态
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+        
+        // FAQ切换功能
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const isActive = element.classList.contains('active');
+            
+            // 关闭所有FAQ
+            document.querySelectorAll('.faq-question').forEach(item => {
+                item.classList.remove('active');
+                item.nextElementSibling.classList.remove('show');
+            });
+            
+            // 如果当前未激活，则打开
+            if (!isActive) {
+                element.classList.add('active');
+                answer.classList.add('show');
             }
         }
-    }
-
-    bg_animation();
-
-    //循环执行
-    animation_handle = setInterval("bg_animation()",1900);
-
-</script>
-<script src="bgpoint.js"></script>
+        
+        // 下载功能
+        function downloadFile(type) {
+            const downloadLinks = {
+                main: 'https://pan.quark.cn/s/40907aff35a1'
+            };
+            
+            if (downloadLinks[type]) {
+                window.open(downloadLinks[type], '_blank');
+                
+                // 显示下载提示
+                const btn = event.target.closest('button');
+                if (btn) {
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 下载中...';
+                    btn.disabled = true;
+                    
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                    }, 2000);
+                }
+            }
+        }
+        
+        // 模组下载功能
+        function downloadMod(type) {
+            const modLinks = {
+                effect: 'https://pan.quark.cn/s/c997f2e9e8a4',
+                weapon: 'https://pan.quark.cn/s/c07fe22c524e',
+                skill1: 'https://pan.quark.cn/s/06db2911acfa',
+                skill2: 'https://pan.quark.cn/s/f775ce57475f',
+                item: 'https://pan.quark.cn/s/e24566bf1db4',
+                tactics: 'https://pan.quark.cn/s/dff073454b6f',
+                arrow: 'https://pan.quark.cn/s/b1078569b97e',
+                zombie: 'https://pan.quark.cn/s/ff9bda9a4d4b',
+                superhp: 'https://pan.quark.cn/s/d373ed0235db',
+                tower: 'https://pan.quark.cn/s/e74e1eab7b34'
+            };
+            
+            if (modLinks[type]) {
+                window.open(modLinks[type], '_blank');
+                
+                // 显示下载提示
+                const btn = event.target.closest('button');
+                if (btn) {
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 下载中...';
+                    btn.disabled = true;
+                    
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                    }, 2000);
+                }
+            }
+        }
+        
+        // 显示模组区域
+        function showModsSection() {
+            document.getElementById('mods').style.display = 'block';
+            window.scrollTo({
+                top: document.getElementById('mods').offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+        
+        // 隐藏模组区域
+        function hideModsSection() {
+            document.getElementById('mods').style.display = 'none';
+            window.scrollTo({
+                top: document.getElementById('download').offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+        
+        // 页面加载后初始化
+        window.addEventListener('load', function() {
+            // 设置第一个FAQ为打开状态
+            const firstFaq = document.querySelector('.faq-question');
+            if (firstFaq) {
+                firstFaq.classList.add('active');
+                firstFaq.nextElementSibling.classList.add('show');
+            }
+        });
+    </script>
 </body>
 </html>
