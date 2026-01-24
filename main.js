@@ -95,7 +95,8 @@ const videos = [
     'https://villager-dusk.github.io/video2.mp4',
     'https://villager-dusk.github.io/video3.mp4',
     'https://villager-dusk.github.io/video4.mp4',
-    'https://villager-dusk.github.io/video5.mp4'
+    'https://villager-dusk.github.io/video5.mp4',
+    'https://villager-dusk.github.io/video6.mp4'
 ];
 
 // 初始化视频功能
