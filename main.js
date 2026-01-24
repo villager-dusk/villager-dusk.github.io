@@ -394,7 +394,7 @@ function toggleFAQ(element) {
 // 下载功能
 function downloadFile(type) {
     const downloadLinks = {
-        main: 'https://pan.quark.cn/s/40907aff35a1'
+        main: 'https://pan.quark.cn/s/6fb51a144cf1'
     };
     
     if (downloadLinks[type]) {
