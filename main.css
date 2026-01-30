@@ -1,8 +1,8 @@
 .player-container {
     width: 100%;
     height: 100%;
-    max-width: 800px;
-    max-height: 340px;
+    max-width: 681px;
+    max-height: 384px;
     margin: 20px auto; /* 改为auto实现居中 */
     border-radius: 12px;
     overflow: hidden;
@@ -12,8 +12,8 @@
 video {
     width: 100%;
     height: 100%;
-    max-width: 852px;
-    max-height: 480px;
+    max-width: 681px;
+    max-height: 384px;
     display: block;
     background-color: #fff;
     cursor: pointer;
