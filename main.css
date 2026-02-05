@@ -899,3 +899,10 @@ a:hover {
         font-size: 1.6rem;
     }
 }
+
+.page-content{
+    display: none;
+}
+.page-content.visible{
+    display: block;
+}
