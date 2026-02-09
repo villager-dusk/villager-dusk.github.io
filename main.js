@@ -319,11 +319,20 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+var timeout_handle;
 // 平滑滚动
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
         
+        clearTimeout(timeout_handle);
+        timeout_handle = setTimeout(function(){
+            // 更新导航链接active状态
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+        },3000);
+
         const targetId = this.getAttribute('href');
         if (targetId === '#') return;
         
@@ -342,6 +351,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+timeout_handle = setTimeout(function(){
+    // 更新导航链接active状态
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+    });
+},3000);
 
 // FAQ切换功能
 function toggleFAQ(element) {
@@ -364,7 +380,7 @@ function toggleFAQ(element) {
 // 下载功能
 function downloadFile(type) {
     const downloadLinks = {
-        main: 'https://pan.quark.cn/s/7f40a68c94e0'
+        main: 'https://pan.quark.cn/s/417dead8c44e'
     };
     
     if (downloadLinks[type]) {
