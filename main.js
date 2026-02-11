@@ -86,7 +86,116 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 初始化视频相关功能
     initVideoFunctions();
+
+    
+
+renderRecommendations();
+
 });
+
+// 渲染推荐资源
+function renderRecommendations() {
+    const recommendationsData = [
+        { 
+            title: "系统提速精灵", 
+            desc: "小巧实用的提速加速软件，非常适应老旧电脑使用，效果显著。", 
+            link: "https://www.fairysoftware.com/xi_tong_ti_shu_jing_ling.html", 
+            icon: "fas fa-tachometer-alt" 
+        },
+        { 
+            title: "误删文件恢复大师", 
+            desc: "快速恢复误删文件，可还原电脑、U盘、录音笔等设备中被删除的文件，操作简单、恢复能力强大。", 
+            link: "https://www.fairysoftware.com/wu_shan_wen_jian_hui_fu_da_shi.html", 
+            icon: "fas fa-undo" 
+        },
+        { 
+            title: "文件夹加密精灵", 
+            desc: "简单好用的文件夹加密软件，给文件夹加密码，保护个人隐私，防止他人任意使用。", 
+            link: "https://www.fairysoftware.com/wen_jian_jia_jia_mi_jing_ling.html", 
+            icon: "fas fa-folder" 
+        },
+        { 
+            title: "九型人格测试", 
+            desc: "基于九型人格理论的性格测试，帮助你了解自己的核心动机、恐惧和成长方向。", 
+            link: "https://www.fairysoftware.com/jiu_xing_ren_ge_ce_shi.html", 
+            icon: "fas fa-user-circle" 
+        },
+        { 
+            title: "情感智商（EQ）测试", 
+            desc: "评估你的情感智商水平，包括自我意识、自我管理、社会意识和关系管理能力。", 
+            link: "https://www.fairysoftware.com/eq_ce_shi.html", 
+            icon: "fas fa-heart" 
+        },
+        { 
+            title: "在线视频压缩", 
+            desc: "免费在线视频压缩工具，压缩率非常高，而且几乎不会造成画质损失！", 
+            link: "https://www.fairysoftware.com/shi_pin_ya_suo.html", 
+            icon: "fas fa-video" 
+        },
+        { 
+            title: "塔罗牌占卜", 
+            desc: "在线塔罗牌占卜，提供多种牌阵，揭示未知，解读人生方向。", 
+            link: "https://www.fairysoftware.com/ta_luo_pai_zhan_bu.html", 
+            icon: "fas fa-moon" 
+        },
+        { 
+            title: "学习风格测试", 
+            desc: "识别你的学习风格偏好（视觉型、听觉型、动觉型），提供个性化学习建议。", 
+            link: "https://www.fairysoftware.com/xue_xi_feng_ge_ce_shi.html", 
+            icon: "fas fa-graduation-cap" 
+        },
+        { 
+            title: "复习计划生成器", 
+            desc: "基于艾宾浩斯遗忘曲线理论，为你生成科学的复习计划，提高记忆效率。", 
+            link: "https://www.fairysoftware.com/yi_wang_qu_xian_fu_xi_ji_hua_sheng_cheng_qi.html", 
+            icon: "fas fa-calendar-alt" 
+        },
+    ];
+    
+    const recommendationsContainer = document.getElementById('recommendations');
+    
+    // 清空容器
+    recommendationsContainer.innerHTML = '';
+    
+    // 方法1: 随机打乱数组并取前4个（Fisher-Yates shuffle算法）
+    const shuffledData = [...recommendationsData];
+    for (let i = shuffledData.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledData[i], shuffledData[j]] = [shuffledData[j], shuffledData[i]];
+    }
+    
+    document.getElementById('recommendations_section').style.display = "block";
+
+    // 取前4个数据
+    const selectedData = shuffledData.slice(0, 3);
+    
+    // 方法2: 更简单的随机选择（如果数据量不大）
+    // const selectedData = recommendationsData
+    //     .sort(() => Math.random() - 0.5)
+    //     .slice(0, 4);
+    
+    selectedData.forEach(item => {
+        const recommendationItem = document.createElement('div');
+        recommendationItem.className = 'recommendation-item';
+        //recommendationItem.style.cursor = 'default';
+        recommendationItem.style.borderColor = 'var(--border-color)';
+        recommendationItem.innerHTML = `
+            <div class="recommendation-title">
+                <i class="${item.icon}"></i>
+                ${item.title}
+            </div>
+            <div class="recommendation-desc" style="min-height:70px; margin:auto 0; font-size:13px;">
+                ${item.desc}
+            </div>
+            <a href="${item.link}" class="recommendation-link" target="_blank">
+                <i class="fas fa-external-link-alt" style="padding-right:5px;"></i>
+                访问链接
+            </a>
+        `;
+        recommendationsContainer.appendChild(recommendationItem);
+    });
+}
+
 
 // 视频相关全局变量
 let videoPlayer, loadingSpinner, videoButtons, currentVideoIndex = 0;
