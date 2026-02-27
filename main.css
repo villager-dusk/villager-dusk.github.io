@@ -951,7 +951,7 @@ a:hover {
     align-items: center;
     justify-content: center;
     padding: 8px 15px;
-    background-color: rgba(108, 99, 255, 0.1);
+    background-color: rgba(255, 179, 99, 0.1);
     color: var(--primary-color);
     border-radius: 6px;
     font-size: 0.9rem;
@@ -960,6 +960,6 @@ a:hover {
 }
 
 .recommendation-link:hover {
-    background-color: rgba(108, 99, 255, 0.2);
+    background-color: rgba(255, 133, 4, 0.15);
     text-decoration: none;
 }
