@@ -76,6 +76,26 @@ video {
     border-color: var(--primary-color);
 }
 
+.video-btn-full {
+    padding: 10px 20px;
+    background-color: #eee;
+    color: #333;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.video-btn-full:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
 .video_loading {
     position: absolute;
     top: 50%;
@@ -389,6 +409,19 @@ a:hover {
     background-color: rgba(255, 123, 58, 0.1);
     text-decoration: none;
     transform: translateY(-2px);
+}
+
+.small-video {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    font-size: 12px; 
+    margin-left:10px;
+    cursor: pointer;
+}
+
+.small-video:hover {
+    text-decoration: none;
 }
 
 .feature-panel {
@@ -882,7 +915,6 @@ a:hover {
     letter-spacing: 1px;
     transform: rotate(45deg);
     z-index: 10;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* 添加针对中等屏幕的调整 */
