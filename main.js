@@ -98,7 +98,7 @@ function renderRecommendations() {
     const recommendationsData = [
         { 
             title: "系统提速精灵", 
-            desc: "小巧实用的提速加速软件，非常适应老旧电脑使用，效果显著。", 
+            desc: "小巧实用的系统加速软件，非常适应老旧电脑使用，效果显著。", 
             link: "https://www.fairysoftware.com/xi_tong_ti_shu_jing_ling.html", 
             icon: "fas fa-tachometer-alt" 
         },
@@ -522,7 +522,8 @@ function downloadMod(type) {
         arrow: 'https://pan.quark.cn/s/b1078569b97e',
         zombie: 'https://pan.quark.cn/s/ff9bda9a4d4b',
         superhp: 'https://pan.quark.cn/s/d373ed0235db',
-        towers: 'https://pan.quark.cn/s/e74e1eab7b34'
+        towers: 'https://pan.quark.cn/s/e74e1eab7b34',
+        iron_golem: 'https://pan.quark.cn/s/18be00f8cd6d'
     };
     
     if (modLinks[type]) {
