@@ -523,7 +523,8 @@ function downloadMod(type) {
         zombie: 'https://pan.quark.cn/s/ff9bda9a4d4b',
         superhp: 'https://pan.quark.cn/s/d373ed0235db',
         towers: 'https://pan.quark.cn/s/e74e1eab7b34',
-        iron_golem: 'https://pan.quark.cn/s/759db9fde8d6'
+        iron_golem: 'https://pan.quark.cn/s/759db9fde8d6',
+        lite: 'https://www.curseforge.com/minecraft/mc-mods/villagerdusklite'
     };
     
     if (modLinks[type]) {
