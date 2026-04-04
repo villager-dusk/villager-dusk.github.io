@@ -342,7 +342,7 @@ a:hover {
 .hero {
     text-align: center;
     padding: 3rem 1rem 5rem 1rem;
-    max-width: 960px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -673,7 +673,7 @@ a:hover {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    
     padding: 0.6rem;
     background-color: transparent;
     color: var(--primary-color);
@@ -998,3 +998,21 @@ a:hover {
     background-color: rgba(255, 133, 4, 0.15);
     text-decoration: none;
 }
+
+.btn-color {
+    background-color: rgba(255, 179, 99, 0.1);
+}
+
+.btn-color:hover {
+    background-color: rgba(255, 133, 4, 0.15);
+}
+
+
+
+/* 轮播样式 */
+.hero-carousel { position: relative; overflow: hidden; }
+.carousel-track { display: flex; transition: transform 0.4s ease; }
+.carousel-slide { flex: 0 0 100%; }
+.carousel-dots { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+.carousel-dot { width: 10px; height: 10px; border-radius: 50%; background: #ccc; cursor: pointer; }
+.carousel-dot.active { background: var(--primary-color); }

@@ -244,6 +244,21 @@ function initVideoFunctions() {
             textSpan.textContent = '收起视频';
             icon.className = 'fas fa-times-circle';
             
+            // 关键修改：重新加载并播放视频
+            if (videoPlayer && videos.length > 0) {
+                // 如果视频没有src或者src为空，设置第一个视频
+                if (!videoPlayer.src) {
+                    switchVideo(videos[0], 0);
+                } else {
+                    // 有src则直接播放
+                    videoPlayer.play().catch(e => {
+                        console.log('播放失败，尝试重新加载');
+                        videoPlayer.load();
+                        videoPlayer.play().catch(err => console.log('仍需用户交互'));
+                    });
+                }
+            }
+            
             // 滚动到视频区域
             setTimeout(() => {
                 videoContainer.scrollIntoView({ 
@@ -581,3 +596,78 @@ window.addEventListener('load', function() {
         }
     }, { once: true });
 });
+
+
+const track = document.getElementById('carouselTrack');
+const slides = document.querySelectorAll('.carousel-slide');
+let idx = 0, autoTimer = null, autoOn = true;
+const total = slides.length;
+
+function update() { track.style.transform = `translateX(-${idx * 100}%)`; updateDots(); }
+function goTo(i) {
+    idx = (i + total) % total; update(); 
+    hideVideo();
+    resetAuto(); 
+}
+function next() { goTo(idx + 1); }
+function prev() { goTo(idx - 1); }
+
+function startAuto() { 
+    if (autoOn) {
+        autoTimer = setInterval(next, 10000);
+    }
+}
+function stopAuto() { clearInterval(autoTimer); }
+function resetAuto() { stopAuto(); startAuto(); }
+
+// 创建点
+const dotsDiv = document.getElementById('carouselDots');
+function updateDots() {
+    document.querySelectorAll('.carousel-dot').forEach((dot, i) => dot.classList.toggle('active', i === idx));
+}
+function createDots() {
+    dotsDiv.innerHTML = '';
+    for (let i = 0; i < total; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'carousel-dot' + (i === idx ? ' active' : '');
+        dot.onclick = () => goTo(i);
+        dotsDiv.appendChild(dot);
+    }
+}
+createDots(); 
+update();
+startAuto();
+window.addEventListener('resize', update);
+// 获取 home 区域
+const homeSection = document.getElementById('home');
+
+// 鼠标进入 home 区域时关闭自动轮播
+if (homeSection) {
+    homeSection.addEventListener('mouseenter', () => {
+        autoOn = false;
+        stopAuto();
+    });
+    
+    homeSection.addEventListener('mouseleave', () => {
+        autoOn = true;
+        startAuto();
+    });
+}
+function hideVideo(){
+    const videoContainer = document.getElementById('video_container');
+    const toggleBtn = document.getElementById('toggleVideoBtn');
+    if (!toggleBtn) return;
+    const icon = toggleBtn.querySelector('i');
+    const textSpan = toggleBtn.querySelector('span') || document.createElement('span');
+    // 隐藏视频容器
+    videoContainer.style.display = 'none';
+    textSpan.textContent = '查看视频';
+    icon.className = 'fas fa-play-circle';
+    
+    // 停止视频播放
+    if (videoPlayer) {
+        videoPlayer.pause();
+        videoPlayer.currentTime = 0;
+    }
+
+}
