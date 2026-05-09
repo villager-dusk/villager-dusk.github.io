@@ -9,9 +9,14 @@ document.addEventListener('DOMContentLoaded', function() {
         'all.min.css',
         
         // 页面中的图片（根据实际情况添加）
-        'images/logo.png'  // 导航栏logo
+        'images/logo.png',  // 导航栏logo
         // 注意：如果hero部分有logo-large图片，也需要添加
         // 注意：这里只列出了已知的图片，实际项目中应该遍历所有图片
+        'fa-solid-900.woff2',
+        'index.html',
+        'main.css',
+        'vdl-logo-small.png',
+        'main.js'
     ];
     
     let loadedCount = 0;
