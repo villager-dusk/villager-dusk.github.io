@@ -235,7 +235,7 @@ function initVideoFunctions() {
         
         if (!textSpan.parentNode) {
             // 如果没有span标签，创建并插入
-            const btnText = toggleBtn.childNodes[1]?.nodeValue || '查看视频';
+            const btnText = toggleBtn.childNodes[1]?.nodeValue || '观看视频';
             toggleBtn.innerHTML = '';
             toggleBtn.appendChild(icon);
             toggleBtn.appendChild(document.createTextNode(' '));
@@ -281,7 +281,7 @@ function initVideoFunctions() {
         } else {
             // 隐藏视频容器
             videoContainer.style.display = 'none';
-            textSpan.textContent = '查看视频';
+            textSpan.textContent = '观看视频';
             icon.className = 'fas fa-play-circle';
             
             // 停止视频播放
@@ -298,7 +298,7 @@ function initVideoFunctions() {
         }
     }
     
-    // 找到"查看视频/收起视频"按钮并添加点击事件
+    // 找到"观看视频/收起视频"按钮并添加点击事件
     const toggleVideoBtn = document.getElementById('toggleVideoBtn');
     if (toggleVideoBtn) {
         // 防止默认跳转行为
@@ -614,19 +614,19 @@ window.addEventListener('load', function() {
                          <div class="mod-card">
                             <div class="hot-ribbon">HOT</div>
                             <h4>
-                                <span>烦村黄昏<span style="padding-left: 5px; font-size: 13px;">简化版</span>
+                                <span>烦村黄昏<span style="padding-left: 5px; font-size: 13px;">Lite版</span>
                                     <span style="font-size: 13px; display: block; font-weight: 500;">版本：v3.3.8</span>
                                 </span>
                                 <span class="mod-type">生存战斗模组</span></h4>
                             <p class="mod-desc" style="font-size: 11px;">
-                                烦村黄昏英文简化版，是模组，非整合包。<br>
+                                烦村黄昏Lite版（简化版）整合包。<br>
                                 降低了生存和战斗难度、简化了操作：x键：释放踢技、切手技、武器特殊技能、c键翻滚、v键受击逃脱；鼠标左键普攻、右键格挡。出生自带装备、地图随机刷新30余种烦村战斗NPC。
                             </p>
-                            <button class="mod-btn" onclick="window.open('https://pan.quark.cn/s/b1423e115504');">
-                                <i class="fas fa-download"></i> 下载模组<span style="font-size: 9px; padding-left:3px;">适配MC1.19.2</span>
+                            <button class="mod-btn" onclick="window.open('https://pan.quark.cn/s/5c4d426fc723');">
+                                <i class="fas fa-download"></i> 下载整合包<span style="font-size: 9px; padding-left:3px;">适配MC1.19.2</span>
                             </button>
-                            <button class="mod-btn" onclick="window.open('https://pan.quark.cn/s/62c48fe30790');">
-                                <i class="fas fa-download"></i> 下载模组<span style="font-size: 9px; padding-left:3px;">适配MC1.20.1</span>
+                            <button class="mod-btn" onclick="window.open('https://pan.quark.cn/s/9de8b6f0a66a');">
+                                <i class="fas fa-download"></i> 下载整合包<span style="font-size: 9px; padding-left:3px;">适配MC1.20.1</span>
                             </button>
                         </div>
 
@@ -919,7 +919,7 @@ function hideVideo(){
     const textSpan = toggleBtn.querySelector('span') || document.createElement('span');
     // 隐藏视频容器
     videoContainer.style.display = 'none';
-    textSpan.textContent = '查看视频';
+    textSpan.textContent = '观看视频';
     icon.className = 'fas fa-play-circle';
     
     // 停止视频播放
