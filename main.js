@@ -846,7 +846,7 @@ window.addEventListener('load', function() {
 
                     <div style="text-align: center; margin-top: 3rem;">
                         <button class="action-button default" onclick="hideModsSection()">
-                            <i class="fas fa-arrow-left" style="padding-right: 5px;"></i> 收起独立功能模组
+                            <i class="fas fa-arrow-left" style="padding-right: 5px;"></i> 收起其它整合包和独立功能模组
                         </button>
                     </div>
                     
