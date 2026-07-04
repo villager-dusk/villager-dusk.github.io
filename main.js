@@ -604,7 +604,7 @@ window.addEventListener('load', function() {
 
     document.getElementById("mods").innerHTML = `
     <div class="container">
-                    <h1 style="text-align: center; margin-bottom: 1rem;">独立功能模组</h1>
+                    <h1 style="text-align: center; margin-bottom: 1rem;">其它整合包和独立功能模组</h1>
                     <p style="text-align: center; color: var(--text-color-secondary); max-width: 800px; margin: 0 auto 2rem;">
                         这些模组都可以加载到烦村黄昏整合包中，也可以单独使用。
                         <span style="display: block; font-size: 13px; padding-top: 5px;">提示：如无特殊说明，均适配Minecraft v1.19.2。</span>
@@ -622,10 +622,10 @@ window.addEventListener('load', function() {
                                 烦村黄昏Lite版（简化版）整合包。<br>
                                 降低了生存和战斗难度、简化了操作：x键：释放踢技、切手技、武器特殊技能、c键翻滚、v键受击逃脱；鼠标左键普攻、右键格挡。出生自带装备、地图随机刷新30余种烦村战斗NPC。
                             </p>
-                            <button class="mod-btn" onclick="window.open('https://pan.quark.cn/s/5c4d426fc723');">
+                            <button class="mod-btn" onclick="window.open('https://pan.quark.cn/s/5c4d426fc723');" style="font-size: 12px;">
                                 <i class="fas fa-download"></i> 下载整合包<span style="font-size: 9px; padding-left:3px;">适配MC1.19.2</span>
                             </button>
-                            <button class="mod-btn" onclick="window.open('https://pan.quark.cn/s/9de8b6f0a66a');">
+                            <button class="mod-btn" onclick="window.open('https://pan.quark.cn/s/9de8b6f0a66a');" style="font-size: 12px;">
                                 <i class="fas fa-download"></i> 下载整合包<span style="font-size: 9px; padding-left:3px;">适配MC1.20.1</span>
                             </button>
                         </div>
