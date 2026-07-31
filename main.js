@@ -615,17 +615,17 @@ window.addEventListener('load', function() {
                             <div class="hot-ribbon">HOT</div>
                             <h4>
                                 <span>烦村黄昏<span style="padding-left: 5px; font-size: 13px;">Lite版</span>
-                                    <span style="font-size: 13px; display: block; font-weight: 500;">版本：v3.3.8</span>
+                                    <span style="font-size: 13px; display: block; font-weight: 500;">版本：v3.3.9</span>
                                 </span>
                                 <span class="mod-type">生存战斗模组</span></h4>
                             <p class="mod-desc" style="font-size: 11px;">
                                 烦村黄昏Lite版（简化版）整合包。<br>
                                 降低了生存和战斗难度、简化了操作：x键：释放踢技、切手技、武器特殊技能、c键翻滚、v键受击逃脱；鼠标左键普攻、右键格挡。出生自带装备、地图随机刷新30余种烦村战斗NPC。
                             </p>
-                            <button class="mod-btn" onclick="window.open('https://pan.quark.cn/s/5c4d426fc723');" style="font-size: 12px;">
+                            <button class="mod-btn" onclick="window.open('https://pan.quark.cn/s/f02230b4063e');" style="font-size: 12px;">
                                 <i class="fas fa-download"></i> 下载整合包<span style="font-size: 9px; padding-left:3px;">适配MC1.19.2</span>
                             </button>
-                            <button class="mod-btn" onclick="window.open('https://pan.quark.cn/s/9de8b6f0a66a');" style="font-size: 12px;">
+                            <button class="mod-btn" onclick="window.open('https://pan.quark.cn/s/ba7ec6ae7529');" style="font-size: 12px;">
                                 <i class="fas fa-download"></i> 下载整合包<span style="font-size: 9px; padding-left:3px;">适配MC1.20.1</span>
                             </button>
                         </div>
